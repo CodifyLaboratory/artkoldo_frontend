@@ -1,0 +1,36 @@
+.filter-menu-container {
+  width: 300px;
+  height: 1000px;
+  background: linear-gradient(
+    135.64deg,
+    #ffffff -21.67%,
+    rgba(121, 121, 121, 0) 60.19%
+  );
+  margin: 30px;
+}
+
+select {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.filter-menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus-btn {
+  background: transparent;
+  border: none;
+}
+
+.plus-btn span {
+  font-size: large;
+}
