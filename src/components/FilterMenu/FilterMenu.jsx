@@ -9,23 +9,30 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import PlusButton from "../PlusButton";
+import MaterialOptions from "./MaterialOptions";
+import PriceOptions from "./PriceOptions";
+import SizeOptions from "./SizeOptions";
 import "./style.css";
+import StyleOptions from "./StyleOptions";
+import TechnicOptions from "./TechnicOptions";
+import ThemeOptions from "./ThemeOptions";
 
 const FilterMenu = () => {
-  function handleShowDropdown() {
-    return (
-      <div>
-        <Form.Select
-          aria-label="Default select example"
-          id="filter-menu-header-dropdown"
-        >
-          <option value="1">Живопись</option>
-          <option value="2">Ремесленные изделия</option>
-          <option value="3">Керамика</option>
-        </Form.Select>
-      </div>
-    );
-  }
+  //   return (
+  //     <div>
+  //       <Form.Select
+  //         aria-label="Default select example"
+  //         id="filter-menu-header-dropdown"
+  //       >
+  //         <option value="1">Живопись</option>
+  //         <option value="2">Ремесленные изделия</option>
+  //         <option value="3">Керамика</option>
+  //       </Form.Select>
+  //     </div>
+  //   );
+  // }
+
+  const showStyleOptions = () => {};
 
   return (
     <Col sm={6} md={4} lg={4} className="filter-menu-container">
@@ -41,29 +48,28 @@ const FilterMenu = () => {
         <option value="3">Керамика</option>
       </Form.Select>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
-        <p>Стиль</p>
-        <PlusButton onChange={handleShowDropdown} />
+      <Row className="filter-menu-section">
+        <StyleOptions />
       </Row>
       <hr />
       <Row className="d-flex justify-content-between align-items-center filter-menu-section">
-        <p>Техника</p>
-        <PlusButton onChange={handleShowDropdown} />
+        <MaterialOptions />
       </Row>
       <hr />
       <Row className="d-flex justify-content-between align-items-center filter-menu-section">
-        <p>Тема</p>
-        <PlusButton onChange={handleShowDropdown} />
+        <ThemeOptions />
       </Row>
       <hr />
       <Row className="d-flex justify-content-between align-items-center filter-menu-section">
-        <p>Цвет</p>
-        <PlusButton onChange={handleShowDropdown} />
+        <TechnicOptions />
       </Row>
       <hr />
       <Row className="d-flex justify-content-between align-items-center filter-menu-section">
-        <p>Размер</p>
-        <PlusButton onChange={handleShowDropdown} />
+        <SizeOptions />
+      </Row>
+      <hr />
+      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+        <PriceOptions />
       </Row>
       <hr />
     </Col>

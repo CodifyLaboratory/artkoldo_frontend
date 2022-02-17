@@ -1,8 +1,8 @@
 import React from "react";
 
-const PlusButton = (onChange) => {
+const PlusButton = () => {
   return (
-    <button className="plus-btn" onClick={onChange}>
+    <button className="plus-btn">
       <span>+</span>
     </button>
   );
