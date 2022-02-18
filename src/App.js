@@ -1,10 +1,12 @@
 import "./App.css";
 import FilterMenu from "./components/FilterMenu/FilterMenu";
 import StyleOptions from "./components/FilterMenu/StyleOptions";
+import Navbar from "./NavbBar/NavBar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <FilterMenu />
     </div>
   );
