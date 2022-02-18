@@ -35,7 +35,7 @@ const FilterMenu = () => {
   const showStyleOptions = () => {};
 
   return (
-    <Col sm={6} md={4} lg={4} className="filter-menu-container">
+    <Col sm={12} md={3} lg={3} className="filter-menu-container">
       <p className="d-flex justify-content-start align-items-center filter-menu-header">
         Категории
       </p>

@@ -33,15 +33,15 @@ const StyleOptions = () => {
   };
 
   return isOptionsOpen ? (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={3} lg={3}>
       <div className="filter-menu-section">
         <p>Стиль</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>&minus;</span>
-        </Button>
+        </button>
       </div>
       {styleCheckboxes.map((el, i) => (
         <Row key={i} className="checkbox-row">
@@ -52,15 +52,15 @@ const StyleOptions = () => {
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={3} lg={3}>
       <div className="filter-menu-section">
         <p>Стиль</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>+</span>
-        </Button>
+        </button>
       </div>
     </Col>
   );
