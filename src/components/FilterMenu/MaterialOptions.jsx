@@ -25,7 +25,7 @@ const MaterialOptions = () => {
   ];
 
   return isOptionsOpen ? (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={4} lg={4}>
       <div className="filter-menu-section">
         <p>Материал</p>
         <button

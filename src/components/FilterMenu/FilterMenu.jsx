@@ -35,7 +35,7 @@ const FilterMenu = () => {
   const showStyleOptions = () => {};
 
   return (
-    <Col sm={12} md={3} lg={3} className="filter-menu-container">
+    <Col sm={6} md={4} lg={3} className="filter-menu-container">
       <p className="d-flex justify-content-start align-items-center filter-menu-header">
         Категории
       </p>
@@ -52,23 +52,23 @@ const FilterMenu = () => {
         <StyleOptions />
       </Row>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+      <Row className="filter-menu-section">
         <MaterialOptions />
       </Row>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+      <Row className="filter-menu-section">
         <ThemeOptions />
       </Row>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+      <Row className="filter-menu-section">
         <TechnicOptions />
       </Row>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+      <Row className="filter-menu-section">
         <SizeOptions />
       </Row>
       <hr />
-      <Row className="d-flex justify-content-between align-items-center filter-menu-section">
+      <Row className="filter-menu-section">
         <PriceOptions />
       </Row>
       <hr />

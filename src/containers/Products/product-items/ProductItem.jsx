@@ -13,7 +13,7 @@ import {
 export const ProductItem = ({ product }) => {
   return (
     <Row>
-      <Col sm={12} md={4} lg={4}>
+      <Col sm={12} md={5} lg={5}>
         <div className="product-item">
           <img className="product-item_image" src={product.image} alt="" />
           <div className="product-item_detailes">
