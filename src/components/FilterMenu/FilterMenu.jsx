@@ -111,7 +111,7 @@ const FilterMenu = ({ filters, setFilters }) => {
   console.log("filters", filters);
 
   return (
-    <Col sm={6} md={4} lg={3} className="filter-menu-container">
+    <div className="filter-menu-container">
       <p className="d-flex justify-content-start align-items-center filter-menu-header">
         Категории
       </p>
@@ -124,7 +124,7 @@ const FilterMenu = ({ filters, setFilters }) => {
           <option value={o.id}>{o.name}</option>
         ))}
       </Form.Select>
-      <hr />
+
       <Row className="filter-menu-section">
         <StyleOptions />
       </Row>
@@ -149,7 +149,7 @@ const FilterMenu = ({ filters, setFilters }) => {
         <PriceOptions />
       </Row>
       <hr />
-    </Col>
+    </div>
   );
 };
 

@@ -1,8 +1,19 @@
-.Item-Cards{
-    display: flex;
-    flex-wrap: wrap ;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 796px;
+.Item-Cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 796px;
+  margin-left: 100px;
+}
 
+.catalog-container {
+  display: flex !important;
+  flex-direction: row;
+  background: linear-gradient(
+    135.64deg,
+    #ffffff -21.67%,
+    rgba(121, 121, 121, 0) 60.19%
+  );
+  margin-top: 60px;
 }
