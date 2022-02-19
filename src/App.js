@@ -1,16 +1,17 @@
 import "./App.css";
-import FilterMenu from "./components/FilterMenu/FilterMenu";
 import StyleOptions from "./components/FilterMenu/StyleOptions";
-import ItemCards from "./containers/Products/ItemCards";
 import Navbar from './components/NavbBar/NavBar';
-
+import ProductContainer from "./containers/ProductContainer/ProductContiner";
+import { BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-     <Navbar />
-      <FilterMenu />
-      <ItemCards/>
+      <BrowserRouter>
+         <Navbar />
+        
+         <ProductContainer />
+      </BrowserRouter>
     </div>
   );
 }
