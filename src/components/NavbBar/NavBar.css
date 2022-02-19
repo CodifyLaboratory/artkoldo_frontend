@@ -42,7 +42,7 @@
     } */
 
 .logo {
-  /* background-image: url(./img/logo.png); */
+  background-image: url(./img/logo.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 149.28px;
@@ -70,7 +70,7 @@
 }
 
 .vector {
-  /* background-image: url("./img/Vector\(7\).png"); */
+  background-image: url("./img/Vector\(7\).png");
   background-repeat: no-repeat;
   margin-left: 235px;
   width: 12px;
@@ -80,7 +80,7 @@
   top: 45px;
 }
 .search_icon {
-  /* background-image: url(./img/Vector\(8\).png); */
+  background-image: url(./img/Vector\(8\).png);
   background-size: contain;
   width: 17px;
   height: 17px;
@@ -90,7 +90,7 @@
   z-index: 125;
 }
 .shop_cart {
-  /* background-image: url(./img/Vector\(9\).png); */
+  background-image: url(./img/Vector\(9\).png);
   background-size: contain;
   position: absolute;
   z-index: 566;

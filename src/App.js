@@ -1,14 +1,17 @@
 import "./App.css";
-import CatalogContainer from "./Catalog/CatalogContainer";
-import StyleOptions from "./components/FilterMenu/StyleOptions";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/NavbBar/NavBar";
 import ProductContainer from "./containers/ProductContainer/ProductContiner";
-// import Navbar from "./NavbBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      <CatalogContainer />
+      <BrowserRouter>
+        <Navbar />
+        <ProductContainer />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
