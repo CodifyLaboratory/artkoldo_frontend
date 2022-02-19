@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;1,300;1,700&display=swap");
+
+.NavbarItems {
+  display: flex;
+  justify-content: space-between;
+  background: #373635;
+  max-width: 100%;
+  height: 150px;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 0;
+}
+
+.nav-menu {
+  text-align: center;
+  width: 1600px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  list-style-type: none;
+  max-width: 40%;
+}
+
+.nav-links {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+
+  /* padding-left: 15px; */
+  /* white-space: nowrap; */
+}
+
+/* .nav-links:last-child {
+    margin-left:150px;
+
+    } */
+
+.logo {
+  background-image: url(./img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 149.28px;
+  height: 84.15px;
+  left: 600px;
+  top: 35px;
+  position: absolute;
+  list-style-type: none;
+}
+
+/* .header_content ul li a:hover {
+    transition: all 0.1s ease-out;
+} */
+.searchbar {
+  width: 317px;
+  height: 34px;
+  align-items: center;
+  background-color: #c4c4c4;
+  border-radius: 12px;
+  margin-left: 220px;
+  position: absolute;
+  z-index: 123;
+  text-indent: 40px;
+  top: 30px;
+}
+
+.vector {
+  background-image: url("./img/Vector\(7\).png");
+  background-repeat: no-repeat;
+  margin-left: 235px;
+  width: 12px;
+  height: 51px;
+  position: absolute;
+  z-index: 456;
+  top: 45px;
+}
+.search_icon {
+  background-image: url(./img/Vector\(8\).png);
+  background-size: contain;
+  width: 17px;
+  height: 17px;
+  margin-left: 510px;
+  top: 40px;
+  position: absolute;
+  z-index: 125;
+}
+.shop_cart {
+  background-image: url(./img/Vector\(9\).png);
+  background-size: contain;
+  position: absolute;
+  z-index: 566;
+  width: 17px;
+  height: 17px;
+  margin-left: 560px;
+  margin-top: 40px;
+}
+.lastitem {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-left: 580px;
+  list-style-type: none;
+  top: 37px;
+  position: absolute;
+}

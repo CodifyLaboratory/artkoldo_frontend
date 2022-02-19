@@ -6,6 +6,7 @@ import ItemCards from "./containers/Products/ItemCards";
 function App() {
   return (
     <div className="App">
+    <Navbar />
       <FilterMenu />
       <ItemCards/>
     </div>
