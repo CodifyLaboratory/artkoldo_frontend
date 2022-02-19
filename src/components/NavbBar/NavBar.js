@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { MenuItems } from "./MenuItems";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col } from "react-bootstrap";
 // import SearchBar from '../SearchBar/SearchBar';
@@ -14,9 +14,9 @@ export default function Navbar() {
           {MenuItems.map((item, index) => {
             return (
               <Col sm={2} className="nav-links" key={index}>
-                {/* <Link className={item.cName} to={item.url}>
+                <Link className={item.cName} to={item.url}>
                   {item.title}
-                </Link> */}
+                </Link>
               </Col>
             );
           })}
@@ -27,13 +27,13 @@ export default function Navbar() {
         <div className="vector"></div>
         <div className="search_icon"></div>
         <div className="shop_cart"></div>
-        {/* <ul>
+        <ul>
           <li>
             <a className="lastitem" href="#">
               Контакты
             </a>
           </li>
-        </ul> */}
+        </ul>
       </div>
     </header>
   );

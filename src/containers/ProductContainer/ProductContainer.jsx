@@ -1,6 +1,7 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import FilterMenu from "../../components/FilterMenu/FilterMenu";
 import ItemCards from "../Products/ItemCards";
+import NavBar from "../components/NavBar/NavBar";
 
 export default function ProductContainer() {
   const [filters, setFilters] = useState({
@@ -18,6 +19,7 @@ export default function ProductContainer() {
 
   return (
     <>
+
       <FilterMenu filters={filters} setFilters={setFilters} />
       <ItemCards products={[]} />
     </>

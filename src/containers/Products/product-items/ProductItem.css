@@ -6,7 +6,7 @@
   margin-right: 46px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   padding-top: 30px;
 }
 
