@@ -43,12 +43,12 @@ const StyleOptions = (styleCheckboxes) => {
           <span>&minus;</span>
         </button>
       </div>
-      {styleCheckboxes.map((el) => ({
+      {/* {styleCheckboxes.map((el) => ({
         <Row key={el.id} className="checkbox-row">
           <input type="checkbox" value={el.id} />
           <span className="checkbox-title">{el.optionName}</span>
         </Row>
-      }))}
+      }))} */}
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
