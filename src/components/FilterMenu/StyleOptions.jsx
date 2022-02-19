@@ -11,22 +11,22 @@ import {
 import PlusButton from "../PlusButton";
 import "./style.css";
 
-const StyleOptions = () => {
+const StyleOptions = (styleCheckboxes) => {
   const [showOptions, setShowOptions] = useState(false);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  const styleCheckboxes = [
-    "Абстракционизм",
-    "Изобразительное искусство",
-    "Экспрессионизм",
-    "Импрессионизм",
-    "Реализм",
-    "Минимализм",
-    "Поп-арт",
-  ];
+  // const styleCheckboxes = [
+  //   "Абстракционизм",
+  //   "Изобразительное искусство",
+  //   "Экспрессионизм",
+  //   "Импрессионизм",
+  //   "Реализм",
+  //   "Минимализм",
+  //   "Поп-арт",
+  // ];
 
-  console.log(styleCheckboxes, styleCheckboxes[0]);
+  // console.log(styleCheckboxes, styleCheckboxes[0]);
 
   const handleStyleOptions = () => {
     setIsOptionsOpen(!isOptionsOpen);
@@ -43,12 +43,12 @@ const StyleOptions = () => {
           <span>&minus;</span>
         </button>
       </div>
-      {styleCheckboxes.map((el, i) => (
-        <Row key={i} className="checkbox-row">
-          <input type="checkbox" />
-          <span className="checkbox-title">{el}</span>
+      {styleCheckboxes.map((el) => ({
+        <Row key={el.id} className="checkbox-row">
+          <input type="checkbox" value={el.id} />
+          <span className="checkbox-title">{el.optionName}</span>
         </Row>
-      ))}
+      }))}
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (

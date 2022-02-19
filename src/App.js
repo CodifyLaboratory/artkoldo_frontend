@@ -1,12 +1,14 @@
 import "./App.css";
+import CatalogContainer from "./Catalog/CatalogContainer";
 import StyleOptions from "./components/FilterMenu/StyleOptions";
-import Navbar from "./NavbBar/NavBar";
+import ProductContainer from "./containers/ProductContainer/ProductContiner";
+// import Navbar from "./NavbBar/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <FilterMenu />
+      {/* <Navbar /> */}
+      <CatalogContainer />
     </div>
   );
 }

@@ -17,53 +17,9 @@ import StyleOptions from "./StyleOptions";
 import TechnicOptions from "./TechnicOptions";
 import ThemeOptions from "./ThemeOptions";
 import axios from "axios";
-
-const filter = [
-  {
-    id: 1,
-    categoryName: "Живопись",
-    section: [
-      {
-        id: 1,
-        sectionName: "Стиль",
-        options: [
-          "abstraction",
-          "Современное искусство",
-          "Абстрактный экспрессионизм",
-          "Экспрессионизм",
-        ],
-      },
-
-      {
-        id: 2,
-        sectionName: "Темы",
-        options: [],
-      },
-    ],
-  },
-  {
-    id: 2,
-    categoryName: "kermika",
-    section: [
-      {
-        id: 1,
-        sectionName: "Стиль",
-        options: [
-          "abstraction",
-          "Современное искусство",
-          "Абстрактный экспрессионизм",
-          "Экспрессионизм",
-        ],
-      },
-
-      {
-        id: 2,
-        sectionName: "Темы",
-        options: [],
-      },
-    ],
-  },
-];
+import CatalogContainer from "../../Catalog/CatalogContainer";
+import { catalogFilters } from "./CatalogFilters";
+import { sectionTitles } from "./sectionTitles";
 
 const FilterMenu = ({ filters, setFilters }) => {
   //   return (
@@ -80,25 +36,41 @@ const FilterMenu = ({ filters, setFilters }) => {
   //   );
   // }
 
-  const fetchData = () => {
-    //fetch reauest to API
-    axios.get("/piatings", { params: filters });
-  };
+  // const fetchData = () => {
+  //   //fetch reauest to API
+  //   axios.get("/piatings", { params: filters });
+  // };
 
-  useEffect(() => {
-    fetchData(filters);
-  }, [filters.categoryId]);
+  // useEffect(() => {
+  //   fetchData(filters);
+  // }, [filters.categoryId]);
 
   const showStyleOptions = () => {};
 
-  const categoryOptions = filter.map((f) => ({
+  const categoryOptions = catalogFilters.map((f) => ({
     id: f.id,
     name: f.categoryName,
   }));
 
-  const filterOptions = filter.filter((f) => f.id === filters.categoryId);
+  // const sectionOptions = catalogFilters.map((f) => ({
+  //   id: f.sections.id,
+  //   sectionName: f.sections.sectionName,
+  // }));
 
-  console.log("filterOptions", filterOptions);
+  // console.log("sections", sectionOptions);
+
+  const filterOptions = catalogFilters.filter(
+    (f) => f.id === filters.categoryId
+  );
+
+  const paintingStyleCheckboxes = catalogFilters[1].sections[1].options.map(
+    (el) => ({
+      id: el.id,
+      optionName: el.optionName,
+    })
+  );
+
+  console.log("!!!!!!", paintingStyleCheckboxes);
 
   const handleCategryChange = (e) => {
     const catId = +e.target.value;
@@ -110,6 +82,7 @@ const FilterMenu = ({ filters, setFilters }) => {
   };
 
   console.log("filters", filters);
+  console.log("sections", sectionTitles[1].sectionName);
 
   return (
     <Col sm={6} md={4} lg={3} className="filter-menu-container">
@@ -125,9 +98,25 @@ const FilterMenu = ({ filters, setFilters }) => {
           <option value={o.id}>{o.name}</option>
         ))}
       </Form.Select>
-      <hr />
+
+      {sectionTitles.map((s) => (
+        <>
+          <Row className="filter-menu-section">
+            <Col sm={12} md={3} lg={3}>
+              <div className="filter-menu-section">
+                <p>{s.sectionName}</p>
+                <button className="dropdown-btn">
+                  <span>+</span>
+                </button>
+              </div>
+            </Col>
+          </Row>
+          <hr />
+        </>
+      ))}
+
       <Row className="filter-menu-section">
-        <StyleOptions />
+        <StyleOptions styleCheckboxes={paintingStyleCheckboxes} />
       </Row>
       <hr />
       <Row className="filter-menu-section">
