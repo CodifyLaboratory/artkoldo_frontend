@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Row,
   Col,
@@ -16,8 +16,55 @@ import "./style.css";
 import StyleOptions from "./StyleOptions";
 import TechnicOptions from "./TechnicOptions";
 import ThemeOptions from "./ThemeOptions";
+import axios from "axios";
+const filter = [
+  {
+    id: 1,
+    categoryName: "Живопись",
+    section: [
+      {
+        id: 1,
+        sectionName: "Стиль",
+        options: [
+          "abstraction",
+          "Современное искусство",
+          "Абстрактный экспрессионизм",
+          "Экспрессионизм",
+        ],
+      },
 
-const FilterMenu = () => {
+      {
+        id: 2,
+        sectionName: "Темы",
+        options: [],
+      },
+    ],
+  },
+  {
+    id: 2,
+    categoryName: "kermika",
+    section: [
+      {
+        id: 1,
+        sectionName: "Стиль",
+        options: [
+          "abstraction",
+          "Современное искусство",
+          "Абстрактный экспрессионизм",
+          "Экспрессионизм",
+        ],
+      },
+
+      {
+        id: 2,
+        sectionName: "Темы",
+        options: [],
+      },
+    ],
+  },
+];
+
+const FilterMenu = ({ filters, setFilters }) => {
   //   return (
   //     <div>
   //       <Form.Select
@@ -32,7 +79,36 @@ const FilterMenu = () => {
   //   );
   // }
 
+  const fetchData = () => {
+    //fetch reauest to API
+    axios.get("/piatings", { params: filters });
+  };
+
+  useEffect(() => {
+    fetchData(filters);
+  }, [filters.categoryId]);
+
   const showStyleOptions = () => {};
+
+  const categoryOptions = filter.map((f) => ({
+    id: f.id,
+    name: f.categoryName,
+  }));
+
+  const filterOptions = filter.filter((f) => f.id === filters.categoryId);
+
+  console.log("filterOptions", filterOptions);
+
+  const handleCategryChange = (e) => {
+    const catId = +e.target.value;
+
+    setFilters((prev) => ({
+      ...prev,
+      categoryId: catId,
+    }));
+  };
+
+  console.log("filters", filters);
 
   return (
     <Col sm={6} md={4} lg={3} className="filter-menu-container">
@@ -42,10 +118,11 @@ const FilterMenu = () => {
       <Form.Select
         aria-label="Default select example"
         id="filter-menu-header-dropdown"
+        onChange={handleCategryChange}
       >
-        <option value="1">Живопись</option>
-        <option value="2">Ремесленные изделия</option>
-        <option value="3">Керамика</option>
+        {categoryOptions.map((o) => (
+          <option value={o.id}>{o.name}</option>
+        ))}
       </Form.Select>
       <hr />
       <Row className="filter-menu-section">
