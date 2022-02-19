@@ -4,7 +4,6 @@ import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col } from "react-bootstrap";
-// import SearchBar from '../SearchBar/SearchBar';
 
 export default function Navbar() {
   return (
@@ -27,13 +26,7 @@ export default function Navbar() {
         <div className="vector"></div>
         <div className="search_icon"></div>
         <div className="shop_cart"></div>
-        <ul>
-          <li>
-            <a className="lastitem" href="#">
-              Контакты
-            </a>
-          </li>
-        </ul>
+     
       </div>
     </header>
   );

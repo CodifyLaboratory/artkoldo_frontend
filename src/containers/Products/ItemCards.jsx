@@ -3,7 +3,7 @@ import {products} from './ListofProducts'
 import './ItemCards.css'
 import {ProductItem} from './product-items/ProductItem'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Card} from 'react-bootstrap';
+// import { Container, Card} from 'react-bootstrap';
 
 
 
