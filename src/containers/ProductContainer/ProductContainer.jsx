@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import FilterMenu from "../../components/FilterMenu/FilterMenu";
 import ItemCards from "../Products/ItemCards";
-import NavBar from "../components/NavBar/NavBar";
+import { Container, Col } from "react-bootstrap";
+import { ProductItem } from "../Products/product-items/ProductItem";
 
 export default function ProductContainer() {
   const [filters, setFilters] = useState({
@@ -18,10 +19,15 @@ export default function ProductContainer() {
   //   }, [filters.categoryId]);
 
   return (
-    <>
-
-      <FilterMenu filters={filters} setFilters={setFilters} />
-      <ItemCards products={[]} />
-    </>
+    <Container fluid className="catalog-container">
+      <Col sm={12} md={3} lg={3}>
+        <div>
+          <FilterMenu filters={filters} setFilters={setFilters} />
+        </div>
+      </Col>
+      <Col sm={12} md={9} lg={9}>
+        <ItemCards products={[]} />
+      </Col>
+    </Container>
   );
 }

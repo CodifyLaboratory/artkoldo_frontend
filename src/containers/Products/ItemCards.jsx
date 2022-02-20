@@ -6,15 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Card } from "react-bootstrap";
 
 export default function ItemCards({ items = [] }) {
-  const list = items.length > 0 ? items : products;
+  // const list = items.length > 0 ? items : products;
 
   return (
-    <>
-      <div className="Item-Cards">
-        {list.map((product) => (
-          <ProductItem product={product} key={product.id} />
-        ))}
-      </div>
-    </>
+    <div className="Item-Cards">
+      {products.map((product) => (
+        <ProductItem product={product} key={product.id} />
+      ))}
+    </div>
   );
 }
