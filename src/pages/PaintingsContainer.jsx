@@ -1,24 +1,49 @@
 import React, { useEffect, useState } from "react";
-import FilterMenu from "../components/FilterMenu/FilterMenu";
-import { Container, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import PageWrapper from "../components/PageWrapper/index";
 import ItemCards from "../components/Products/ItemCards";
 import { useNavigate } from "react-router";
+import PaintingFilters from "../components/FilterMenu/PaintingFilters";
+import { API_URL } from "../API/api";
+import axios from "axios";
+import "./PaintingsContainer.css";
 
-export default function PaintingsContainer(categoryFilter) {
-  const [filters, setFilters] = useState({
+export default function PaintingsContainer(handleCategoryChange) {
+  const [paintingFilters, setPaintingFilters] = useState({
     categoryId: 1,
+    sections: [],
   });
+  const navigate = useNavigate();
+
+  // useEffect((el) => {
+  //   fetch data on Paintings
+  // }, []);
+
+  useEffect(() => {
+    axios.get(`${API_URL}/paintings/`);
+  }, []);
 
   return (
-    <Container fluid className="catalog-container">
-      <Col sm={12} md={3} lg={3}>
-        <div>
-          <FilterMenu filters={filters} setFilters={setFilters} />
-        </div>
-      </Col>
-      <Col sm={12} md={9} lg={9}>
-        <ItemCards products={[]} />
-      </Col>
-    </Container>
+    <PageWrapper>
+      <div className="breadcrumbs d-flex justify-content-start">
+        <p>Главная/Живопись/...</p>
+      </div>
+      <hr style={{ width: "1590px" }} />
+      <div className="sort-items-container d-flex justify-content-between">
+        <p>Живопись</p>
+        {/* <div className="sort-items-select">
+          <select />
+        </div> */}
+      </div>
+      <hr style={{ width: "1590px" }} />
+      <Row className="catalog-container">
+        <Col sm={12} md={3} lg={3} className="">
+          <PaintingFilters filters setFilters handleCategoryChange />
+        </Col>
+        <Col sm={12} md={9} lg={9} className="items-container-column">
+          <ItemCards products={[]} />
+        </Col>
+      </Row>
+    </PageWrapper>
   );
 }

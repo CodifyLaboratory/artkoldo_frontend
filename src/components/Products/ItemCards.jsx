@@ -1,18 +1,20 @@
 import React from "react";
-import { products } from "./ListofProducts";
+import { products } from "../../mockData/ListofProducts";
 import "./ItemCards.css";
-import { ProductItem } from "./product-items/ProductItem";
+import { ProductItem } from "./ProductItem";
+import { Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Card } from "react-bootstrap";
 
 export default function ItemCards({ items = [] }) {
   // const list = items.length > 0 ? items : products;
 
   return (
-    <div className="Item-Cards">
+    <Row className="Item-Cards d-flex justify-content-between">
       {products.map((product) => (
-        <ProductItem product={product} key={product.id} />
+        <Col sm={6} md={6} lg={6}>
+          <ProductItem product={product} key={product.id} />
+        </Col>
       ))}
-    </div>
+    </Row>
   );
 }

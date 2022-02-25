@@ -1,0 +1,17 @@
+body {
+  background: #f3f3ec;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1920px;
+  /* padding: 0 100px 0 100px; */
+  margin: 0 auto;
+}
+
+.page-content {
+  padding: 0 100px 0 100px;
+  width: 1590px;
+}

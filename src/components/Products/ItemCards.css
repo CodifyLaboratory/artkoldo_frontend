@@ -1,20 +1,18 @@
 .Item-Cards {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 796px;
-  margin-left: 100px;
+  width: 1100px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 
 .catalog-container {
   display: flex !important;
-  flex-direction: row;
-  background: linear-gradient(
-    135.64deg,
-    #ffffff -21.67%,
-    rgba(121, 121, 121, 0) 60.19%
-  );
+  justify-content: space-between !important;
+  width: 1590px !important;
+}
 
-  margin-top: 60px;
+.items-container-column {
+  display: flex !important;
+  justify-content: end;
 }
