@@ -10,7 +10,7 @@ import {
 import PlusButton from "../PlusButton";
 import "./style.css";
 
-const TechnicOptions = () => {
+const TechniqueOptions = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -51,4 +51,4 @@ const TechnicOptions = () => {
   );
 };
 
-export default TechnicOptions;
+export default TechniqueOptions;

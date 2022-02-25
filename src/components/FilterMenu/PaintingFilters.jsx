@@ -3,30 +3,23 @@ import { Row, Form } from "react-bootstrap";
 import MaterialOptions from "./MaterialOptions";
 import PriceOptions from "./PriceOptions";
 import SizeOptions from "./SizeOptions";
-import "./style.css";
 import StyleOptions from "./StyleOptions";
-import TechnicOptions from "./TechnicOptions";
 import ThemeOptions from "./ThemeOptions";
-import { catalogFilters } from "./CatalogFilters";
+import TechniqueOptions from "./TechniqueOptions";
+import ColorOptions from "./ColorOptions";
 
-const FilterMenu = ({ filters, setFilters }) => {
+import "./style.css";
+import { catalogFilters } from "../../mockData/MockFilters";
+import RegionOptions from "./RegionOptions";
+
+const PaintingFilters = ({ filters, setFilters, handleCategoryChange }) => {
+  // handleOptionsChange = (e) => {
+  //   const
+  // };
   const categoryOptions = catalogFilters.map((f) => ({
     id: f.id,
     name: f.categoryName,
   }));
-
-  const handleCategoryChange = (e) => {
-    const catId = +e.target.value;
-    setFilters((prev) => ({
-      ...prev,
-      categoryId: catId,
-    }));
-  };
-
-  // handleOptionsChange = (e) => {
-  //   const
-  // };
-
   return (
     <div className="filter-menu-container">
       <p className="d-flex justify-content-start align-items-center filter-menu-header">
@@ -37,9 +30,9 @@ const FilterMenu = ({ filters, setFilters }) => {
         id="filter-menu-header-dropdown"
         onChange={handleCategoryChange}
       >
-        {categoryOptions.map((o) => (
-          <option value={o.id}>{o.name}</option>
-        ))}
+        <option id={1}>Живопись</option>
+        <option id={2}>Ремесленные изделия</option>
+        <option id={3}>Керамика</option>
       </Form.Select>
       <Row className="filter-menu-section">
         <StyleOptions
@@ -57,19 +50,27 @@ const FilterMenu = ({ filters, setFilters }) => {
       </Row>
       <hr />
       <Row className="filter-menu-section">
-        <TechnicOptions />
+        <SizeOptions />
       </Row>
       <hr />
       <Row className="filter-menu-section">
-        <SizeOptions />
+        <TechniqueOptions />
+      </Row>
+      <hr />
+      <Row className="filter-menu-section">
+        <ColorOptions />
       </Row>
       <hr />
       <Row className="filter-menu-section">
         <PriceOptions />
       </Row>
       <hr />
+      <Row className="filter-menu-section">
+        <RegionOptions />
+      </Row>
+      <hr />
     </div>
   );
 };
 
-export default FilterMenu;
+export default PaintingFilters;
