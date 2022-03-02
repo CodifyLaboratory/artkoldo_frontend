@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper/index";
-import PaintingsContainer from "./PaintingsContainer";
-import { useNavigate, useParams } from "react-router";
+
+import { useNavigate } from "react-router";
 import { API_URL } from "../API/api";
 import axios from "axios";
 
