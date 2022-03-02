@@ -13,7 +13,7 @@ export default function PaintingsContainer(handleCategoryChange) {
     categoryId: 1,
     sections: [],
   });
-  const navigate = useNavigate();
+
 
   // useEffect((el) => {
   //   fetch data on Paintings

@@ -9,10 +9,8 @@ const ProductPage = (props) => {
     <div>
         <PageWrapper>
          
-            {/* <div>
-              <button onClick={
-                props.history.push({ pathname: '/cart'})} className='btn'>Добавить в корзину</button>
-            </div> */}
+      
+      
         </PageWrapper>
       </div> 
   );

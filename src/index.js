@@ -8,7 +8,7 @@ import Routing from './routes/routes'
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Routing />
+    {/* <Routing /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
