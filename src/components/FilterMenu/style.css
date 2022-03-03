@@ -11,6 +11,7 @@ select {
 .filter-menu-section {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   width: 480px;
 }
 
@@ -32,6 +33,7 @@ select {
   width: 50px;
   display: flex;
   flex-wrap: nowrap !important;
+  align-items: center;
 }
 
 .checkbox-title {

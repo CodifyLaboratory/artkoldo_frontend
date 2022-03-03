@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper/index";
-import PaintingsContainer from "./PaintingsContainer";
 import { useNavigate, useParams } from "react-router";
 import { API_URL } from "../API/api";
 import axios from "axios";
@@ -40,15 +39,5 @@ export default function MainPage() {
     }
   }, [categoryFilters.categoryId]);
 
-  return (
-    <PageWrapper>
-      {/* <PaintingsContainer
-        filters={categoryFilters}
-        setCategoryFilters={setCategoryFilters}
-        handleCategoryChange={handleCategoryChange}
-      /> */}
-      {/* <HandicraftsContainer handleCategoryChange={handleCategoryChange} />
-        <CeramicsContainer handleCategoryChange={handleCategoryChange} /> */}
-    </PageWrapper>
-  );
+  return <PageWrapper></PageWrapper>;
 }
