@@ -1,20 +1,16 @@
 import React from "react";
 import "./ProductItem.css";
-import {
-  Row,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Dropdown,
-} from "react-bootstrap";
+import { Col } from "react-bootstrap";
+
+
+
 
 export const ProductItem = ({ product }) => {
+
   return (
     <Col sm={12} md={5} lg={5}>
-      <div className="product-item">
-        <img className="product-item_image" src={product.image} alt="" />
+      <div className="product-item" >
+        <img className="product-item_image" src={product.image}  alt="" />
         <div className="product-item_detailes">
           <div className="product-item_detailes_col1">
             <span className="product-item_title">{product.title}</span>

@@ -4,14 +4,14 @@ import { MenuItems } from "./MenuItems";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Col, Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 // import SearchBar from '../SearchBar/SearchBar';
 
 export default function Navbar() {
   return (
     <header className="header">
       <div className="header-container">
-        {/* <div className="header-left">
+         <div className="header-left">
           <ul className="nav-menu">
             {MenuItems.map((item, index) => {
               return (
@@ -23,24 +23,25 @@ export default function Navbar() {
               );
             })}
           </ul>
-        </div> */}
-        {/* <div className="logo"> */}
-        <img src={logo} />
-        {/* </div> */}
-        {/* <div className="header-right">
+        </div> 
+
+        <div className="logo"> <img src={logo} alt='logo'/></div>
+
+        <div className="header-right">
           <div className="searchBar">
             <input className="search-bar" type="text" placeholder="Поиск" />
-            <button className="search-btn"></button>
           </div>
+          <div className="vector"></div>
           <div className="search-icon"></div>
           <div className="shop-cart"></div>
-          <div>
-            <a className="lastitem" href="#">
-              Контакты
-            </a>
-          </div>
-        </div> */}
-      </div>
+        </div> 
+        <div className="lastitem">
+        <ul>
+                    <li><Link to='/Kontakty'>Контакты</Link></li>
+                    
+                </ul>
+        </div>
+    </div>
     </header>
   );
 }

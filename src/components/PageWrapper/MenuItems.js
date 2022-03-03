@@ -24,5 +24,5 @@ export const MenuItems = [
     //     title: 'Контакты',
     //     url: '/Kontakty',
     //     cName: 'nav-links'
-    // },
+    // }
 ]
