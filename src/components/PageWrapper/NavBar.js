@@ -15,11 +15,11 @@ export default function Navbar() {
           <ul className="nav-menu">
             {MenuItems.map((item, index) => {
               return (
-                <Col sm={2} className="nav-links" key={index}>
+                <div className="nav-links" key={index}>
                   <Link className={item.cName} to={item.url}>
                     {item.title}
                   </Link>
-                </Col>
+                </div>
               );
             })}
           </ul>
@@ -34,13 +34,14 @@ export default function Navbar() {
           <div className="vector"></div>
           <div className="search-icon"></div>
           <div className="shop-cart"></div>
-        </div> 
-        <div className="lastitem">
+          <div className="lastitem">
         <ul>
                     <li><Link to='/Kontakty'>Контакты</Link></li>
                     
                 </ul>
         </div>
+        </div> 
+        
     </div>
     </header>
   );

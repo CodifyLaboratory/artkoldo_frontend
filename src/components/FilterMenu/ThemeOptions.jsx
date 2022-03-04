@@ -71,7 +71,7 @@ const ThemeOptions = () => {
   ];
 
   return isOptionsOpen ? (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
         <button
@@ -90,7 +90,7 @@ const ThemeOptions = () => {
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
         <button

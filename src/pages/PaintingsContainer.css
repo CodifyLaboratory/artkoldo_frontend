@@ -1,3 +1,6 @@
+.page-wrapper{
+  padding-left: 64px;
+}
 .catalog-container {
   display: flex !important;
   justify-content: space-between !important;
@@ -7,7 +10,6 @@
 .breadcrumbs {
   height: 50px;
   margin-top: 50px;
-  width: 1590px;
 }
 
 .sort-items-container {
@@ -15,8 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1590px;
+  width: 100%;
 }
+
 
 .sort-items-select {
   display: flex;

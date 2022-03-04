@@ -9,7 +9,7 @@
 .catalog-container {
   display: flex !important;
   justify-content: space-between !important;
-  width: 1590px !important;
+  width: 100% !important;
 }
 
 .items-container-column {

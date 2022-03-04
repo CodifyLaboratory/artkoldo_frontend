@@ -25,17 +25,20 @@ export default function PaintingsContainer(handleCategoryChange) {
 
   return (
     <PageWrapper>
+      <div className="page-wrapper">
       <div className="breadcrumbs d-flex justify-content-start">
         <p>Главная/Живопись/...</p>
       </div>
-      <hr style={{ width: "1590px" }} />
+      <hr className="hr-top"  />
       <div className="sort-items-container d-flex justify-content-between">
         <p>Живопись</p>
         {/* <div className="sort-items-select">
           <select />
         </div> */}
       </div>
-      <hr style={{ width: "1590px" }} />
+      <hr className="hr-top" />
+      </div>
+
       <Row className="catalog-container">
         <Col sm={12} md={3} lg={3} className="">
           <PaintingFilters filters setFilters handleCategoryChange />

@@ -7,11 +7,13 @@ select {
   margin-bottom: 40px;
   padding: 10px;
 }
+.select-form{
+  background-color: red;
+}
 
 .filter-menu-section {
   display: flex;
   justify-content: space-between;
-  width: 480px;
 }
 
 .dropdown-btn {
@@ -24,7 +26,8 @@ select {
 }
 
 .filter-menu-container {
-  width: 372px;
+  width: 100%px;
+  padding-left: 64px;
 }
 
 .checkbox-row {
