@@ -1,5 +1,6 @@
 .page-wrapper{
   padding-left: 64px;
+  padding-right: 64px;
 }
 .catalog-container {
   display: flex !important;
