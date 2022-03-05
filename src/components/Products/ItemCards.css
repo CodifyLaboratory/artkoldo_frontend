@@ -15,4 +15,5 @@
 .items-container-column {
   display: flex !important;
   justify-content: end;
+  height: 100%;
 }

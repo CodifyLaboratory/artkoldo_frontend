@@ -27,7 +27,7 @@ header {
 }
 .nav-menu{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style-type: none;
   align-items: center;
 }
@@ -42,6 +42,8 @@ header {
   color: #ffffff;
   white-space: nowrap;
   margin-top: 18px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav-links a:nth-child(3n){
