@@ -1,4 +1,5 @@
-.filter-menu-container {
+.hr{
+  color:#373635;
 }
 
 select {
@@ -7,8 +8,12 @@ select {
   margin-bottom: 40px;
   padding: 10px;
 }
-.select-form{
-  background-color: red;
+
+.form-select{
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 12px ;
+
 }
 
 .filter-menu-section {

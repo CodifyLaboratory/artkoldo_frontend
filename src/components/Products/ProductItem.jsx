@@ -14,7 +14,7 @@ export const ProductItem = ({ product }) => {
         <div className="product-item_detailes">
           <div className="product-item_detailes_col1">
             <span className="product-item_title">{product.title}</span>
-            <span className="product-item_aithor ">{product.author}</span>
+            <span className="product-item_master">{product.master}</span>
             <span className="product-item_location">{product.location}</span>
           </div>
           <div className=" product-item_detailes_col2">

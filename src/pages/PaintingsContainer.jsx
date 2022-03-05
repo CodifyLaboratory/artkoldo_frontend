@@ -29,14 +29,14 @@ export default function PaintingsContainer(handleCategoryChange) {
       <div className="breadcrumbs d-flex justify-content-start">
         <p>Главная/Живопись/...</p>
       </div>
-      <hr className="hr-top"  />
+      <hr />
       <div className="sort-items-container d-flex justify-content-between">
         <p>Живопись</p>
         {/* <div className="sort-items-select">
           <select />
         </div> */}
       </div>
-      <hr className="hr-top" />
+      <hr />
       </div>
 
       <Row className="catalog-container">

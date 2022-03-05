@@ -28,7 +28,7 @@ const PaintingFilters = ({ filters, setFilters, handleCategoryChange }) => {
       </p>
       <Form.Select
         aria-label="Default select example"
-        id="filter-menu-header-dropdown" classname="select-form"
+        id="filter-menu-header-dropdown" 
         onChange={handleCategoryChange}
       >
         <option id={1}>Живопись</option>
