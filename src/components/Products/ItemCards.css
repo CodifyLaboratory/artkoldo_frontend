@@ -1,0 +1,18 @@
+.Item-Cards {
+  width: 1100px;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.catalog-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.items-container-column {
+  display: flex !important;
+  justify-content: end;
+}

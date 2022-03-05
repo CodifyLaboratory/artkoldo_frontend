@@ -1,0 +1,16 @@
+body {
+  background: #f3f3ec;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+ 
+}
+
+.page-content {
+  width: 100%;
+}

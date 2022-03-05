@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Dropdown,
-} from "react-bootstrap";
-import PlusButton from "../PlusButton";
+import { Row, Col } from "react-bootstrap";
 import "./style.css";
 
-const TechnicOptions = () => {
+const ColorOptions = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -19,15 +10,15 @@ const TechnicOptions = () => {
   const styleCheckboxes = ["Масло", "Акрил", "Гуашь", "Чернила", "Акварель"];
 
   return isOptionsOpen ? (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Техника</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>&minus;</span>
-        </Button>
+        </button>
       </div>
       {styleCheckboxes.map((el, i) => (
         <Row key={i} className="checkbox-row">
@@ -38,18 +29,18 @@ const TechnicOptions = () => {
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Техника</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>+</span>
-        </Button>
+        </button>
       </div>
-    </Col>
+      </Col>
   );
 };
 
-export default TechnicOptions;
+export default ColorOptions;

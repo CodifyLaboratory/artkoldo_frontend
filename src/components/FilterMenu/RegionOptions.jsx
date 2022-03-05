@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Dropdown,
-} from "react-bootstrap";
-import PlusButton from "../PlusButton";
+import { Row, Col } from "react-bootstrap";
 import "./style.css";
 
-const PriceOptions = () => {
+const RegionOptions = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  const styleCheckboxes = ["Маленький", "Средний", "Большой"];
+  const styleCheckboxes = ["Масло", "Акрил", "Гуашь", "Чернила", "Акварель"];
 
   return isOptionsOpen ? (
     <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
-        <p>Цена</p>
+        <p>Техника</p>
         <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
@@ -35,18 +26,12 @@ const PriceOptions = () => {
           <span className="checkbox-title">{el}</span>
         </Row>
       ))}
-      <div className="select-manually">Выбрать вручную</div>
-      <div className="manual-input-container">
-        <input placeholder="От" className="manual-input-price" />
-        <span>&nbsp;&mdash;&nbsp;</span>
-        <input placeholder="До" className="manual-input-price" />
-        <span>&nbsp;сом</span>
-      </div>
+      <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
     <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
-        <p>Цена</p>
+        <p>Техника</p>
         <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
@@ -58,4 +43,4 @@ const PriceOptions = () => {
   );
 };
 
-export default PriceOptions;
+export default RegionOptions;
