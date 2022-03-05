@@ -1,63 +1,68 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
+import PaintingFilters from "../components/CatalogFilters/PaintingFilters";
 import PageWrapper from "../components/PageWrapper/index";
 import ItemCards from "../components/Products/ItemCards";
 import { useNavigate } from "react-router";
-import PaintingFilters from "../components/FilterMenu/PaintingFiltersContainer";
 import { API_URL } from "../API/api";
 import axios from "axios";
 import "./PaintingsContainer.css";
 
 export default function PaintingsContainer(handleCategoryChange) {
-  // const [paintingFilters, setPaintingFilters] = useState({
-  //   categoryId: 1,
-  //   sections: [],
-  // });
-
-  const [paintingFilters, setPaintingFilters] = useState([]);
   const [paintings, setPaintings] = useState([]);
 
-  const [styleCheckedOptions, setStyleCheckedOptions] = useState(
-    new Array(paintingFilters.Style.length).fill(false)
-  );
-  const [techniqueCheckedOptions, setTechniqueCheckedOptions] = useState(
-    new Array(paintingFilters.PaintTechnique.length).fill(false)
-  );
-  const [materialCheckedOptions, setMaterialCheckedOptions] = useState(
-    new Array(paintingFilters.PaintMaterial.length).fill(false)
-  );
-  const [subjectCheckedOptions, setSubjectCheckedOptions] = useState(
-    new Array(paintingFilters.Subject.length).fill(false)
-  );
-  const [sizeCheckedOptions, setSizeCheckedOptions] = useState(
-    new Array(paintingFilters.Size.length).fill(false)
-  );
-  const [colorCheckedOptions, setColorCheckedOptions] = useState(
-    new Array(paintingFilters.Color.length).fill(false)
-  );
-  const [regionCheckedOptions, setRegionCheckedOptions] = useState(
-    new Array(paintingFilters.Region.length).fill(false)
-  );
+  const [styleChecked, setStyleChecked] = useState([]);
+  const [techniqueChecked, setTechniqueChecked] = useState([]);
+  const [materialChecked, setMaterialChecked] = useState([]);
+  const [subjectChecked, setSubjectChecked] = useState([]);
+  const [colorChecked, setColorChecked] = useState([]);
+  const [regionChecked, setRegionChecked] = useState([]);
+  const [minHeight, setMinHeight] = useState("");
+  const [maxHeight, setMaxHeight] = useState("");
+  const [minWidth, setMinWidth] = useState("");
+  const [maxWidth, setMaxWidth] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
-  const navigate = useNavigate();
+  // const [priceOrder, setPriceOrder] = useState('')
+  // const [dateOrder, setDateOrder] = useState()
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/painting_filter/`)
-      .then((response) => setPaintingFilters(response.data));
-  }, []);
-
-  useEffect(() => {
-    const payload = {
-      cat: paintingFilters.value,
+    const params = {
+      style: styleChecked.length > 0 ? styleChecked.join(", ") : undefined,
+      subject:
+        subjectChecked.length > 0 ? subjectChecked.join(", ") : undefined,
+      material:
+        materialChecked.length > 0 ? materialChecked.join(", ") : undefined,
+      technique:
+        techniqueChecked.length > 0 ? techniqueChecked.join(", ") : undefined,
+      color: colorChecked.length > 0 ? colorChecked.join(", ") : undefined,
+      region: regionChecked.length > 0 ? regionChecked.join(", ") : undefined,
+      min_width: "",
+      max_width: "",
+      min_height: "",
+      max_height: "",
+      min_price: "",
+      max_price: "",
+      // ordering: togglePriceOrder
     };
     axios
-      .get(`${API_URL}/paintings/`, { params: payload })
-      .then((response) => setPaintings(response.data));
-  }, [paintingFilters.cat, paintingFilters.theme]);
+      .get(`${API_URL}/paintings/`, { params })
+      .then((r) => setPaintings(r.data));
+  }, [
+    styleChecked,
+    materialChecked,
+    techniqueChecked,
+    colorChecked,
+    regionChecked,
+    minHeight,
+    maxHeight,
+    minWidth,
+    maxWidth,
+    minPrice,
+    maxPrice,
+  ]);
 
-  console.log("FILTERS", paintingFilters);
-  console.log("OPTIONS", paintingFilters.Style);
   console.log("PAINTINGS", paintings);
 
   // useEffect(() => {
@@ -88,14 +93,39 @@ export default function PaintingsContainer(handleCategoryChange) {
       <hr style={{ width: "1590px" }} />
       <Row className="catalog-container">
         <Col sm={12} md={3} lg={3} className="">
-          <PaintingFilters
-            filters={paintingFilters}
-            setFilters={setPaintingFilters}
-            handleCategoryChange
-          />
-        </Col>
-        <Col sm={12} md={9} lg={9} className="items-container-column">
-          <ItemCards items={paintings} setPaintings={setPaintings} />
+          <div className="filter-menu-container">
+            <p className="d-flex justify-content-start align-items-center filter-menu-header">
+              Категории
+            </p>
+            <Form.Select
+              aria-label="Default select example"
+              id="filter-menu-header-dropdown"
+              onChange={handleCategoryChange}
+            >
+              <option value={1}>Живопись</option>
+              <option value={2}>Ремесленные изделия</option>
+              <option value={3}>Керамика</option>
+            </Form.Select>
+            <hr />
+            <Row className="filter-menu-section">
+              <PaintingFilters
+                setStyleChecked={setStyleChecked}
+                setColorChecked={setColorChecked}
+                setMaterialChecked={setMaterialChecked}
+                setTechniqueChecked={setTechniqueChecked}
+                setRegionChecked={setRegionChecked}
+                setSubjectChecked={setSubjectChecked}
+                setMinHeight={setMinHeight}
+                setMaxHeight={setMaxHeight}
+                setMinWidth={setMinWidth}
+                setMaxWidth={setMaxWidth}
+                setMinPrice={setMinPrice}
+                setMaxPrice={setMaxPrice}
+              />
+            </Row>
+            <hr />
+            <ItemCards items={paintings} setPaintings={setPaintings} />
+          </div>
         </Col>
       </Row>
     </PageWrapper>
