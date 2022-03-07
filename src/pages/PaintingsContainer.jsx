@@ -9,6 +9,7 @@ import axios from "axios";
 import "./PaintingsContainer.css";
 
 export default function PaintingsContainer(handleCategoryChange) {
+  
   const [paintingFilters, setPaintingFilters] = useState({
     categoryId: 1,
     sections: [],

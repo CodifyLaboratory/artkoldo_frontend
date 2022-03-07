@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function ItemCards({ items = [] }) {
   // const list = items.length > 0 ? items : products;
 
+
   return (
     <Row className="Item-Cards d-flex justify-content-between">
       {products.map((product) => (
