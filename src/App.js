@@ -9,9 +9,9 @@ import PaintingsContainer from "./pages/PaintingsPage";
 function App() {
   return (
     <div className="App">
-        <PaintingsContainer />
-        {/*<PaintingsContainer />*/}
-        {/* <ProductPage /> */}
+      <PaintingsPage />
+      {/*<PaintingsContainer />*/}
+      {/* <ProductPage /> */}
     </div>
   );
 }

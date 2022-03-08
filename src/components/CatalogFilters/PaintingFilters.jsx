@@ -5,7 +5,6 @@ import axios from "axios";
 import "./style.css";
 
 export default function PaintingFilters({
-  filters,
   setStyleChecked,
   setColorChecked,
   setMaterialChecked,
@@ -19,18 +18,24 @@ export default function PaintingFilters({
   setMinPrice,
   setMaxPrice,
 }) {
-  const [paintingFilters, setPaintingFilters] = useState({});
+  const [filters, setFilters] = useState({});
   const [showOptions, setShowOptions] = useState(false);
+  const [showSubjectOptions, setShowSubjectOptions] = useState(false);
+  const [showColorOptions, setShowColorOptions] = useState(false);
+  const [showPaintMaterialOptions, setShowPaintMaterialOptions] = useState(false);
+  const [showPaintTechniqueOptions, setShowPaintTechniqueOptions] = useState(false);
+  const [showRegionOptions, setShowRegionOptions] = useState(false);
   const [showSizeOptions, setShowSizeOptions] = useState(false);
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("PaintingFilters", paintingFilters);
+  console.log("PaintingFilters", filters);
+  console.log("keys", Object.keys(filters));
 
   useEffect(() => {
-    axios
-      .get(`${API_URL}/painting_filter/`)
-      .then((r) => setPaintingFilters(r.data));
+    axios.get(`${API_URL}/painting_filter/`).then((r) => setFilters(r.data));
   }, []);
+
+  console.log("painting_filters", filters);
 
   function handleCheckboxes(e, key, option) {
     if (key === "Style") {
@@ -114,7 +119,7 @@ export default function PaintingFilters({
 
   return (
     <div>
-      {Object.keys(paintingFilters).map((key) => {
+      {Object.keys(filters).map((key) =>
         showOptions ? (
           <Col sm={12} md={3} lg={3}>
             <div className="filter-menu-section">
@@ -126,7 +131,7 @@ export default function PaintingFilters({
                 <span>&minus;</span>
               </button>
             </div>
-            {paintingFilters[key].map((option) => (
+            {filters[key].map((option) => (
               <Row key={option.id} className="checkbox-row">
                 <input
                   type="checkbox"
@@ -153,12 +158,12 @@ export default function PaintingFilters({
               </button>
             </div>
           </Col>
-        );
-      })}
+        )
+      )}
       {showSizeOptions ? (
         <Col sm={12} md={3} lg={3}>
           <div className="filter-menu-section">
-            <p>Выбрать вручную</p>
+            <p>Размер</p>
             <button
               className="dropdown-btn"
               onClick={() => setShowSizeOptions(!showSizeOptions)}
@@ -199,7 +204,7 @@ export default function PaintingFilters({
       ) : (
         <Col sm={12} md={3} lg={3}>
           <div className="filter-menu-section">
-            <p>Выбрать вручную</p>
+            <p>Размер</p>
             <button
               className="dropdown-btn"
               onClick={() => setShowSizeOptions(!showSizeOptions)}
@@ -212,7 +217,7 @@ export default function PaintingFilters({
       {showPriceOptions ? (
         <Col sm={12} md={3} lg={3}>
           <div className="filter-menu-section">
-            <p>Выбрать вручную</p>
+            <p>Цена</p>
             <button
               className="dropdown-btn"
               onClick={() => setShowPriceOptions(!showPriceOptions)}
@@ -239,7 +244,7 @@ export default function PaintingFilters({
       ) : (
         <Col sm={12} md={3} lg={3}>
           <div className="filter-menu-section">
-            <p>Выбрать вручную</p>
+            <p>Цена</p>
             <button
               className="dropdown-btn"
               onClick={() => setShowPriceOptions(!showPriceOptions)}

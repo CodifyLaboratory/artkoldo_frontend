@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41335e0-07dd-4a45-931e-6ee3ef49d158" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterMenu/CheckboxOptions.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageWrapper/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageWrapper/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageWrapper/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageWrapper/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PaintingsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaintingsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/CeramicsFiltersContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/HandicraftFiltersContainer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/PaintingFilters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CatalogFilters/PaintingFilters.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/PaintingsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaintingsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +50,10 @@
       <workItem from="1646369460276" duration="323000" />
       <workItem from="1646370652608" duration="29830000" />
       <workItem from="1646470342376" duration="2446000" />
+      <workItem from="1646491843275" duration="834000" />
+      <workItem from="1646627653379" duration="1769000" />
+      <workItem from="1646632491871" duration="4157000" />
+      <workItem from="1646729832359" duration="1651000" />
     </task>
     <servers />
   </component>

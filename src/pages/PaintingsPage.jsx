@@ -24,6 +24,8 @@ export default function PaintingsContainer(handleCategoryChange) {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
+  console.log("checked", subjectChecked);
+
   // const [priceOrder, setPriceOrder] = useState('')
   // const [dateOrder, setDateOrder] = useState()
 
@@ -100,7 +102,7 @@ export default function PaintingsContainer(handleCategoryChange) {
             <Form.Select
               aria-label="Default select example"
               id="filter-menu-header-dropdown"
-              onChange={handleCategoryChange}
+              // onChange={handleCategoryChange}
             >
               <option value={1}>Живопись</option>
               <option value={2}>Ремесленные изделия</option>
