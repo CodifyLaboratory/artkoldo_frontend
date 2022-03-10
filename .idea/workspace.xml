@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e41335e0-07dd-4a45-931e-6ee3ef49d158" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/Basket/Basket.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Basket/Basket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/CeramicsFiltersContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/HandicraftFiltersContainer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CatalogFilters/PaintingFilters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CatalogFilters/PaintingFilters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PaintingsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaintingsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Products/ItemCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products/ItemCards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Products/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Products/ProductItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PaintingsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaintingsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage/ProductPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage/ProductPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProductPage/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductPage/ProductPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +58,7 @@
       <workItem from="1646491843275" duration="834000" />
       <workItem from="1646627653379" duration="1769000" />
       <workItem from="1646632491871" duration="4157000" />
-      <workItem from="1646729832359" duration="1651000" />
+      <workItem from="1646729832359" duration="2079000" />
     </task>
     <servers />
   </component>

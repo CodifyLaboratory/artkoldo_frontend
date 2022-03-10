@@ -1,15 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import Routing from './routes/routes'
 import { BrowserRouter } from "react-router-dom";
-
-
+import Routing from "./routes/routes";
 
 ReactDOM.render(
-    <BrowserRouter>
-     <Routing />
-    </BrowserRouter>,
-
+  <BrowserRouter>
+    <Routing />
+  </BrowserRouter>,
   document.getElementById("root")
 );
