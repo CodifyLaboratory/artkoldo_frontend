@@ -5,13 +5,6 @@ import "./style.css";
 import { catalogFilters } from "../../mockData/MockFilters";
 
 const CeramicsFilters = ({ filters, setFilters, handleCategoryChange }) => {
-  // handleOptionsChange = (e) => {
-  //   const
-  // };
-  const categoryOptions = catalogFilters.map((f) => ({
-    id: f.id,
-    name: f.categoryName,
-  }));
   return (
     <div className="filter-menu-container">
       <p className="d-flex justify-content-start align-items-center filter-menu-header">
