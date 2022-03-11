@@ -48,6 +48,7 @@ export default function PaintingFilters({
       if (checked) {
         checkedIds.push(e.target.id);
       } else {
+        console.log("prevChecked", prevChecked);
         //remove option.id
       }
       console.log("checkedStyle", checkedIds);
@@ -96,12 +97,13 @@ export default function PaintingFilters({
 
   function handleRegion(e) {
     const { checked } = e.target;
+    const targetId = e.target.id;
     setRegionChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
+      const checkedIds = [...prevChecked];
+      if (prevChecked.includes(targetId)) {
+        //remove targetId from checkedIds
       } else {
-        //remove option.id
+        checkedIds.push(e.target.id);
       }
       return checkedIds;
     });
