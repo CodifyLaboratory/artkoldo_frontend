@@ -55,7 +55,7 @@ export default function PaintingsPage(handleCategoryChange) {
     };
     axios
       .get(`${API_URL}/paintings/`, { params })
-      .then((r) => setPaintings(r.data));
+      .then((r) => setPaintings(r.data.results));
   }, [
     styleChecked,
     materialChecked,
