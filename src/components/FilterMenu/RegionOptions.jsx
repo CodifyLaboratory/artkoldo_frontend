@@ -10,7 +10,7 @@ const RegionOptions = () => {
   const styleCheckboxes = ["Масло", "Акрил", "Гуашь", "Чернила", "Акварель"];
 
   return isOptionsOpen ? (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Техника</p>
         <button
@@ -29,7 +29,7 @@ const RegionOptions = () => {
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Техника</p>
         <button

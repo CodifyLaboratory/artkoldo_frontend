@@ -71,7 +71,7 @@ const ThemeOptions = () => {
   ];
 
   return isOptionsOpen ? (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
         <button
@@ -83,14 +83,14 @@ const ThemeOptions = () => {
       </div>
       {styleCheckboxes.map((el, i) => (
         <Row key={i} className="checkbox-row">
-          <input type="checkbox" />
+          <input type ="checkbox" className="checkbox-css" />
           <span className="checkbox-title">{el}</span>
         </Row>
       ))}
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
         <button

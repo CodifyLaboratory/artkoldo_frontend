@@ -25,7 +25,7 @@ const MaterialOptions = () => {
   ];
 
   return isOptionsOpen ? (
-    <Col sm={12} md={4} lg={4}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Материал</p>
         <button
@@ -44,7 +44,7 @@ const MaterialOptions = () => {
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={12} md={3} lg={3}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Материал</p>
         <button
@@ -54,7 +54,7 @@ const MaterialOptions = () => {
           <span>+</span>
         </button>
       </div>
-    </Col>
+      </Col>
   );
 };
 

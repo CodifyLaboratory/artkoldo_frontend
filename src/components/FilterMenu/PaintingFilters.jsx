@@ -8,6 +8,7 @@ import ThemeOptions from "./ThemeOptions";
 import TechniqueOptions from "./TechniqueOptions";
 import ColorOptions from "./ColorOptions";
 
+
 import "./style.css";
 import { catalogFilters } from "../../mockData/MockFilters";
 import RegionOptions from "./RegionOptions";
@@ -27,7 +28,7 @@ const PaintingFilters = ({ filters, setFilters, handleCategoryChange }) => {
       </p>
       <Form.Select
         aria-label="Default select example"
-        id="filter-menu-header-dropdown"
+        id="filter-menu-header-dropdown" 
         onChange={handleCategoryChange}
       >
         <option id={1}>Живопись</option>

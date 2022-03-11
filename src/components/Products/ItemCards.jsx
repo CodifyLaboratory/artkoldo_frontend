@@ -12,7 +12,7 @@ export default function ItemCards({ items = [] }) {
   return (
     <Row className="Item-Cards d-flex justify-content-between">
       {products.map((product) => (
-        <Col sm={6} md={6} lg={6}>
+        <Col sm={9} md={9} lg={6}>
           <ProductItem product={product} key={product.id} />
         </Col>
       ))}

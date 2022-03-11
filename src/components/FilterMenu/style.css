@@ -1,4 +1,11 @@
-.filter-menu-container {
+.hr{
+  color:#373635;
+}
+.checkbox-css{
+  background-color: red;
+  width: 60px;
+  border-radius: 50%;
+
 }
 
 select {
@@ -8,10 +15,16 @@ select {
   padding: 10px;
 }
 
+.form-select{
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 12px ;
+
+}
+
 .filter-menu-section {
   display: flex;
   justify-content: space-between;
-  width: 480px;
 }
 
 .dropdown-btn {
@@ -24,7 +37,8 @@ select {
 }
 
 .filter-menu-container {
-  width: 372px;
+  width: 100%px;
+  padding-left: 64px;
 }
 
 .checkbox-row {
@@ -32,6 +46,7 @@ select {
   width: 50px;
   display: flex;
   flex-wrap: nowrap !important;
+  
 }
 
 .checkbox-title {
