@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PaintingFilters from "../../components/CatalogFilters/PaintingFilters";
 import PageWrapper from "../../components/PageWrapper/index";
-import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
@@ -31,7 +30,7 @@ export default function PaintingsPage(handleCategoryChange) {
   useEffect(() => {
     axios
       .get(`${API_URL}/paintings`)
-      .then((response) => setPaintings(response.data));
+      .then((response) => setPaintings(response.results.results));
   }, []);
 
   useEffect(() => {
@@ -55,7 +54,7 @@ export default function PaintingsPage(handleCategoryChange) {
     };
     axios
       .get(`${API_URL}/paintings/`, { params })
-      .then((r) => setPaintings(r.data));
+      .then((r) => setPaintings(r.data.results));
   }, [
     styleChecked,
     materialChecked,
@@ -73,10 +72,6 @@ export default function PaintingsPage(handleCategoryChange) {
 
   console.log("PAINTINGS", paintings);
 
-  // function handleClick(id) {
-  //   navigate(`/paintings/${id}`);
-  // }
-
   // useEffect(() => {
   //   switch (categoryFilters.categoryId) {
   //     case "1":
@@ -89,8 +84,6 @@ export default function PaintingsPage(handleCategoryChange) {
   //       navigate("/paintings");
   //   }
   // }, [categoryFilters.categoryId]);
-
-  const { id } = useParams();
 
   return (
     <PageWrapper>
