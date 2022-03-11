@@ -1,6 +1,12 @@
 .hr{
   color:#373635;
 }
+.checkbox-css{
+  background-color: red;
+  width: 60px;
+  border-radius: 50%;
+
+}
 
 select {
   border: 1px solid black;
@@ -40,6 +46,7 @@ select {
   width: 50px;
   display: flex;
   flex-wrap: nowrap !important;
+  
 }
 
 .checkbox-title {

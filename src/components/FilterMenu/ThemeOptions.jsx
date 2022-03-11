@@ -83,7 +83,7 @@ const ThemeOptions = () => {
       </div>
       {styleCheckboxes.map((el, i) => (
         <Row key={i} className="checkbox-row">
-          <input type="checkbox" />
+          <input type ="checkbox" className="checkbox-css" />
           <span className="checkbox-title">{el}</span>
         </Row>
       ))}
