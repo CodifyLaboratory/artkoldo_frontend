@@ -1,17 +1,35 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import searchIcon from "../../images/search_icon.svg"
 import dropdownIcon from "../../images/arrow_down.svg"
 import { Form } from "react-bootstrap";
 import './SearchBar.css'
-import { products} from '../../mockData/ListofProducts'
+import { API_URL } from "../../API/api";
+import axios from "axios";
+
 
 
 function SearchBar() {
-    const [value, setValue]=useState('')
-    const filteredProducts= products.filter(product=>{
-        return product.title.toLowerCase().includes(value.toLowerCase())
-    })
-    console.log(filteredProducts)
+
+    // const [value, setValue]=useState('')
+    // const [product, setProduct] = useState({});
+
+    // useEffect((id) => {
+    //     axios
+    //       .get(`${API_URL}/paintings/${id}/`)
+    //       .then((response) => {
+    //         setProduct(response.data);
+    //       })
+    //       .catch((error) => {
+    //         console.log(error);
+    //       });
+    //   }, []);
+
+
+    // const filteredProducts= products.filter(product=>{
+    //     return product.title.toLowerCase().includes(value.toLowerCase())
+    // })
+
+    // console.log(filteredProducts)
   return <form className="searchBar">
     <Form.Select aria-label="Default select example" className="nb-search-select">
         <option>Open this select menu</option>
@@ -20,7 +38,7 @@ function SearchBar() {
         <option value="3">Керамика</option>
     </Form.Select>
     <div className="search-fill">
-         <input className="search-bar" type="text" placeholder="Поиск" onChange={(event)=>setValue(event.target.value)} />
+         <input className="search-bar" type="text" placeholder="Поиск" onChange={(event)=>console.log(event.target.value)} />
     </div>
     <div classname="search-right">
         <div classname="search-sumbit">
