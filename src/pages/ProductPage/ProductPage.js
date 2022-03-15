@@ -1,6 +1,6 @@
 import React from 'react'
 import PageWrapper from '../../components/PageWrapper';
-import './ProductPage'
+import './ProductPage.css'
 import { useEffect, useState } from "react";
 
 import axios from 'axios';
@@ -12,11 +12,7 @@ export default function ProductPage () {
 
 const [product, setProduct] = useState({});
 const [cartItems, setCartItems] = useState([])
-// let navigate = useNavigate();
-// function handleClick() {
-//   navigate('/productPage')
 
-// }
 
 
 useEffect(() => {
@@ -42,24 +38,25 @@ useEffect(() => {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
   };
-  localStorage.setItem('cartItems','')
-    //  const card = localStorage.getItem('cartItems');
-    //  const items = [
-    //     {
-    //       product: {id: 0, name: 'name 1', price: 100},
-    //       count: 1,
-    //     },
-    //     {
-    //       product: {id: 1, name: 'name 2', price: 200},
-    //       count: 2,
-    //     },
-    //  ]}
+
+     const cart = localStorage.getItem('cartItems');
+     const items = [
+        {
+          product: {id: 0, name: 'name 1', price: 100},
+          count: 1,
+        },
+        {
+          product: {id: 1, name: 'name 2', price: 200},
+          count: 2,
+        },
+     ]
 
   return (
     <div>
         <PageWrapper>
           <div className='product-item'>
-            <img className='product-image' src={product.image} alt={product.name}></img>
+            <div className='product-image'>
+            <img  src={product.image} alt={product.name}></img>
          </div>
        <div className='product-detailes'>
             <div className="product-detailes_col1">
@@ -68,6 +65,7 @@ useEffect(() => {
           </div>
           <div className product-item_detailes_col2>
             <span className="product-item_price">{product.price}</span>
+          </div>
           </div>
           </div>
           <>
