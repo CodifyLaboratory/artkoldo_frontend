@@ -1,16 +1,23 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import App from "../App";
+import CeramicItem from "../pages/CeramicsPage/CeramicItem";
+import CeramicsPage from "../pages/CeramicsPage/CeramicsPage";
+import HandicraftItem from "../pages/HandicraftsPage/HandicraftItem";
+import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
+import MainPage from "../pages/MainPage/MainPage";
+import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
-import PaintingsContainer from "../pages/PaintingsPage/PaintingsPage";
-import ProductPage from "../pages/ProductPage/ProductPage";
 
 export default function Routing() {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<MainPage />} />
       <Route path="/paintings" element={<PaintingsPage />} />
-      <Route path="/paintings/:id" element={<ProductPage />} />
+      <Route path="/paintings/:id" element={<PaintingItem />} />
+      <Route path="/handicrafts" element={<HandicraftsPage />} />
+      <Route path="/handicrafts/:id" element={<HandicraftItem />} />
+      <Route path="/ceramics" element={<CeramicsPage />} />
+      <Route path="/ceramics/:id" element={<CeramicItem />} />
       <Route path="*" element={<div>NOT FOUND</div>} />
     </Routes>
   );

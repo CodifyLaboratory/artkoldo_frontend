@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <header className="header">
       <div className="header-container">
-         <div className="header-left">
+        <div className="header-left">
           <ul className="nav-menu">
             {MenuItems.map((item, index) => {
               return (
@@ -23,9 +23,12 @@ export default function Navbar() {
               );
             })}
           </ul>
-        </div> 
+        </div>
 
-        <div className="logo"> <img src={logo} alt='logo'/></div>
+        <div className="logo">
+          {" "}
+          <img src={logo} alt="logo" />
+        </div>
 
         <div className="header-right">
           <div className="searchBar">
@@ -34,14 +37,15 @@ export default function Navbar() {
           <div className="vector"></div>
           <div className="search-icon"></div>
           <div className="shop-cart"></div>
-        </div> 
-        <div className="lastitem">
-        <ul>
-                    <li><Link to='/Kontakty'>Контакты</Link></li>
-                    
-                </ul>
         </div>
-    </div>
+        <div className="lastitem">
+          <ul>
+            <li>
+              <Link to="/Kontakty">Контакты</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
   );
 }

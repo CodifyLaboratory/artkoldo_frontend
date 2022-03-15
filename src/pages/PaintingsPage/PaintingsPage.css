@@ -52,6 +52,7 @@
 .Item-Cards {
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-left: 33px;
 }
@@ -62,7 +63,6 @@
   width: 510px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   padding-top: 30px;
 }
 

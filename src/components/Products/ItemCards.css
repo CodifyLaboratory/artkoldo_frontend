@@ -1,5 +1,7 @@
-.Item-Cards {
+/* .Item-Cards {
+  width: 70%;
   display: flex !important;
+  flex-wrap: wrap !important;
   justify-content: space-between;
 }
 
@@ -17,12 +19,12 @@
   justify-content: flex-end;
   padding-top: 30px;
   /* padding-right: 156px; */
-}
+/* }
 
 .product-item_image {
   /* width: 510px;
   height: 308px; */
-  float: top;
+/* float: top;
   overflow: hidden;
 }
 
@@ -54,4 +56,4 @@
 .product-item_price {
   font-size: 30px;
   line-height: 35, 16px;
-}
+} */
