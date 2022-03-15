@@ -1,0 +1,74 @@
+.filter-menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 108px;
+}
+
+.filter-menu-section p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.filter-menu-section img {
+  width: 14px;
+  height: 14px;
+  background: none;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+}
+
+.dropdown-btn span {
+  font-size: large;
+}
+
+.checkbox-row {
+  margin-bottom: 38px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.checkbox-row input {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-title {
+  margin-left: 23px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.select-all-options {
+  margin-bottom: 40px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-decoration-line: underline;
+  color: #373635;
+}
+
+.checkboxes-container {
+  width: 100%;
+}
+
+.filter-menu-open {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

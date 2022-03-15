@@ -1,12 +1,11 @@
-.filter-menu-container {
-  width: 300px;
-  height: 1000px;
-  background: linear-gradient(
-    135.64deg,
-    #ffffff -21.67%,
-    rgba(121, 121, 121, 0) 60.19%
-  );
-  margin: 30px;
+.hr{
+  color:#373635;
+}
+.checkbox-css{
+  background-color: red;
+  width: 60px;
+  border-radius: 50%;
+
 }
 
 select {
@@ -16,10 +15,16 @@ select {
   padding: 10px;
 }
 
+.form-select{
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 12px ;
+
+}
+
 .filter-menu-section {
   display: flex;
   justify-content: space-between;
-  width: 300px;
 }
 
 .dropdown-btn {
@@ -31,12 +36,22 @@ select {
   font-size: large;
 }
 
+.filter-menu-container {
+  width: 100%px;
+  padding-left: 64px;
+}
+
 .checkbox-row {
   margin-bottom: 20px;
+  width: 50px;
+  display: flex;
+  flex-wrap: nowrap !important;
+  
 }
 
 .checkbox-title {
-  margin-left: 20px;
+  margin-left: 0px;
+  width: 100px;
 }
 
 .select-all-options {
@@ -70,4 +85,5 @@ select {
 .manual-input-container {
   color: rgba(130, 119, 119, 1);
   margin-bottom: 10px;
+  display: flex;
 }

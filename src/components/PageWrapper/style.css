@@ -1,0 +1,14 @@
+body {
+  background: #f3f3ec;
+  width: 1920px;
+  margin: 0 auto;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  width: 100%;
+}

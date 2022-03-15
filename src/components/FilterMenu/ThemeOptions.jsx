@@ -5,10 +5,8 @@ import {
   Form,
   FormControl,
   InputGroup,
-  Button,
   Dropdown,
 } from "react-bootstrap";
-import PlusButton from "../PlusButton";
 import "./style.css";
 
 const ThemeOptions = () => {
@@ -73,34 +71,34 @@ const ThemeOptions = () => {
   ];
 
   return isOptionsOpen ? (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>&minus;</span>
-        </Button>
+        </button>
       </div>
       {styleCheckboxes.map((el, i) => (
         <Row key={i} className="checkbox-row">
-          <input type="checkbox" />
+          <input type ="checkbox" className="checkbox-css" />
           <span className="checkbox-title">{el}</span>
         </Row>
       ))}
       <div className="select-all-options">Все стили</div>
     </Col>
   ) : (
-    <Col sm={6} md={4} lg={4}>
+    <Col sm={12} md={12} lg={12}>
       <div className="filter-menu-section">
         <p>Тема</p>
-        <Button
+        <button
           className="dropdown-btn"
           onClick={() => setIsOptionsOpen(!isOptionsOpen)}
         >
           <span>+</span>
-        </Button>
+        </button>
       </div>
     </Col>
   );
