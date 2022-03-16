@@ -1,10 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Plus from "../../images/Plus.svg";
 import Minus from "../../images/Minus.svg";
 import "./Checkboxes.css";
 
-const CheckboxOptions = ({ section, checkboxes, onChange }) => {
+const CheckboxOptions = ({
+  section,
+  checkboxes,
+  checkedOps,
+  setCheckedOps,
+}) => {
   const [showOptions, setShowOptions] = useState(false);
+  const [isCheckAll, setIsCheckAll] = useState(false);
+
+  const toggleCheck = (id) => {
+    setCheckedOps(() => {
+      if (checkedOps.includes(id)) {
+        return checkedOps.filter((item) => item !== id);
+      } else {
+        return [...checkedOps, id];
+      }
+    });
+  };
+
+  const selectAll = () => {
+    setIsCheckAll(!isCheckAll);
+    setCheckedOps(() => {
+      if (isCheckAll) {
+        setCheckedOps(checkboxes.map((el) => el.id));
+      } else {
+        return [];
+      }
+    });
+  };
+
+  useEffect(() => {
+    let allChecked = true;
+    for (const el of checkedOps) {
+      console.log("checkedOps", checkedOps);
+      console.log("el", el);
+      if (checkedOps.includes(el) === false) {
+        allChecked = false;
+      }
+    }
+    if (allChecked) {
+      setIsCheckAll(true);
+    } else {
+      setIsCheckAll(false);
+    }
+  }, [checkedOps]);
 
   return showOptions ? (
     <div className="filter-menu-open">
@@ -24,14 +67,17 @@ const CheckboxOptions = ({ section, checkboxes, onChange }) => {
             id={option.id}
             name={option.title}
             value={option.id}
-            onChange={onChange}
+            onChange={() => toggleCheck(option.id)}
+            checked={checkedOps.includes(option.id)}
           />
           <label htmlFor={option.id} className="checkbox-title">
             {option.title}
           </label>
         </div>
       ))}
-      <div className="select-all-options">Все стили</div>
+      <div className="select-all-options">
+        <button onClick={() => selectAll()}>Все стили</button>
+      </div>
     </div>
   ) : (
     <div className="filter-menu-section">

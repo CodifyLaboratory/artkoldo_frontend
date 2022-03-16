@@ -7,11 +7,17 @@ import axios from "axios";
 import "./Filters.css";
 
 export default function PaintingFilters({
+  styleChecked,
   setStyleChecked,
+  colorChecked,
   setColorChecked,
+  materialChecked,
   setMaterialChecked,
+  techniqueChecked,
   setTechniqueChecked,
+  regionChecked,
   setRegionChecked,
+  subjectChecked,
   setSubjectChecked,
   setMinHeight,
   setMaxHeight,
@@ -21,125 +27,36 @@ export default function PaintingFilters({
   setMaxPrice,
 }) {
   const [filters, setFilters] = useState({});
-  const [showOptions, setShowOptions] = useState(false);
-  const [showSubjectOptions, setShowSubjectOptions] = useState(false);
-  const [showColorOptions, setShowColorOptions] = useState(false);
-  const [showPaintMaterialOptions, setShowPaintMaterialOptions] =
-    useState(false);
-  const [showPaintTechniqueOptions, setShowPaintTechniqueOptions] =
-    useState(false);
-  const [showRegionOptions, setShowRegionOptions] = useState(false);
   const [showSizeOptions, setShowSizeOptions] = useState(false);
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
   console.log("PaintingFilters", filters);
-  console.log("keys", Object.keys(filters));
 
   useEffect(() => {
     axios.get(`${API_URL}/painting_filter/`).then((r) => setFilters(r.data));
   }, []);
-
-  console.log("painting_filters", filters);
-
-  function handleStyle(e) {
-    const { checked } = e.target;
-    setStyleChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
-      } else {
-        console.log("prevChecked", prevChecked);
-        //remove option.id
-      }
-      console.log("checkedStyle", checkedIds);
-      return checkedIds;
-    });
-  }
-
-  function handleSubject(e) {
-    const { checked } = e.target;
-    setSubjectChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
-      } else {
-        //remove option.id
-      }
-      return checkedIds;
-    });
-  }
-
-  function handleMaterial(e) {
-    const { checked } = e.target;
-    setMaterialChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
-      } else {
-        //remove option.id
-      }
-      return checkedIds;
-    });
-  }
-
-  function handleColor(e) {
-    const { checked } = e.target;
-    setColorChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
-      } else {
-        //remove option.id
-      }
-      return checkedIds;
-    });
-  }
-
-  function handleRegion(e) {
-    const { checked } = e.target;
-    const targetId = e.target.id;
-    setRegionChecked((prevChecked) => {
-      const checkedIds = [...prevChecked];
-      if (prevChecked.includes(targetId)) {
-        //remove targetId from checkedIds
-      } else {
-        checkedIds.push(e.target.id);
-      }
-      return checkedIds;
-    });
-  }
-
-  function handleTechnique(e) {
-    const { checked } = e.target;
-    setTechniqueChecked((prevChecked) => {
-      const checkedIds = [];
-      if (checked) {
-        checkedIds.push(e.target.id);
-      } else {
-        //remove option.id
-      }
-      return checkedIds;
-    });
-  }
 
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
         section={"Стиль"}
         checkboxes={filters.Style}
-        onChange={(e) => handleStyle(e)}
+        checkedOps={styleChecked}
+        setCheckedOps={setStyleChecked}
       />
       <hr />
       <CheckboxOptions
         section={"Материал"}
         checkboxes={filters.PaintMaterial}
-        onChange={(e) => handleMaterial(e)}
+        checkedOps={materialChecked}
+        setCheckedOps={setMaterialChecked}
       />
       <hr />
       <CheckboxOptions
         section={"Тема"}
         checkboxes={filters.Subject}
-        onChange={(e) => handleSubject(e)}
+        checkedOps={subjectChecked}
+        setCheckedOps={setSubjectChecked}
       />
       <hr />
       {showSizeOptions ? (
@@ -200,13 +117,15 @@ export default function PaintingFilters({
       <CheckboxOptions
         section={"Техника"}
         checkboxes={filters.PaintTechnique}
-        onChange={(e) => handleTechnique(e)}
+        checkedOps={techniqueChecked}
+        setCheckedOps={setTechniqueChecked}
       />
       <hr />
       <CheckboxOptions
         section={"Цвет"}
         checkboxes={filters.Color}
-        onChange={(e) => handleColor(e)}
+        checkedOps={colorChecked}
+        setCheckedOps={setColorChecked}
       />
       <hr />
       {showPriceOptions ? (
@@ -252,7 +171,8 @@ export default function PaintingFilters({
       <CheckboxOptions
         section={"Происхождение"}
         checkboxes={filters.Region}
-        onChange={(e) => handleRegion(e)}
+        checkedOps={regionChecked}
+        setCheckedOps={setRegionChecked}
       />
       <hr />
     </div>

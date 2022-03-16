@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from "react";
-import PaintingFilters from "../../components/CatalogFilters/PaintingFilters";
 import PageWrapper from "../../components/PageWrapper/index";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
-import "./PaintingsPage.css";
+import "./HandicraftsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
+import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import { useNavigate } from "react-router-dom";
 
-export default function PaintingsPage(handleCategoryChange) {
+export default function HandicraftsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
   const [searchValue, setSearchValue] = useState("");
-  const [styleChecked, setStyleChecked] = useState([]);
+  const [typeChecked, setTypeChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
-  const [subjectChecked, setSubjectChecked] = useState([]);
   const [colorChecked, setColorChecked] = useState([]);
   const [regionChecked, setRegionChecked] = useState([]);
-  const [minHeight, setMinHeight] = useState("");
-  const [maxHeight, setMaxHeight] = useState("");
-  const [minWidth, setMinWidth] = useState("");
-  const [maxWidth, setMaxWidth] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,41 +32,31 @@ export default function PaintingsPage(handleCategoryChange) {
   useEffect(() => {
     const params = {
       search: searchValue ? searchValue : undefined,
-      style: styleChecked.length > 0 ? styleChecked : undefined,
-      subject: subjectChecked.length > 0 ? subjectChecked : undefined,
+      type: typeChecked.length > 0 ? typeChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
       color: colorChecked.length > 0 ? colorChecked : undefined,
       region: regionChecked.length > 0 ? regionChecked : undefined,
-      min_width: minWidth,
-      max_width: maxWidth,
-      min_height: minHeight,
-      max_height: maxHeight,
       min_price: minPrice,
       max_price: maxPrice,
       page: currentPage,
       ordering: order,
     };
-    ax.get(`${API_URL}/paintings/`, { params }).then((r) => setData(r.data));
+    ax.get(`${API_URL}/handicrafts/`, { params }).then((r) => setData(r.data));
   }, [
     searchValue,
     currentPage,
-    styleChecked,
     materialChecked,
     techniqueChecked,
     colorChecked,
     regionChecked,
-    subjectChecked,
-    minHeight,
-    maxHeight,
-    minWidth,
-    maxWidth,
+    typeChecked,
     minPrice,
     maxPrice,
     order,
   ]);
 
-  console.log("PAINTINGS", data?.results);
+  console.log("HANDICRAFTS", data?.results);
 
   const handlePagination = (page) => {
     setCurrentPage(page);
@@ -90,11 +75,11 @@ export default function PaintingsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная/Живопись/...</p>
+        <p>Главная/Ремесленные изделия/...</p>
       </div>
       <hr />
       <div className="sort-items-container">
-        <p>Живопись</p>
+        <p>Ремесленные изделия</p>
         <div className="sort-items-select">
           <select onChange={(e) => setOrder(e.target.value)}>
             <option selected disabled hidden>
@@ -115,16 +100,16 @@ export default function PaintingsPage(handleCategoryChange) {
             className="filter-menu-header-dropdown"
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option selected value={1}>
-              Живопись
+            <option selected value={2}>
+              Ремесленные изделия
             </option>
-            <option value={2}>Ремесленные изделия</option>
+            <option value={1}>Живопись</option>
             <option value={3}>Керамика</option>
           </select>
           <hr />
-          <PaintingFilters
-            styleChecked={styleChecked}
-            setStyleChecked={setStyleChecked}
+          <HandicraftFilters
+            typeChecked={typeChecked}
+            setTypeChecked={setTypeChecked}
             colorChecked={colorChecked}
             setColorChecked={setColorChecked}
             materialChecked={materialChecked}
@@ -133,12 +118,6 @@ export default function PaintingsPage(handleCategoryChange) {
             setTechniqueChecked={setTechniqueChecked}
             regionChecked={regionChecked}
             setRegionChecked={setRegionChecked}
-            subjectChecked={subjectChecked}
-            setSubjectChecked={setSubjectChecked}
-            setMinHeight={setMinHeight}
-            setMaxHeight={setMaxHeight}
-            setMinWidth={setMinWidth}
-            setMaxWidth={setMaxWidth}
             setMinPrice={setMinPrice}
             setMaxPrice={setMaxPrice}
           />
@@ -146,7 +125,7 @@ export default function PaintingsPage(handleCategoryChange) {
         <div className="Item-Cards">
           {data?.results.map((product) => (
             <div className="product-item" key={product.id}>
-              <Link to={`/paintings/${product.id}`}>
+              <Link to={`/handicrafts/${product.id}`}>
                 <img
                   className="product-item_image"
                   id={product.id}
