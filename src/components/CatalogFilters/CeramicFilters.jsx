@@ -23,7 +23,7 @@ export default function CeramicFilters({
   const [filters, setFilters] = useState({});
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("HandicraftFilters", filters);
+  console.log("CeramicFilters", filters);
 
   useEffect(() => {
     axios.get(`${API_URL}/ceramic_filter/`).then((r) => setFilters(r.data));

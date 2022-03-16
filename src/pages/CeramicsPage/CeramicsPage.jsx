@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function CeramicsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   const [typeChecked, setTypeChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -21,6 +21,7 @@ export default function CeramicsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const navigate = useNavigate();
 
   const qs = require("qs");
   let ax = axios.create({
@@ -30,6 +31,7 @@ export default function CeramicsPage(handleCategoryChange) {
 
   useEffect(() => {
     const params = {
+      search: searchValue ? searchValue : undefined,
       type: typeChecked.length > 0 ? typeChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
@@ -42,6 +44,7 @@ export default function CeramicsPage(handleCategoryChange) {
     };
     ax.get(`${API_URL}/ceramics/`, { params }).then((r) => setData(r.data));
   }, [
+    searchValue,
     currentPage,
     materialChecked,
     techniqueChecked,
@@ -70,7 +73,7 @@ export default function CeramicsPage(handleCategoryChange) {
   }, [category]);
 
   return (
-    <PageWrapper>
+    <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
         <p>Главная/Керамика/...</p>
       </div>

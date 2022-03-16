@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 // import axios from "axios";
 import "./SearchBar.css";
 
-function SearchBar(setSearchValue) {
+function SearchBar({ setSearchValue }) {
   //   const [searchValue, setSearchValue] = useState("");
   //   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("paintings");

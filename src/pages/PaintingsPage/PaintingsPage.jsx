@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function PaintingsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   const [styleChecked, setStyleChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -26,6 +26,7 @@ export default function PaintingsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const navigate = useNavigate();
 
   const qs = require("qs");
   let ax = axios.create({
@@ -35,6 +36,7 @@ export default function PaintingsPage(handleCategoryChange) {
 
   useEffect(() => {
     const params = {
+      search: searchValue ? searchValue : undefined,
       style: styleChecked.length > 0 ? styleChecked : undefined,
       subject: subjectChecked.length > 0 ? subjectChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
@@ -52,6 +54,7 @@ export default function PaintingsPage(handleCategoryChange) {
     };
     ax.get(`${API_URL}/paintings/`, { params }).then((r) => setData(r.data));
   }, [
+    searchValue,
     currentPage,
     styleChecked,
     materialChecked,
@@ -85,7 +88,7 @@ export default function PaintingsPage(handleCategoryChange) {
   }, [category]);
 
   return (
-    <PageWrapper>
+    <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
         <p>Главная/Живопись/...</p>
       </div>
