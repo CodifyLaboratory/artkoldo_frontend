@@ -6,7 +6,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./Filters.css";
 
-export default function HandicraftFilters({
+export default function CeramicFilters({
   typeChecked,
   setTypeChecked,
   colorChecked,
@@ -23,31 +23,31 @@ export default function HandicraftFilters({
   const [filters, setFilters] = useState({});
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("HandicraftFilters", filters);
+  console.log("CeramicFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/handicraft_filter/`).then((r) => setFilters(r.data));
+    axios.get(`${API_URL}/ceramic_filter/`).then((r) => setFilters(r.data));
   }, []);
 
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
         section={"Тип товара"}
-        checkboxes={filters.HandicraftType}
+        checkboxes={filters.CeramicType}
         checkedOps={typeChecked}
         setCheckedOps={setTypeChecked}
       />
       <hr />
       <CheckboxOptions
         section={"Материал"}
-        checkboxes={filters.HandicraftMaterial}
+        checkboxes={filters.CeramicMaterial}
         checkedOps={materialChecked}
         setCheckedOps={setMaterialChecked}
       />
       <hr />
       <CheckboxOptions
         section={"Техника"}
-        checkboxes={filters.HandicraftTechnique}
+        checkboxes={filters.CeramicTechnique}
         checkedOps={techniqueChecked}
         setCheckedOps={setTechniqueChecked}
       />

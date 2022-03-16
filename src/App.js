@@ -1,11 +1,10 @@
 import "./App.css";
-import PaintingsPage from "./pages/PaintingsPage/PaintingsPage";
-
+import Routing from "./routes/routes";
 
 function App() {
   return (
     <div className="App">
-        <PaintingsPage  />
+      <Routing />
     </div>
   );
 }

@@ -54,6 +54,10 @@
 
 .select-all-options {
   margin-bottom: 40px;
+}
+
+.select-all-options button {
+  border: none;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

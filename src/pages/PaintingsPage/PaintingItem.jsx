@@ -1,11 +1,15 @@
-import React from 'react'
-import PageWrapper from '../../components/PageWrapper';
-import './ProductPage'
-import  products  from '../../mockData/ListofProducts';
-import { useState } from "react";
-import Basket from '../Basket/Basket';
-// import axios from 'axios';
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
+import "./PaintingItem.css";
+import { useState, useEffect } from "react";
+import { API_URL } from "../../API/api";
+import Basket from "../Basket/Basket";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
+export default function PaintingItem() {
+  const [product, setProduct] = useState({});
+  const [cartItems, setCartItems] = useState([]);
 
 
 
