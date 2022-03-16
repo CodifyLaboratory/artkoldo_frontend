@@ -4,9 +4,6 @@
 input {
   outline: none;
 }
-.title {
-  color: aliceblue;
-}
 .nb-search-select {
   border: 1px solid white;
   border-radius: 12px 0 0 12px;

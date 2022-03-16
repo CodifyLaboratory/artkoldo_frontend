@@ -67,6 +67,15 @@ function Footer() {
       </div>
       <div className="social">
             <SearchBar/>
+              <p>Мы в соц.сетях</p>
+              <div social-icons>
+                <div className="tw-icon"></div>
+                <div className="fb-icon">
+                  <img src=""></img>
+                </div>
+              </div>
+            
+            <p> Бишкек, Кыргызстан</p>
       </div>
     </div>
 

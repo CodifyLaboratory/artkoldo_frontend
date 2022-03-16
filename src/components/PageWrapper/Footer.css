@@ -71,4 +71,22 @@
 
 .social {
   width: 20%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icons{
+display: flex;
+}
+.social-tw{
+  width: 28px;
+  height: 28px;
+  background-image: url(../../images/twitter-icon.png);
+  background-repeat: no-repeat;
+  border: 1px solid red;
+}
+.social-fb{
+  width: 28px;
+  height: 28px;
 }
