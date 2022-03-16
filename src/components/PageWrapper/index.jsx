@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
 import Navbar from "./NavBar";
-import { Container } from "react-bootstrap";
 import "./style.css";
 
 function PageWrapper(props) {

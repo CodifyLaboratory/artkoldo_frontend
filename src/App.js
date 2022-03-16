@@ -1,15 +1,11 @@
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-
-import PaintingsContainer from "./pages/PaintingsContainer";
-
+import PaintingsPage from "./pages/PaintingsPage/PaintingsPage";
 
 
 function App() {
-
   return (
     <div className="App">
-        <PaintingsContainer  />
+        <PaintingsPage  />
     </div>
   );
 }

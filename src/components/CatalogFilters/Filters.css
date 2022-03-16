@@ -1,0 +1,87 @@
+.filter-menu-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-menu-header-dropdown {
+  border: 1px solid black;
+  margin-bottom: 40px;
+  padding: 10px;
+  background-color: #f3f3ec;
+  width: 274px;
+  height: 62px;
+  border-radius: 12px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+  padding: 13px;
+}
+
+.filter-menu-header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.select-manually {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #827777;
+  margin-bottom: 20px;
+}
+
+.manual-input-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.manual-input-row {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(130, 119, 119, 1);
+  margin-bottom: 20px;
+}
+
+.manual-input-row input {
+  color: black;
+}
+
+.manual-input-size {
+  width: 150px;
+  height: 43px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #f3f3ec;
+  padding-left: 10px;
+}
+
+.manual-input-price {
+  width: 108px;
+  height: 53px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #f3f3ec;
+  padding-left: 10px;
+}
+
+.price-row {
+  padding-bottom: 40px;
+}

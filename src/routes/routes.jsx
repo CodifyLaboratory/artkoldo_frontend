@@ -1,13 +1,9 @@
-
 import { Routes } from "react-router-dom";
-import { Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 import App from "../App";
+
 import ProductPage from "../pages/ProductPage/ProductPage";
 import Basket from '../pages/Basket/Basket'
-
-
-
-
 
 export default function Routing() {
     return (
@@ -22,5 +18,5 @@ export default function Routing() {
           <Route path="*" element={<div>NOT FOUND</div>} /> 
       
       </Routes>
-  );
+    )
 }
