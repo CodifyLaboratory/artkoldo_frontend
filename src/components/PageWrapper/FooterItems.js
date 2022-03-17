@@ -29,8 +29,18 @@ export const AboutCompanyItems=[
             cName: 'nav-links'
         },
         {
-            title: 'Блог',
-            url: '/Blog',
+            title: 'Партнерам',
+            url: '/ForPartners',
+            cName: 'nav-links'
+        },
+        {
+            title: 'Доставка',
+            url: '/Delivery',
+            cName: 'nav-links'
+        },
+        {
+            title: 'Оплата',
+            url: '/Payment',
             cName: 'nav-links'
         }
 
@@ -41,17 +51,17 @@ export const RuleItems=[
       
     {
       title: "Положения и условия",
-      url: "/Rules1",
+      url: "/Rules",
       cName: "nav-links",
     },
     {
         title: 'Политика конфиденциональности',
-        url: '/Rules2',
+        url: '/Rules',
         cName: 'nav-links'
     },
     {
         title: 'Политика авторского права',
-        url: '/Rules3',
+        url: '/Rules',
         cName: 'nav-links'
     }
 

@@ -9,6 +9,7 @@ import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
 import MainPage from "../pages/MainPage/MainPage";
 import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
+import RulesPage from "../pages/RulesPage/RulesPage";
 
 export default function Routing() {
   return (
@@ -22,6 +23,7 @@ export default function Routing() {
       <Route path="/ceramics/:id" element={<CeramicItem />} />
       <Route path="/Onas" element={<AboutUsPage />} />
       <Route path="/Contacts" element={<ContactsPage />} />
+      <Route path="/Rules" element={<RulesPage />} />
 
       <Route path="*" element={<div>NOT FOUND</div>} />
     </Routes>

@@ -13,7 +13,8 @@
   display: flex;
   justify-content: space-between;
   font-size: 28px;
-  align-items: center;
+  padding-top: 81px;
+  
 }
 
 
@@ -23,17 +24,6 @@
   color: #E1C55F;
 }
 
-.footer-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-menu {
-  display: flex;
-  flex-direction: column;
-}
-
 .footer-menu :hover {
   color: #E1C55F;
 }
@@ -41,32 +31,17 @@
 .ul-margin{
   margin-top: 20px;
 }
-.ul-margin {
-  margin-top: 20px;
-}
-
 
 .logo {
+  width: 20%;
   background-image: url(../../images/logo.png);
-  background-repeat: no-repeat;
-  width: 20%;
   background-position: center;
+  background-repeat: no-repeat;
+
 }
 
-.categories {
+.categories, .about-company , .rules {
   width: 20%;
-  text-align: center;
-}
-
-.about-company {
-  width: 20%;
-  text-align: center;
-}
-
-.rules {
-  width: 20%;
-  text-align: center;
-
 }
 
 .social {
@@ -77,16 +52,29 @@
 }
 
 .social-icons{
-display: flex;
+  display: flex;
 }
 .social-tw{
   width: 28px;
   height: 28px;
-  background-image: url(../../images/twitter-icon.png);
+  border-radius: 50%;
+  background-color: #229ED9;
+  background-image: url(../../images/twIcon.png);
   background-repeat: no-repeat;
-  border: 1px solid red;
+  background-position: center;
 }
 .social-fb{
   width: 28px;
   height: 28px;
+  background-color: #1877F2;
+  border-radius: 50%;
+  background-image: url(../../images/fbIcon.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+/* .soc-icon{
+  width: 12;
+  height: 15;
+
+} */
