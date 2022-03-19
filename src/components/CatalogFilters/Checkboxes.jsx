@@ -64,13 +64,13 @@ const CheckboxOptions = ({
         <div key={option.id} className="checkbox-row">
           <input
             type="checkbox"
-            id={option.id}
+            id={option.title}
             name={option.title}
             value={option.id}
             onChange={() => toggleCheck(option.id)}
             checked={checkedOps.includes(option.id)}
           />
-          <label htmlFor={option.id} className="checkbox-title">
+          <label htmlFor={option.title} className="checkbox-title">
             {option.title}
           </label>
         </div>

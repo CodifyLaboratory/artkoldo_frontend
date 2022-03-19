@@ -1,0 +1,73 @@
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  margin-top: 214px;
+  margin-bottom: 216px;
+}
+.ant-pagination-item {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.ant-pagination-item-active {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  color: #626262;
+}
+.ant-pagination-item:hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
+}
+
+.anticon {
+  width: 28px;
+  height: 28px;
+  background: none;
+}
+
+.anticon-left {
+  margin-right: 30px;
+}
+
+.anticon-right {
+  margin-left: 30px;
+}
+
+.ant-pagination-item-link {
+  border: none;
+  background: none;
+}
+
+.ant-pagination-prev:after {
+  content: initial;
+  width: 50px;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #4b4747;
+}
+
+.ant-pagination-next:after {
+  width: 50px;
+  height: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #4b4747;
+}
