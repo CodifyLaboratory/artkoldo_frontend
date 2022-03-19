@@ -13,6 +13,8 @@ const CheckboxOptions = ({
   const [isCheckAll, setIsCheckAll] = useState(false);
 
   const toggleCheck = (id) => {
+    console.log("checkedOps", checkedOps);
+    console.log("id", id);
     setCheckedOps(() => {
       if (checkedOps.includes(id)) {
         return checkedOps.filter((item) => item !== id);
@@ -20,12 +22,13 @@ const CheckboxOptions = ({
         return [...checkedOps, id];
       }
     });
+    console.log("checkedOps", checkedOps);
+    console.log("id", id);
   };
 
   const selectAll = () => {
-    setIsCheckAll(!isCheckAll);
     setCheckedOps(() => {
-      if (isCheckAll) {
+      if (checkboxes?.length !== checkedOps?.length) {
         setCheckedOps(checkboxes.map((el) => el.id));
       } else {
         return [];
@@ -64,13 +67,13 @@ const CheckboxOptions = ({
         <div key={option.id} className="checkbox-row">
           <input
             type="checkbox"
-            id={option.id}
+            id={option.title}
             name={option.title}
             value={option.id}
             onChange={() => toggleCheck(option.id)}
             checked={checkedOps.includes(option.id)}
           />
-          <label htmlFor={option.id} className="checkbox-title">
+          <label htmlFor={option.title} className="checkbox-title">
             {option.title}
           </label>
         </div>

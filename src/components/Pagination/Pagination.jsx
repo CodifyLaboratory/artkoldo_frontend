@@ -4,16 +4,14 @@ import "./Pagination.css";
 
 export default function PaginationComponent(
   currentPage,
-  defaultCurrentPage,
-  defaultPageSize,
+  pageSize,
   total,
   onChange
 ) {
   return (
     <Pagination
       current={currentPage}
-      defaultCurrent={defaultCurrentPage}
-      defaultPageSize={defaultPageSize}
+      pageSize={pageSize}
       total={total}
       onChange={onChange}
     />

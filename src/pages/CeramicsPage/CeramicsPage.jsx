@@ -5,6 +5,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
+import { Pagination } from "antd";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 
@@ -36,7 +37,7 @@ export default function CeramicsPage(handleCategoryChange) {
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
       color: colorChecked.length > 0 ? colorChecked : undefined,
-      region: regionChecked.length > 0 ? regionChecked : undefined,
+      author__region: regionChecked.length > 0 ? regionChecked : undefined,
       min_price: minPrice,
       max_price: maxPrice,
       page: currentPage,
@@ -71,6 +72,9 @@ export default function CeramicsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
+
+  if (!data) return <div>Loading</div>;
+  console.log("data", data);
 
   return (
     <PageWrapper setSearchValue={setSearchValue}>
@@ -129,7 +133,7 @@ export default function CeramicsPage(handleCategoryChange) {
                 <img
                   className="product-item_image"
                   id={product.id}
-                  src={product.image}
+                  src={product.photo}
                   // onClick={() => handleClick(product.id)}
                   alt=""
                 />
@@ -150,13 +154,12 @@ export default function CeramicsPage(handleCategoryChange) {
           ))}
         </div>
       </div>
-      {/* <PaginationComponent
-        currentPage={currentPage}
-        defaultCurrentPage={1}
-        defaultPageSize={data?.page_size}
+      <Pagination
+        current={data?.current_page}
+        pageSize={data?.page_size}
         total={data?.total_count}
         onChange={handlePagination}
-      /> */}
+      />
     </PageWrapper>
   );
 }
