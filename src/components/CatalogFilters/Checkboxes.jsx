@@ -79,7 +79,13 @@ const CheckboxOptions = ({
         </div>
       ))}
       <div className="select-all-options">
-        <button onClick={() => selectAll()}>Все стили</button>
+        <button onClick={() => selectAll()}>
+          {checkboxes?.length !== checkedOps?.length ? (
+            <span>Выбрать все</span>
+          ) : (
+            <span>Отменить</span>
+          )}
+        </button>
       </div>
     </div>
   ) : (
