@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import PageWrapper from "../components/PageWrapper/index";
 import ItemCards from "../components/Products/ItemCards";
 import { useNavigate } from "react-router";
-import PaintingFilters from "../components/FilterMenu/PaintingFilters";
+import PaintingFilters from "../components/FilterMenu/PaintingFiltersContainer";
 import { API_URL } from "../API/api";
 import axios from "axios";
 import "./PaintingsContainer.css";
@@ -14,7 +14,6 @@ export default function PaintingsContainer(handleCategoryChange) {
     categoryId: 1,
     sections: [],
   });
-
 
   // useEffect((el) => {
   //   fetch data on Paintings
