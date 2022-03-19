@@ -5,6 +5,9 @@ function App() {
   return (
     <div className="App">
       <Routing />
+      {/*<MainPage />*/}
+      {/* <PaintingsContainer /> */}
+      {/* <ProductPage /> */}
     </div>
   );
 }

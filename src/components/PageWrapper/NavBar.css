@@ -21,6 +21,7 @@ header {
 }
 .nav-menu {
   display: flex;
+  justify-content: space-around;
   list-style-type: none;
   align-items: center;
 }
@@ -30,18 +31,22 @@ header {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 26px;
   line-height: 22px;
   color: #ffffff;
   white-space: nowrap;
-  margin-right: 44px;
   margin-top: 18px;
 }
 .nav-links a:nth-child(3n) {
   padding-left: 144px;
 }
 
+.nav-links :hover{
+  color: #E1C55F;
+}
+
 .logo {
+  width: 12%;
   display: flex;
   align-items: center;
 }
@@ -53,6 +58,7 @@ img {
 
 .header-right {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   justify-content: end;
   width: 100%;
@@ -106,8 +112,8 @@ textarea {
 .shop-cart {
   background-image: url(../../images/cart_icon.svg);
   background-size: contain;
-  position: absolute;
-  z-index: 566;
+  background-repeat: no-repeat;
+  padding-left: 20px;
   width: 17px;
   height: 17px;
 }
@@ -116,7 +122,7 @@ textarea {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 26px;
   line-height: 22px;
   color: #ffffff;
   text-decoration: none;
@@ -127,4 +133,8 @@ textarea {
 }
 .lastitem {
   margin-top: 18px;
+}
+
+.lastitem ul li :hover{
+  color: #E1C55F;
 }

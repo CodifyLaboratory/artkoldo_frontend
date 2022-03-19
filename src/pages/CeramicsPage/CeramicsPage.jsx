@@ -5,6 +5,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
+import { Pagination } from "antd";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +39,7 @@ export default function CeramicsPage(handleCategoryChange) {
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
       color: colorChecked.length > 0 ? colorChecked : undefined,
-      region: regionChecked.length > 0 ? regionChecked : undefined,
+      author__region: regionChecked.length > 0 ? regionChecked : undefined,
       min_price: minPrice,
       max_price: maxPrice,
       page: currentPage,
