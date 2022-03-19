@@ -5,7 +5,9 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./HandicraftsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
+import { Pagination } from "antd";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
+import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
 
 export default function HandicraftsPage(handleCategoryChange) {
@@ -22,13 +24,11 @@ export default function HandicraftsPage(handleCategoryChange) {
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
   const navigate = useNavigate();
-
   const qs = require("qs");
   let ax = axios.create({
     paramsSerializer: (params) =>
       qs.stringify(params, { arrayFormat: "repeat" }),
   });
-
   useEffect(() => {
     const params = {
       search: searchValue ? searchValue : undefined,
@@ -36,7 +36,7 @@ export default function HandicraftsPage(handleCategoryChange) {
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
       color: colorChecked.length > 0 ? colorChecked : undefined,
-      region: regionChecked.length > 0 ? regionChecked : undefined,
+      author__region: regionChecked.length > 0 ? regionChecked : undefined,
       min_price: minPrice,
       max_price: maxPrice,
       page: currentPage,
@@ -55,13 +55,10 @@ export default function HandicraftsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-
   console.log("HANDICRAFTS", data?.results);
-
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
-
   useEffect(() => {
     if (category === "1") {
       navigate("/paintings");
@@ -71,7 +68,8 @@ export default function HandicraftsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-
+  if (!data) return <div>Loading</div>;
+  console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
@@ -126,13 +124,27 @@ export default function HandicraftsPage(handleCategoryChange) {
           {data?.results.map((product) => (
             <div className="product-item" key={product.id}>
               <Link to={`/handicrafts/${product.id}`}>
-                <img
-                  className="product-item_image"
-                  id={product.id}
-                  src={product.image}
-                  // onClick={() => handleClick(product.id)}
-                  alt=""
-                />
+                {product?.photo ? (
+                  <>
+                    <img
+                      className="product-item_image"
+                      id={product.id}
+                      src={product.photo}
+                      // onClick={() => handleClick(product.id)}
+                      alt=""
+                    />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      className="product-item_logo"
+                      id={product.id}
+                      src={`${Logo}`}
+                      // onClick={() => handleClick(product.id)}
+                      alt=""
+                    />
+                  </>
+                )}
               </Link>
               <div className="product-item_detailes">
                 <div className="product-item_detailes_col1">
@@ -150,13 +162,17 @@ export default function HandicraftsPage(handleCategoryChange) {
           ))}
         </div>
       </div>
-      {/* <PaginationComponent
-        currentPage={currentPage}
-        defaultCurrentPage={1}
-        defaultPageSize={data?.page_size}
+      <Pagination
+        current={data?.current_page}
+        pageSize={data?.page_size}
         total={data?.total_count}
         onChange={handlePagination}
-      /> */}
+      />
     </PageWrapper>
   );
 }
+
+
+
+
+

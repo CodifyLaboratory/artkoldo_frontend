@@ -1,6 +1,7 @@
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import AboutUsPage from "../pages/AboutUs/AboutUsPage";
+import Basket from "../pages/Basket/Basket";
 import CeramicItem from "../pages/CeramicsPage/CeramicItem";
 import CeramicsPage from "../pages/CeramicsPage/CeramicsPage";
 import ContactsPage from "../pages/Contacts/ContactsPage";
@@ -24,6 +25,7 @@ export default function Routing() {
       <Route path="/Onas" element={<AboutUsPage />} />
       <Route path="/Contacts" element={<ContactsPage />} />
       <Route path="/Rules" element={<RulesPage />} />
+      <Route path="/basket" element={<Basket />} />
 
       <Route path="*" element={<div>NOT FOUND</div>} />
     </Routes>

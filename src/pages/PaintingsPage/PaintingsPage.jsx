@@ -4,10 +4,12 @@ import PageWrapper from "../../components/PageWrapper/index";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
+import { Pagination } from "antd";
 import "./PaintingsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
+import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
-
+const qs = require("qs");
 export default function PaintingsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
@@ -27,13 +29,10 @@ export default function PaintingsPage(handleCategoryChange) {
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
   const navigate = useNavigate();
-
-  const qs = require("qs");
   let ax = axios.create({
     paramsSerializer: (params) =>
       qs.stringify(params, { arrayFormat: "repeat" }),
   });
-
   useEffect(() => {
     const params = {
       search: searchValue ? searchValue : undefined,
@@ -42,7 +41,7 @@ export default function PaintingsPage(handleCategoryChange) {
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
       color: colorChecked.length > 0 ? colorChecked : undefined,
-      region: regionChecked.length > 0 ? regionChecked : undefined,
+      author__region: regionChecked.length > 0 ? regionChecked : undefined,
       min_width: minWidth,
       max_width: maxWidth,
       min_height: minHeight,
@@ -70,13 +69,10 @@ export default function PaintingsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-
   console.log("PAINTINGS", data?.results);
-
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
-
   useEffect(() => {
     if (category === "1") {
       navigate("/paintings");
@@ -86,11 +82,14 @@ export default function PaintingsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
+  console.log("data", data);
 
+  if (!data) return <div>Loading</div>;
+  console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная/Живопись/...</p>
+        <p>Главная / Живопись /...</p>
       </div>
       <hr />
       <div className="sort-items-container">
@@ -147,21 +146,35 @@ export default function PaintingsPage(handleCategoryChange) {
           {data?.results.map((product) => (
             <div className="product-item" key={product.id}>
               <Link to={`/paintings/${product.id}`}>
-                <img
-                  className="product-item_image"
-                  id={product.id}
-                  src={product.image}
-                  // onClick={() => handleClick(product.id)}
-                  alt=""
-                />
+                {product.photo_1 ? (
+                  <>
+                    <img
+                      className="product-item_image"
+                      id={product.id}
+                      src={product.photo_1}
+                      // onClick={() => handleClick(product.id)}
+                      alt=""
+                    />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      className="product-item_logo"
+                      id={product.id}
+                      src={`${Logo}`}
+                      // onClick={() => handleClick(product.id)}
+                      alt=""
+                    />
+                  </>
+                )}
               </Link>
               <div className="product-item_detailes">
                 <div className="product-item_detailes_col1">
                   <span className="product-item_title">{product.title}</span>
-                  {/* <span className="product-item_aithor ">{product.author}</span>
                   <span className="product-item_location">
-                    {product.location}
-                  </span> */}
+                    {product.author.name}
+                  </span>
+                  {/* <span className="product-item_aithor ">{product.price}</span> */}
                 </div>
                 <div className="product-item_detailes_col2">
                   <span className="product-item_pice">{product.price}</span>
@@ -171,13 +184,21 @@ export default function PaintingsPage(handleCategoryChange) {
           ))}
         </div>
       </div>
-      {/* <PaginationComponent
-        currentPage={currentPage}
-        defaultCurrentPage={1}
-        defaultPageSize={data?.page_size}
+      <Pagination
+        current={data?.current_page}
+        pageSize={data?.page_size}
         total={data?.total_count}
         onChange={handlePagination}
-      /> */}
+      />
     </PageWrapper>
   );
 }
+
+
+
+
+
+
+
+
+

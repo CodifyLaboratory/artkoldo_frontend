@@ -1,30 +1,46 @@
 .searchBar {
   display: flex;
+  width: 250px;
+  margin-right: 50px;
 }
 input {
   outline: none;
 }
-.nb-search-select {
+
+#categoryId{
+  width: 90px;
   border: 1px solid white;
   border-radius: 12px 0 0 12px;
-  width: 80px;
   background-color: transparent;
   color: white;
   background-image: url(../../images/arrow_down.svg);
   background-size: 10%;
   background-position-x: 90%;
   background-position-y: 52%;
-  border-right: none;
   height: 34px;
+  border-right: none;
   outline: none;
 }
 .search-bar {
-  border-radius: 0px 12px 12px 0px;
+  width: 130px;
   border-left: none;
+  background-position-x: 95%;
+  background-color: transparent;
+  height: 34px;
+  border: 1px solid #ffffff;
+  border-left: none;
+  border-right: none;
+}
+
+.searchSubmit{
+  width: 30px;
+  height: 34px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
   background-image: url(../../images/search_icon.svg);
   background-repeat: no-repeat;
-  background-position: right;
-  width: 220px;
-  background-size: 7%;
-  background-position-x: 95%;
+  background-position: center;
+  background-size: 17px;
 }
