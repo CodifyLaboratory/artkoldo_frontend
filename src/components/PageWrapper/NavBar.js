@@ -34,7 +34,7 @@ export default function Navbar({ setSearchValue }) {
           <div className="lastitem">
             <ul>
               <li>
-                <Link to="/Kontakty">Контакты</Link>
+                <Link to="/Contacts">Контакты</Link>
               </li>
             </ul>
           </div>
