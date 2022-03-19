@@ -72,6 +72,15 @@
   height: 308px;
   float: top;
   overflow: hidden;
+  object-fit: cover;
+}
+
+.product-item_logo {
+  width: 510px;
+  height: 308px;
+  float: top;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .product-item_detailes {
