@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Plus from "../../images/Plus.svg";
 import Minus from "../../images/Minus.svg";
 import "./Checkboxes.css";
-
 const CheckboxOptions = ({
   section,
   checkboxes,
@@ -11,7 +10,6 @@ const CheckboxOptions = ({
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [isCheckAll, setIsCheckAll] = useState(false);
-
   const toggleCheck = (id) => {
     console.log("checkedOps", checkedOps);
     console.log("id", id);
@@ -25,7 +23,6 @@ const CheckboxOptions = ({
     console.log("checkedOps", checkedOps);
     console.log("id", id);
   };
-
   const selectAll = () => {
     setCheckedOps(() => {
       if (checkboxes?.length !== checkedOps?.length) {
@@ -35,7 +32,6 @@ const CheckboxOptions = ({
       }
     });
   };
-
   useEffect(() => {
     let allChecked = true;
     for (const el of checkedOps) {
@@ -51,7 +47,6 @@ const CheckboxOptions = ({
       setIsCheckAll(false);
     }
   }, [checkedOps]);
-
   return showOptions ? (
     <div className="filter-menu-open">
       <div className="filter-menu-section">
@@ -100,5 +95,7 @@ const CheckboxOptions = ({
     </div>
   );
 };
-
 export default CheckboxOptions;
+
+
+

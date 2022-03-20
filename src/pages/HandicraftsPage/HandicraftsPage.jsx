@@ -25,13 +25,11 @@ export default function HandicraftsPage(handleCategoryChange) {
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
   const navigate = useNavigate();
-
   const qs = require("qs");
   let ax = axios.create({
     paramsSerializer: (params) =>
       qs.stringify(params, { arrayFormat: "repeat" }),
   });
-
   useEffect(() => {
     const params = {
       search: searchValue ? searchValue : undefined,
@@ -58,13 +56,10 @@ export default function HandicraftsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-
   console.log("HANDICRAFTS", data?.results);
-
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
-
   useEffect(() => {
     if (category === "1") {
       navigate("/paintings");
@@ -74,10 +69,8 @@ export default function HandicraftsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-
   if (!data) return <div>Loading</div>;
   console.log("data", data);
-
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
