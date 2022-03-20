@@ -70,15 +70,15 @@ function Footer() {
       </div>
       <div className="social">
             <SearchBar/>
-              <p>Мы в соц.сетях</p>
-              <div classname="social-icons">
+              <p className="pt-4">Мы в соц.сетях</p>
+              <div classname="social-icons d-flex pt-4">
                 <a href="URL"> <div className="social-tw">
-                </div></a> 
-                <a href="URL"> <div className="social-fb">
+                </div></a>
+                <a href="URL"> <div className="social-fb mt-3">
                 </div></a>
               </div>
             
-            <p> Бишкек, Кыргызстан</p>
+            <p className="pt-4"> Бишкек, Кыргызстан</p>
       </div>
     </div>
 

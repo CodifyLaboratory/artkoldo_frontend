@@ -51,7 +51,9 @@
 
 .social-icons {
   display: flex;
+  width: 100px;
 }
+
 .social-tw {
   width: 28px;
   height: 28px;
@@ -70,9 +72,3 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
-/* .soc-icon{
-  width: 12;
-  height: 15;
-
-} */
