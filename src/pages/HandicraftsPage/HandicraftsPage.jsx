@@ -130,7 +130,6 @@ export default function HandicraftsPage(handleCategoryChange) {
                       className="product-item_image"
                       id={product.id}
                       src={product.photo}
-                      // onClick={() => handleClick(product.id)}
                       alt=""
                     />
                   </>
@@ -140,7 +139,6 @@ export default function HandicraftsPage(handleCategoryChange) {
                       className="product-item_logo"
                       id={product.id}
                       src={`${Logo}`}
-                      // onClick={() => handleClick(product.id)}
                       alt=""
                     />
                   </>
