@@ -10,7 +10,6 @@ import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
 
-
 export default function HandicraftsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
