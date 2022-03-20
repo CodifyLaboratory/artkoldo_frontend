@@ -9,7 +9,6 @@ import { Pagination } from "antd";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
-import { Pagination } from "antd";
 
 export default function CeramicsPage(handleCategoryChange) {
   const [data, setData] = useState();

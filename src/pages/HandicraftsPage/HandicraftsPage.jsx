@@ -9,7 +9,7 @@ import { Pagination } from "antd";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
-import { Pagination } from "antd";
+
 
 export default function HandicraftsPage(handleCategoryChange) {
   const [data, setData] = useState();
