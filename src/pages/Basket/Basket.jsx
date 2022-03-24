@@ -3,12 +3,36 @@ import PageWrapper from '../../components/PageWrapper'
 import { useState} from 'react'
 import './Basket.css'
 
-import { PresetStatusColorTypes } from 'antd/lib/_util/colors'
-const cartFromLocalStorage = JSON.parse(localStorage.getItem('cartItems') || "[ ]")
+
 export default function Basket() {
   const [product, setProduct] = useState({});
+  // const [cartItems, setCartItems] = useState([]);
 
-  const [ cartItems ] = useState(cartFromLocalStorage)
+
+
+  // const onAdd= (product) => {
+  //   const exist = cartItems.find((x) => x.id === product.id);
+  //   if (exist) {
+  //     setCartItems(
+  //       cartItems.map((x) =>
+  //       x.id === product.id ? { ...exist, qty: exist.qty + 1} : x
+  //     )
+  //     );
+  //   } else {
+  //     setCartItems([...cartItems, { ...product, qty: 1}])
+  //   }}
+  //   const onRemove = (product) => {
+  //    const exist = cartItems.find((x) => x.id === product.id);
+  //    if (exist.qty === 1) {
+  //      setCartItems(cartItems.filter((x) => x.id !== product.id));
+  //    } else {
+  //      setCartItems(
+  //        cartItems.map((x) =>
+  //          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+  //        )
+  //      );
+  //    }
+  //  }
 
   return (
 
@@ -33,7 +57,7 @@ export default function Basket() {
                     <div className="three_column_of_product">
                         <div className="first_product_name">
                             <div className="flex_in_product_name">
-                                {/* <div className="div_for_img_in_product_name">-</div> */}
+                           
                                 <p className="disc_of_icons">Удалить</p>
                             </div>
                             <div className="flex_in_product_name">
@@ -43,9 +67,13 @@ export default function Basket() {
                         </div>
                         <div className="second_product_name">
                             <div className="calc_of_product_name">
-                                {/* <img src={}> */}
+                            {/* <button onClick={() => onRemove(item)} className="remove">
+                -
+              </button>{' '}
                                 <div className="input_of_calc">1</div>
-                                {/* <img src={}> */}
+                                <button onClick={() => onAdd())} className="add">
+                +
+              </button> */}
                             </div>
                         </div>
                         <div className="third_product_name">
