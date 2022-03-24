@@ -65,6 +65,7 @@
   line-height: 23px;
   text-decoration-line: underline;
   color: #373635;
+  background-color: transparent;
 }
 
 .checkboxes-container {
