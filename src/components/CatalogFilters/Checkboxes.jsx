@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Plus from "../../images/Plus.svg";
-import Minus from "../../images/Minus.svg";
+import Plus from "../../images/icons/Plus.svg";
+import Minus from "../../images/icons/Minus.svg";
 import "./Checkboxes.css";
 const CheckboxOptions = ({
   section,
@@ -96,6 +96,3 @@ const CheckboxOptions = ({
   );
 };
 export default CheckboxOptions;
-
-
-

@@ -7,13 +7,13 @@ input {
   outline: none;
 }
 
-#categoryId{
+#categoryId {
   width: 90px;
   border: 1px solid white;
   border-radius: 12px 0 0 12px;
   background-color: transparent;
   color: white;
-  background-image: url(../../images/arrow_down.svg);
+  background-image: url(../../images/icons/arrow_down.svg);
   background-size: 10%;
   background-position-x: 90%;
   background-position-y: 52%;
@@ -32,14 +32,14 @@ input {
   border-right: none;
 }
 
-.searchSubmit{
+.searchSubmit {
   width: 30px;
   height: 34px;
   background-color: transparent;
   border: 1px solid white;
   border-left: none;
   border-radius: 0 12px 12px 0;
-  background-image: url(../../images/search_icon.svg);
+  background-image: url(../../images/icons/search_icon.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 17px;

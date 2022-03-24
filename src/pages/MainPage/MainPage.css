@@ -1,0 +1,159 @@
+.sell-now-container {
+  width: 100%;
+  height: 628px;
+  background: url("../../images/sell-now.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sell-now-btn {
+  width: 724px;
+  height: 106px;
+  background: #373635;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.sell-now-btn span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #f3f3ec;
+  text-transform: uppercase;
+}
+
+.category-btns-container {
+  width: 100%;
+  height: 253px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+.paintings-btn {
+  width: 291px;
+  height: 120px;
+  background: #373635;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.handicrafts-btn {
+  width: 425px;
+  height: 120px;
+  background: #373635;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 55px;
+  margin-right: 55px;
+}
+
+.ceramics-btn {
+  width: 291px;
+  height: 120px;
+  background: #373635;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-btn-title {
+  font-family: "Rhodium Libre", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.0847px;
+  line-height: 34px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.about-container {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-box {
+  width: 1666px;
+  height: 732px;
+  background: #c4c4c4;
+  border-radius: 12px;
+  display: flex;
+}
+
+.about-left {
+  width: 50%;
+  padding: 50px 0px 99px 80px;
+}
+
+.about-title {
+  font-family: "Garamond";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 79px;
+  color: #373635;
+}
+
+.about-text {
+  width: 744.38px;
+  height: 252px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 150%;
+  color: #373635;
+  margin-top: 56px;
+  margin-bottom: 63px;
+}
+
+.about-btn {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.52px;
+  line-height: 23px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333333;
+}
+
+.about-right {
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 76px 40px 99px 62px;
+}
+
+.about-right img {
+  width: 741.21px;
+  height: 557px;
+}
+
+/* .container {
+  padding: 40px;
+  margin: 0 auto;
+  width: 1920px;
+  height: 800px;
+}
+
+.slick-list {
+  margin: auto;
+} */

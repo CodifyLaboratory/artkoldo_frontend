@@ -7,8 +7,8 @@ import axios from "axios";
 import { Pagination } from "antd";
 import "./PaintingsPage.css";
 import PaginationComponent from "../../components/Pagination/Pagination";
-import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
+import ItemCards from "../../components/Products/ItemCards";
 const qs = require("qs");
 
 export default function PaintingsPage(handleCategoryChange) {
@@ -143,47 +143,7 @@ export default function PaintingsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <div className="Item-Cards">
-          {data?.results.map((product) => (
-            <div className="product-item" key={product.id}>
-              <Link to={`/paintings/${product.id}`}>
-                {product.photo_1 ? (
-                  <>
-                    <img
-                      className="product-item_image"
-                      id={product.id}
-                      src={product.photo_1}
-                      // onClick={() => handleClick(product.id)}
-                      alt=""
-                    />
-                  </>
-                ) : (
-                  <>
-                    <img
-                      className="product-item_logo"
-                      id={product.id}
-                      src={`${Logo}`}
-                      // onClick={() => handleClick(product.id)}
-                      alt=""
-                    />
-                  </>
-                )}
-              </Link>
-              <div className="product-item_detailes">
-                <div className="product-item_detailes_col1">
-                  <span className="product-item_title">{product.title}</span>
-                  <span className="product-item_location">
-                    {product.author.name}
-                  </span>
-                  {/* <span className="product-item_aithor ">{product.price}</span> */}
-                </div>
-                <div className="product-item_detailes_col2">
-                  <span className="product-item_pice">{product.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ItemCards products={data?.results} />
       </div>
       <Pagination
         current={data?.current_page}

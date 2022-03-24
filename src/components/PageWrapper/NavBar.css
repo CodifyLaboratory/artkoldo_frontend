@@ -41,8 +41,8 @@ header {
   padding-left: 144px;
 }
 
-.nav-links :hover{
-  color: #E1C55F;
+.nav-links :hover {
+  color: #e1c55f;
 }
 
 .logo {
@@ -58,7 +58,7 @@ img {
 
 .header-right {
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   justify-content: end;
   width: 100%;
@@ -72,7 +72,7 @@ textarea {
 }
 
 .shop-cart {
-  background-image: url(../../images/cart_icon.svg);
+  background-image: url(../../images/icons/cart_icon.svg);
   background-size: contain;
   background-repeat: no-repeat;
   padding-left: 20px;
@@ -97,6 +97,6 @@ textarea {
   margin-top: 18px;
 }
 
-.lastitem ul li :hover{
-  color: #E1C55F;
+.lastitem ul li :hover {
+  color: #e1c55f;
 }

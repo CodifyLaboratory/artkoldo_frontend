@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PageWrapper from "../../components/PageWrapper/index";
-import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
-import PaginationComponent from "../../components/Pagination/Pagination";
 import { Pagination } from "antd";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
-import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
+import ItemCards from "../../components/Products/ItemCards";
 
 export default function CeramicsPage(handleCategoryChange) {
   const [data, setData] = useState();
@@ -120,47 +118,7 @@ export default function CeramicsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <div className="Item-Cards">
-          {data?.results.map((product) => (
-            <div className="product-item" key={product.id}>
-              <Link to={`/ceramics/${product.id}`}>
-                {product?.photo ? (
-                  <>
-                    <img
-                      className="product-item_image"
-                      id={product.id}
-                      src={product.photo}
-                      // onClick={() => handleClick(product.id)}
-                      alt=""
-                    />
-                  </>
-                ) : (
-                  <>
-                    <img
-                      className="product-item_logo"
-                      id={product.id}
-                      src={`${Logo}`}
-                      // onClick={() => handleClick(product.id)}
-                      alt=""
-                    />
-                  </>
-                )}
-              </Link>
-              <div className="product-item_detailes">
-                <div className="product-item_detailes_col1">
-                  <span className="product-item_title">{product.title}</span>
-                  {/* <span className="product-item_aithor ">{product.author}</span>
-                  <span className="product-item_location">
-                    {product.location}
-                  </span> */}
-                </div>
-                <div className="product-item_detailes_col2">
-                  <span className="product-item_pice">{product.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ItemCards products={data?.results} />
       </div>
       <Pagination
         current={data?.current_page}

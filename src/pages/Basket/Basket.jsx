@@ -1,12 +1,14 @@
-import React from 'react'
-import PageWrapper from '../../components/PageWrapper'
-import { useState} from 'react'
-import './Basket.css'
-const cartFromLocalStorage = JSON.parse(localStorage.getItem('cartItems') || "[ ]")
+import React from "react";
+import PageWrapper from "../../components/PageWrapper";
+import { useState } from "react";
+import "./Basket.css";
+const cartFromLocalStorage = JSON.parse(
+  localStorage.getItem("cartItems") || "[ ]"
+);
 export default function Basket() {
   // const {  onAdd } = props;
-  const [ cartItems ] = useState(cartFromLocalStorage)
-//   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  const [cartItems] = useState(cartFromLocalStorage);
+  //   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   //  const onRemove = (product) => {
   //   const exist = cartItems.find((x) => x.id === product.id);
   //   if (exist.qty === 1) {
@@ -21,18 +23,22 @@ export default function Basket() {
   // }
   return (
     //  <div>
-         <PageWrapper>
-         <div className="breadcrumbs"><p>Главная/Живопись/...</p></div>
-         <hr />
- <div>
-         {cartItems.length === 0 && <div className="basket-content">Cart is empty</div>}
-        {/* {cartItems.map((item) => (
+    <PageWrapper>
+      <div className="breadcrumbs">
+        <p>Главная/Живопись/...</p>
+      </div>
+      <hr />
+      <div>
+        {cartItems.length === 0 && (
+          <div className="basket-content">Cart is empty</div>
+        )}
+        {cartItems.map((item) => (
           <div key={item.id} className="row">
             <div className="col-2">{item.name}</div>
             <div className="col-2">
               <button onClick={() => onRemove(item)} className="remove">
                 -
-              </button>{' '}
+              </button>{" "}
               <button onClick={() => onAdd(item)} className="add">
                 +
               </button>
@@ -69,14 +75,14 @@ export default function Basket() {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
+              <button onClick={() => alert("Implement Checkout!")}>
                 Checkout
               </button>
             </div>
           </>
-        )} */}
+        )}
       </div>
-         </PageWrapper>
+    </PageWrapper>
     //  </div>
   );
-};
+}

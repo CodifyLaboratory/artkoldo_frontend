@@ -9,6 +9,7 @@ import { Pagination } from "antd";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
+import ItemCards from "../../components/Products/ItemCards";
 
 export default function HandicraftsPage(handleCategoryChange) {
   const [data, setData] = useState();
@@ -120,45 +121,7 @@ export default function HandicraftsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <div className="Item-Cards">
-          {data?.results.map((product) => (
-            <div className="product-item" key={product.id}>
-              <Link to={`/handicrafts/${product.id}`}>
-                {product?.photo ? (
-                  <>
-                    <img
-                      className="product-item_image"
-                      id={product.id}
-                      src={product.photo}
-                      alt=""
-                    />
-                  </>
-                ) : (
-                  <>
-                    <img
-                      className="product-item_logo"
-                      id={product.id}
-                      src={`${Logo}`}
-                      alt=""
-                    />
-                  </>
-                )}
-              </Link>
-              <div className="product-item_detailes">
-                <div className="product-item_detailes_col1">
-                  <span className="product-item_title">{product.title}</span>
-                  {/* <span className="product-item_aithor ">{product.author}</span>
-                  <span className="product-item_location">
-                    {product.location}
-                  </span> */}
-                </div>
-                <div className="product-item_detailes_col2">
-                  <span className="product-item_pice">{product.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ItemCards products={data?.results} />
       </div>
       <Pagination
         current={data?.current_page}

@@ -22,7 +22,7 @@ export default function Routing() {
       <Route path="/handicrafts/:id" element={<HandicraftItem />} />
       <Route path="/ceramics" element={<CeramicsPage />} />
       <Route path="/ceramics/:id" element={<CeramicItem />} />
-      <Route path="/Onas" element={<AboutUsPage />} />
+      <Route path="/about" element={<AboutUsPage />} />
       <Route path="/Contacts" element={<ContactsPage />} />
       <Route path="/Rules" element={<RulesPage />} />
       <Route path="/basket" element={<Basket />} />

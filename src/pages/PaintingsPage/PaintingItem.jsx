@@ -6,14 +6,16 @@ import { API_URL } from "../../API/api";
 // import Basket from "../Basket/Basket";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import PaintingFilters from "../../components/CatalogFilters/PaintingFilters";
-// import { Row, Col } from "react-bootstrap";
+import ItemCards from "../../components/Products/ItemCards";
+
 import { useParams } from "react-router-dom";
 export default function PaintingItem() {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState();
+  const [recommended, setRecommended] = useState();
   const [cartItems, setCartItems] = useState([]);
   const { id } = useParams();
   console.log("id", id);
+
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     axios
@@ -24,8 +26,18 @@ export default function PaintingItem() {
       .catch((error) => {
         console.log(error);
       });
+    axios
+      .get(`${API_URL}/painting_recommendations/${id}/`)
+      .then((response) => {
+        setRecommended(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
+
   console.log("product", product);
+  console.log("recommended", recommended);
   //  const [ products ]= useState([
   //     {
   //       product: {id: 0, name: 'name 1', price: 100},
@@ -60,6 +72,8 @@ export default function PaintingItem() {
   //     );
   //   }
   // }
+
+  if (!product || !recommended) return <div className="Loading">Loading</div>;
   return (
     <div>
       <PageWrapper>
@@ -143,8 +157,13 @@ export default function PaintingItem() {
             </div>
           </div>
           <div className="bottom">
-            <h1 className="bottom_heading">Рекомендуем также</h1>
+            <h1 className="bottom_heading">Рекомендуем также:</h1>
           </div>
+          <ItemCards
+            products={
+              recommended.length <= 6 ? recommended : recommended.splice(0, 6)
+            }
+          />
         </div>
       </PageWrapper>
     </div>

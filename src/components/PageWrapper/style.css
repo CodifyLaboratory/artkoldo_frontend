@@ -1,5 +1,7 @@
 body {
-  background: url('../../images/bg.png');
+  background: url("../../images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 1920px;
   margin: 0 auto;
 }

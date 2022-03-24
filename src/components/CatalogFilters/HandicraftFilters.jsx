@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CheckboxOptions from "./Checkboxes";
-import Plus from "../../images/Plus.svg";
-import Minus from "../../images/Minus.svg";
+import Plus from "../../images/icons/Plus.svg";
+import Minus from "../../images/icons/Minus.svg";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./Filters.css";

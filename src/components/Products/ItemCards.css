@@ -1,59 +1,96 @@
-/* .Item-Cards {
-  width: 70%;
-  display: flex !important;
-  flex-wrap: wrap !important;
+.Item-Cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 33px;
+  margin-bottom: 100px;
 }
 
-.items-container-column {
-  display: flex !important;
-  justify-content: space-between;
-}
+/* @media (max-width: 1440px) {
+  .Item-Cards{
+    width: 50%;
+  }
+} */
 
 .product-item {
   color: black;
   font-size: 20px;
-  width: 50%;
+  width: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding-top: 30px;
-  /* padding-right: 156px; */
-/* }
+}
 
 .product-item_image {
-  /* width: 510px;
-  height: 308px; */
-/* float: top;
+  width: 510px;
+  height: 308px;
+  float: top;
   overflow: hidden;
+  object-fit: cover;
+}
+
+.product-item_logo {
+  width: 510px;
+  height: 308px;
+  float: top;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .product-item_detailes {
   display: flex;
-  flex-direction: row;
+  width: 100% !important;
+  /* flex-direction: column; */
   justify-content: space-between;
   padding-top: 24px;
 }
-.product-item_detailes_col1 {
+
+.product-item-text-one {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-text-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
   font-weight: 400;
-}
-
-.product-item_title {
   font-size: 20px;
+  line-height: 23px;
+  color: #000000;
 }
 
-.product-item_master {
-  font-size: 20px;
-}
-
-.product-item_location {
-  font-size: 17px;
-  font-weight: 300;
-}
-
-.product-item_price {
+.product-text-price {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 30px;
-  line-height: 35, 16px;
-} */
+  line-height: 35px;
+  color: #000000;
+}
+
+.product-item-text-two {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-item-text-three {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+}

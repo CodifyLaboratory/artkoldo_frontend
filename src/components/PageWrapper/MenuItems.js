@@ -16,7 +16,7 @@ export const MenuItems = [
   },
   {
     title: "О нас",
-    url: "/Onas",
+    url: "/about",
     cName: "nav-links",
   },
   // {

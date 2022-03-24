@@ -1,45 +1,58 @@
 import React, { useState, useEffect } from "react";
 import "./ItemCards.css";
-import { Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "../../images/product-logo.jpeg";
 
 export default function ItemCards({ products = [] }) {
-  // const list = items.length > 0 ? items : products;
-
-  let navigate = useNavigate();
-
-  function handleClick(id) {
-    navigate(`/paintings/${id}`);
-  }
-
   return (
-    <></>
-    // <Row className="Item-Cards d-flex justify-content-between">
-    //   {products.map((product) => (
-    //     <Col sm={6} md={6} lg={6} key={product.id}>
-    //       <div className="product-item">
-    //         <img
-    //           className="product-item_image"
-    //           src={product.image}
-    //           onClick={() => handleClick(product.id)}
-    //           alt=""
-    //         />
-    //         <div className="product-item_detailes">
-    //           <div className="product-item_detailes_col1">
-    //             <span className="product-item_title">{product.title}</span>
-    //             {/* <span className="product-item_aithor ">{product?.author}</span>
-    //             <span className="product-item_location">
-    //               {product?.location}
-    //             </span> */}
-    //           </div>
-    //           <div className="product-item_detailes_col2">
-    //             <span className="product-item_pice">{product.price}</span>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </Col>
-    //   ))}
-    // </Row>
+    <div className="Item-Cards">
+      {products?.map((product) => (
+        <div className="product-item" key={product?.id}>
+          <Link to={`/paintings/${product.id}`}>
+            {product?.photo_1 ? (
+              <>
+                <img
+                  className="product-item_image"
+                  id={product?.id}
+                  src={product?.photo_1}
+                  // onClick={() => handleClick(product.id)}
+                  alt=""
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  className="product-item_logo"
+                  id={product?.id}
+                  src={`${Logo}`}
+                  // onClick={() => handleClick(product.id)}
+                  alt=""
+                />
+              </>
+            )}
+          </Link>
+          <div className="product-item-text">
+            <div className="product-item-text-one">
+              <div className="product-text-title">
+                <span>{product?.title}</span>
+              </div>
+              <div className="product-text-price">
+                <span>{product?.price}</span>
+                <span>&nbsp;c.</span>
+              </div>
+            </div>
+            <div className="product-item-text-two">
+              <span>{product?.author?.name}</span>
+            </div>
+            <div className="product-item-text-three">
+              <span>
+                {product?.author?.region?.title},&nbsp;
+                {product?.author?.region?.country?.title}
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
