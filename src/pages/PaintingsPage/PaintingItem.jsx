@@ -36,6 +36,10 @@ export default function PaintingItem() {
       });
   }, []);
 
+  // useEffect(() => {
+  //   return setCartItems;
+  // });
+
   console.log("product", product);
   console.log("recommended", recommended);
   //  const [ products ]= useState([
@@ -59,6 +63,7 @@ export default function PaintingItem() {
     } else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
     }
+    console.log("111111", cartItems);
   };
   //  const onRemove = (product) => {
   //   const exist = cartItems.find((x) => x.id === product.id);
