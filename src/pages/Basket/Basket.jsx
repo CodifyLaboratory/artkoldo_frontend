@@ -7,9 +7,11 @@ import { PresetStatusColorTypes } from "antd/lib/_util/colors";
 const cartFromLocalStorage = JSON.parse(
   localStorage.getItem("cartItems") || "[ ]"
 );
-export default function Basket() {
+export default function Basket({ updateCart }) {
   const [product, setProduct] = useState({});
-  const [cartItems, setCartItems] = useState(cartFromLocalStorage);
+  const [cartItems] = useState(cartFromLocalStorage);
+
+  console.log("fromLocalStorage", cartItems);
 
   return (
     <PageWrapper>

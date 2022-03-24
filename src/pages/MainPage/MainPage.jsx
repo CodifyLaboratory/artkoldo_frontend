@@ -12,7 +12,7 @@ import Slider from "react-slick";
 
 export default function MainPage() {
   return (
-    <>
+    <div className="main-page-container">
       <Navbar />
       <div className="sell-now-container">
         <div className="sell-now-btn">
@@ -74,6 +74,6 @@ export default function MainPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
