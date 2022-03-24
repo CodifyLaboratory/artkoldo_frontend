@@ -9,7 +9,6 @@ function SearchBar({ setSearchValue }) {
   //   const [searchValue, setSearchValue] = useState("");
   //   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("paintings");
-  const [searchValue2, setSearchValue2 ] = useState("")
 
 
   //   useEffect(() => {
