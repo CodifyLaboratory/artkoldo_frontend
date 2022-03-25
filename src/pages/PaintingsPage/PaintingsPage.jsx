@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";

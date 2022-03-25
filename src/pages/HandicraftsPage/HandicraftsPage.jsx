@@ -4,6 +4,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./HandicraftsPage.css";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";

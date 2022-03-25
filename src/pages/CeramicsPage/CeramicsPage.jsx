@@ -4,6 +4,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
