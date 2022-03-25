@@ -8,7 +8,8 @@ export default function RulesPage() {
         <div className="rules-page">
             <PageWrapper>
                 <div className="breadcrumbs d-flex justify-content-start">
-                    <p>Главная/Правила и условия/...</p>
+                <p> <a href="/">Главная/</a> <a href="/Rules">
+        Правила и условия/...</a></p>
                </div>
                  <hr />
 

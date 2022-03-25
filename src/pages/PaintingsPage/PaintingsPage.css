@@ -127,6 +127,15 @@
   color: #373635;
 }
 
+.breadcrumbs p a{
+  text-decoration: none;
+  color: #373635;
+}
+
+.breadcrumbs :hover{
+  color: #E1C55F;
+}
+
 .sort-items-container {
   height: 142px;
   display: flex;

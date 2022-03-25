@@ -70,6 +70,11 @@ function Footer() {
           <SearchBar />
           <p className="pt-4">Мы в соц.сетях</p>
           <div className="social-icons d-flex pt-4">
+          <a href="URL">
+              {" "}
+              <div className="social-instagram"></div>
+            </a>
+
             <a href="URL">
               {" "}
               <div className="social-tw"></div>
@@ -78,6 +83,7 @@ function Footer() {
               {" "}
               <div className="social-fb"></div>
             </a>
+            
           </div>
 
           <p className="pt-4"> Бишкек, Кыргызстан</p>

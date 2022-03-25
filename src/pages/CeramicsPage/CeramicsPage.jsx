@@ -71,7 +71,7 @@ export default function CeramicsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная/Керамика/...</p>
+        <p> <a href="/">Главная/</a> <a href="/ceramics">Керамика/...</a></p>
       </div>
       <hr />
       <div className="sort-items-container">

@@ -34,16 +34,10 @@ export const AboutCompanyItems=[
             cName: 'nav-links'
         },
         {
-            title: 'Доставка',
-            url: '/Delivery',
-            cName: 'nav-links'
-        },
-        {
-            title: 'Оплата',
-            url: '/Payment',
+            title: 'Доставка и оплата',
+            url: '/shipmentAndPaymantPages',
             cName: 'nav-links'
         }
-
 
 ]
 

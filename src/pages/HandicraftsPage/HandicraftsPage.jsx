@@ -73,8 +73,9 @@ export default function HandicraftsPage(handleCategoryChange) {
   console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>
-      <div className="breadcrumbs">
-        <p>Главная/Ремесленные изделия/...</p>
+     <div className="breadcrumbs">
+        <p> <a href="/">Главная/</a> <a href="/handicrafts">
+        Ремесленные изделия/...</a></p>
       </div>
       <hr />
       <div className="sort-items-container">

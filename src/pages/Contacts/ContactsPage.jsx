@@ -8,7 +8,8 @@ export default function ContactsPage() {
         <div>
             <PageWrapper>
                  <div className="breadcrumbs">
-                    <p>Главная/О нас/ ...</p>
+                 <p> <a href="/">Главная/</a> <a href="/Contacts">
+        Контакты/...</a></p>
                  </div>
                 <hr />
                 <div className="contacts">
