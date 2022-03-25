@@ -144,6 +144,7 @@ export default function PaintingItem() {
               products={
                 recommended.length <= 6 ? recommended : recommended.splice(0, 6)
               }
+              category="ceramics"
             />
           </div>
         </PageWrapper>

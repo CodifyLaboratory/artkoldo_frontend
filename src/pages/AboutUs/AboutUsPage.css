@@ -51,9 +51,13 @@
   font-size: 24px;
 }
 
-.founder-img {
-  width: 350px;
+.founder-img img {
+  width: 295px;
   height: 252px;
+}
+
+.founder-img {
+  margin-bottom: 35px;
 }
 
 .founder-text {
