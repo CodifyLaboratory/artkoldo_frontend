@@ -64,11 +64,11 @@ export default function PaintingItem() {
           </div>
           <hr />
           <div className="page-content">
-            <div className="product?-content">
+            <div className="product-content">
               <div className="left-side">
                 <div>
                   <img
-                    className="product?-img"
+                    className="product-img"
                     src={product?.photo_1}
                     alt={product?.title}
                   ></img>
@@ -96,31 +96,18 @@ export default function PaintingItem() {
                   ></img>
                 </div>
                 <div>
-                  <h1 className="description_headings">О картине/Об изделии</h1>
-                  <hr className="dividing_line"></hr>
-                  <h2 className="small_heading">Общие</h2>
-                  <span className="description">
-                    Город: {product?.author?.region?.title}
-                  </span>
-                  <span className="description">
-                    Страна: {product?.author?.region?.country?.title}
-                  </span>
+                  <h1 className="description_headings">Об изделии</h1>
+                  <p className="product-description">{product?.description}</p>
                   <hr className="dividing_line"></hr>
                   <h2 className="small_heading">Характеристики</h2>
                   <span className="description">
-                    Тема: {product?.subject?.title}
+                    Тип: {product?.type?.title}
                   </span>
                   <span className="description">
                     Материал: {product?.material?.title}
                   </span>
                   <span className="description">
-                    Стиль: {product?.style?.title}
-                  </span>
-                  <span className="description">
-                    Техника: {product?.technique.title}
-                  </span>
-                  <span className="description">
-                    Ширина: {product?.width} см, Высота: {product?.height} см
+                    Техника: {product?.technique?.title}
                   </span>
                   <hr className="dividing_line"></hr>
                   <h2 className="small_heading">Оплата</h2>

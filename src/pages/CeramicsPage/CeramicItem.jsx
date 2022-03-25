@@ -97,31 +97,18 @@ export default function PaintingItem() {
                   ></img>
                 </div>
                 <div>
-                  <h1 className="description_headings">О картине/Об изделии</h1>
-                  <hr className="dividing_line"></hr>
-                  <h2 className="small_heading">Общие</h2>
-                  <span className="description">
-                    Город: {product.author.region.title}
-                  </span>
-                  <span className="description">
-                    Страна: {product.author.region.country.title}
-                  </span>
+                  <h1 className="description_headings">Об изделии</h1>
+                  <p className="product-description">{product?.description}</p>
                   <hr className="dividing_line"></hr>
                   <h2 className="small_heading">Характеристики</h2>
                   <span className="description">
-                    Тема: {product.subject.title}
+                    Тип: {product?.type?.title}
                   </span>
                   <span className="description">
-                    Материал: {product.material.title}
+                    Материал: {product?.material?.title}
                   </span>
                   <span className="description">
-                    Стиль: {product.style.title}
-                  </span>
-                  <span className="description">
-                    Техника: {product.technique.title}
-                  </span>
-                  <span className="description">
-                    Ширина: {product.width} см, Высота: {product.height} см
+                    Техника: {product?.technique?.title}
                   </span>
                   <hr className="dividing_line"></hr>
                   <h2 className="small_heading">Оплата</h2>
@@ -132,17 +119,17 @@ export default function PaintingItem() {
                 </div>
               </div>
               <div class="right_side">
-                <div class="right_description_headings">{product.title}</div>
+                <div class="right_description_headings">{product?.title}</div>
                 <div className="description">
                   <p>Керамическое изделие</p>
                   <p>
-                    Ширина: {product.width} см, Высота: {product.height} см
+                    Ширина: {product?.width} см, Высота: {product?.height} см
                   </p>
-                  <p>Автор: {product.author.name}</p>
-                  <p>Местоположение: {product.author.region.title}</p>
+                  <p>Автор: {product?.author?.name}</p>
+                  <p>Местоположение: {product?.author?.region?.title}</p>
                 </div>
                 <div className="dividing_line_2"></div>
-                <p className="number_of_price">{product.price} c</p>
+                <p className="number_of_price">{product?.price} c</p>
                 <div className="link_btn">
                   <button className="add_btn" onClick={() => onAdd(product)}>
                     Добавить в корзину

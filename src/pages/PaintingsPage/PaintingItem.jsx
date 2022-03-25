@@ -98,15 +98,8 @@ export default function PaintingItem() {
                   ></img>
                 </div>
                 <div>
-                  <h1 className="description_headings">О картине/Об изделии</h1>
-                  <hr className="dividing_line"></hr>
-                  <h2 className="small_heading">Общие</h2>
-                  <span className="description">
-                    Город: {product.author.region.title}
-                  </span>
-                  <span className="description">
-                    Страна: {product.author.region.country.title}
-                  </span>
+                  <h1 className="description_headings">О картине</h1>
+                  <p className="product-description">{product?.description}</p>
                   <hr className="dividing_line"></hr>
                   <h2 className="small_heading">Характеристики</h2>
                   <span className="description">

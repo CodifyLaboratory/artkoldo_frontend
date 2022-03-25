@@ -172,3 +172,11 @@ span {
   background-color: #373635;
   border-radius: 12px;
 }
+
+.product-description {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
+}
