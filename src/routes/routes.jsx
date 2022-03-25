@@ -1,24 +1,33 @@
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import AboutUsPage from "../pages/AboutUs/AboutUsPage";
+import Basket from "../pages/Basket/Basket";
+import CeramicItem from "../pages/CeramicsPage/CeramicItem";
+import CeramicsPage from "../pages/CeramicsPage/CeramicsPage";
+import ContactsPage from "../pages/Contacts/ContactsPage";
+import HandicraftItem from "../pages/HandicraftsPage/HandicraftItem";
+import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
+import MainPage from "../pages/MainPage/MainPage";
+import PaintingItem from "../pages/PaintingsPage/PaintingItem";
+import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
+import RulesPage from "../pages/RulesPage/RulesPage";
 
-// import { Routes } from "react-router-dom";
+export default function Routing() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/paintings" element={<PaintingsPage />} />
+      <Route path="/paintings/:id" element={<PaintingItem />} />
+      <Route path="/handicrafts" element={<HandicraftsPage />} />
+      <Route path="/handicrafts/:id" element={<HandicraftItem />} />
+      <Route path="/ceramics" element={<CeramicsPage />} />
+      <Route path="/ceramics/:id" element={<CeramicItem />} />
+      <Route path="/about" element={<AboutUsPage />} />
+      <Route path="/Contacts" element={<ContactsPage />} />
+      <Route path="/Rules" element={<RulesPage />} />
+      <Route path="/basket" element={<Basket />} />
 
-// import { Route} from "react-router-dom";
-// import App from "../App";
-// // import clickButton from '../components/clickme/clickButton';
-// import ProductPage from "../pages/ProductPage/ProductPage";
-
-
-
-
-// export default function Routing() {
-//     return (
-//      <Routes>
-//           <Route path="/" element={<App />}/>
-//           <Route path='/productPage' element={<ProductPage />}/>
-    
-
-  
-//           <Route path="*" element={<div>NOT FOUND</div>} /> 
-      
-//       </Routes>
-//   );
-// }
+      <Route path="*" element={<div>NOT FOUND</div>} />
+    </Routes>
+  );
+}

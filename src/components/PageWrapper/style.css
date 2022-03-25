@@ -1,16 +1,17 @@
 body {
-  background: #f3f3ec;
+  width: 1920px;
+  margin: 0 auto;
+  background: url("../../images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 100%;
-  margin: 0 auto;
- 
 }
 
 .page-content {
+  padding: 0 165px 0 165px;
   width: 100%;
 }

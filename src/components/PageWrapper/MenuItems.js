@@ -1,28 +1,27 @@
 export const MenuItems = [
-
-    {
-        title: 'Живопись',
-        url: '/Jivopis',
-        cName: 'nav-links'
-    },
-    {
-        title: 'Ремесленные изделия',
-        url: '/RemeslennyeIzdeliia',
-        cName: 'nav-links'
-    },
-    {
-        title: 'Керамика',
-        url: '/Keramika',
-        cName: 'nav-links'
-    },
-    {
-        title: 'О нас',
-        url: '/Onas',
-        cName: 'nav-links'
-    },
-    // {
-    //     title: 'Контакты',
-    //     url: '/Kontakty',
-    //     cName: 'nav-links'
-    // }
-]
+  {
+    title: "Живопись",
+    url: "/paintings",
+    cName: "nav-links",
+  },
+  {
+    title: "Ремесленные изделия",
+    url: "/handicrafts",
+    cName: "nav-links",
+  },
+  {
+    title: "Керамика",
+    url: "/ceramics",
+    cName: "nav-links",
+  },
+  {
+    title: "О нас",
+    url: "/about",
+    cName: "nav-links",
+  },
+  // {
+  //     title: 'Контакты',
+  //     url: '/Kontakty',
+  //     cName: 'nav-links'
+  // }
+];

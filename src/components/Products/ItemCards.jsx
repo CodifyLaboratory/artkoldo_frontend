@@ -1,20 +1,58 @@
-import React from "react";
-import { products } from "../../mockData/ListofProducts";
+import React, { useState, useEffect } from "react";
 import "./ItemCards.css";
-import { ProductItem } from "./ProductItem";
-import { Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "../../images/product-logo.jpeg";
 
-export default function ItemCards({ items = [] }) {
-  // const list = items.length > 0 ? items : products;
-
+export default function ItemCards({ products = [] }) {
   return (
-    <Row className="Item-Cards d-flex justify-content-between">
-      {products.map((product) => (
-        <Col sm={9} md={9} lg={6}>
-          <ProductItem product={product} key={product.id} />
-        </Col>
+    <div className="Item-Cards">
+      {products?.map((product) => (
+        <div className="product-item" key={product?.id}>
+          <Link to={`/paintings/${product.id}`}>
+            {product?.photo_1 ? (
+              <>
+                <img
+                  className="product-item_image"
+                  id={product?.id}
+                  src={product?.photo_1}
+                  // onClick={() => handleClick(product.id)}
+                  alt=""
+                />
+              </>
+            ) : (
+              <>
+                <img
+                  className="product-item_logo"
+                  id={product?.id}
+                  src={`${Logo}`}
+                  // onClick={() => handleClick(product.id)}
+                  alt=""
+                />
+              </>
+            )}
+          </Link>
+          <div className="product-item-text">
+            <div className="product-item-text-one">
+              <div className="product-text-title">
+                <span>{product?.title}</span>
+              </div>
+              <div className="product-text-price">
+                <span>{product?.price}</span>
+                <span>&nbsp;c.</span>
+              </div>
+            </div>
+            <div className="product-item-text-two">
+              <span>{product?.author?.name}</span>
+            </div>
+            <div className="product-item-text-three">
+              <span>
+                {product?.author?.region?.title},&nbsp;
+                {product?.author?.region?.country?.title}
+              </span>
+            </div>
+          </div>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 }
