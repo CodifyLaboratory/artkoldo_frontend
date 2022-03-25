@@ -30,7 +30,11 @@ export default function Navbar({ setSearchValue }) {
         </div>
         <div className="header-right">
           <SearchBar setSearchValue={setSearchValue} />
-          <div className="shop-cart"></div>
+
+          <Link to="/Basket">
+            <div className="shop-cart"></div>
+          </Link>
+
           <div className="lastitem">
             <ul>
               <li>
