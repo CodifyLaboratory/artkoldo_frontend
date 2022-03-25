@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PageWrapper from "../../components/PageWrapper/index";
-import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./HandicraftsPage.css";
-import PaginationComponent from "../../components/Pagination/Pagination";
 import { Pagination } from "antd";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import Logo from "../../images/product-logo.jpeg";

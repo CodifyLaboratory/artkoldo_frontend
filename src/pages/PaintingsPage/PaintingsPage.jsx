@@ -6,7 +6,6 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import { Pagination } from "antd";
 import "./PaintingsPage.css";
-import PaginationComponent from "../../components/Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 const qs = require("qs");
