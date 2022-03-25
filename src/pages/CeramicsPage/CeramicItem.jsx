@@ -61,7 +61,11 @@ export default function PaintingItem() {
       <div>
         <PageWrapper>
           <div className="breadcrumbs">
-            <p>Главная/Живопись/...</p>
+            <span>
+              <a href="/">Главная/</a>
+              <a href="/ceramics">Керамика/</a>
+            </span>
+            <span>...</span>
           </div>
           <hr />
           <div className="page-content">
