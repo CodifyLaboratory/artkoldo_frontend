@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PageWrapper from "../../components/PageWrapper/index";
-import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./HandicraftsPage.css";
-import PaginationComponent from "../../components/Pagination/Pagination";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
@@ -74,7 +73,10 @@ export default function HandicraftsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная/Ремесленные изделия/...</p>
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Ремесленные изделия</span>
       </div>
       <hr />
       <div className="sort-items-container">
@@ -121,7 +123,7 @@ export default function HandicraftsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="handicrafts" />
       </div>
       <Pagination
         current={data?.current_page}

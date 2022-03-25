@@ -4,6 +4,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
@@ -71,7 +72,10 @@ export default function CeramicsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная/Керамика/...</p>
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Керамика</span>
       </div>
       <hr />
       <div className="sort-items-container">
@@ -118,7 +122,7 @@ export default function CeramicsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="ceramics" />
       </div>
       <Pagination
         current={data?.current_page}

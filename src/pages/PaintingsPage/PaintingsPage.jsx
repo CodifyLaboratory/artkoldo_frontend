@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import { Pagination } from "antd";
+import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
-import PaginationComponent from "../../components/Pagination/Pagination";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 const qs = require("qs");
@@ -90,7 +90,10 @@ export default function PaintingsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная / Живопись /...</p>
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Живопись</span>
       </div>
       <hr />
       <div className="sort-items-container">
@@ -143,7 +146,7 @@ export default function PaintingsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="paintings" />
       </div>
       <Pagination
         current={data?.current_page}
