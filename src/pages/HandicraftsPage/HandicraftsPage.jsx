@@ -121,7 +121,7 @@ export default function HandicraftsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="handicrafts" />
       </div>
       <Pagination
         current={data?.current_page}

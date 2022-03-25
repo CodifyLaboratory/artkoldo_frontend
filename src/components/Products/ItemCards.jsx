@@ -3,12 +3,12 @@ import "./ItemCards.css";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../images/product-logo.jpeg";
 
-export default function ItemCards({ products = [] }) {
+export default function ItemCards({ products = [], category = "" }) {
   return (
     <div className="Item-Cards">
       {products?.map((product) => (
         <div className="product-item" key={product?.id}>
-          <Link to={`/paintings/${product.id}`}>
+          <Link to={`/${category}/${product.id}`}>
             {product?.photo_1 ? (
               <>
                 <img

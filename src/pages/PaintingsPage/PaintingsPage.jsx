@@ -143,7 +143,7 @@ export default function PaintingsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="paintings" />
       </div>
       <Pagination
         current={data?.current_page}

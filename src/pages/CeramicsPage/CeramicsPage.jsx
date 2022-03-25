@@ -118,7 +118,7 @@ export default function CeramicsPage(handleCategoryChange) {
             setMaxPrice={setMaxPrice}
           />
         </div>
-        <ItemCards products={data?.results} />
+        <ItemCards products={data?.results} category="ceramics" />
       </div>
       <Pagination
         current={data?.current_page}
