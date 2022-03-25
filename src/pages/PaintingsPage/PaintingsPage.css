@@ -127,6 +127,16 @@
   color: #373635;
 }
 
+.breadcrumbs span a {
+  text-decoration: none;
+  color: #373635;
+}
+
+.breadcrumbs span:first-child :hover {
+  color: #e1c55f;
+  cursor: pointer;
+}
+
 .sort-items-container {
   height: 142px;
   display: flex;

@@ -90,7 +90,10 @@ export default function PaintingsPage(handleCategoryChange) {
   return (
     <PageWrapper setSearchValue={setSearchValue}>
       <div className="breadcrumbs">
-        <p>Главная / Живопись /...</p>
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Живопись</span>
       </div>
       <hr />
       <div className="sort-items-container">

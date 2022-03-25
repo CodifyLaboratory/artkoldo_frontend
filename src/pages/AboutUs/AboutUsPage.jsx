@@ -9,7 +9,10 @@ export default function AboutUsPage() {
     <div>
       <PageWrapper>
         <div className="breadcrumbs">
-          <p>Главная/О нас/ ...</p>
+          <span>
+            <a href="/">Главная/</a>
+          </span>
+          <span>О нас</span>
         </div>
         <hr />
         <div className="about-us-Block">
