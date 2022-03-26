@@ -150,7 +150,7 @@ export default function PaintingsPage(handleCategoryChange) {
       </div>
       <Pagination
         current={data?.current_page}
-        pageSize={data?.page_size}
+        pageSize={12}
         total={data?.total_count}
         onChange={handlePagination}
       />
