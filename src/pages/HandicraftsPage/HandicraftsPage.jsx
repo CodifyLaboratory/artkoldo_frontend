@@ -125,7 +125,7 @@ export default function HandicraftsPage(handleCategoryChange) {
       </div>
       <Pagination
         current={data?.current_page}
-        pageSize={data?.page_size}
+        // pageSize={data?.page_size}
         total={data?.total_count}
         onChange={handlePagination}
       />
