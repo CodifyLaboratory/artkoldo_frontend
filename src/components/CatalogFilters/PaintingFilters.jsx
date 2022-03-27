@@ -36,6 +36,7 @@ export default function PaintingFilters({
     axios.get(`${API_URL}/painting_filter/`).then((r) => setFilters(r.data));
   }, []);
 
+  if (!filters) return <div>Loading</div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions

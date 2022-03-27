@@ -20,7 +20,6 @@ export default function MainPage() {
           <span>Продай уже сейчас</span>
         </button>
       </div>
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
       <div className="category-btns-container">
         <Link to="/paintings" style={{ textDecoration: "none" }}>
           <div className="paintings-btn">
@@ -76,6 +75,7 @@ export default function MainPage() {
         </div>
       </div>
       <Footer />
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 }
