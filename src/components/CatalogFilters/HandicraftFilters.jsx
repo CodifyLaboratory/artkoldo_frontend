@@ -29,6 +29,7 @@ export default function HandicraftFilters({
     axios.get(`${API_URL}/handicraft_filter/`).then((r) => setFilters(r.data));
   }, []);
 
+  if (!filters) return <div>Loading</div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions

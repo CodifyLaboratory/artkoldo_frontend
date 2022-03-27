@@ -29,6 +29,7 @@ export default function CeramicFilters({
     axios.get(`${API_URL}/ceramic_filter/`).then((r) => setFilters(r.data));
   }, []);
 
+  if (!filters) return <div>Loading</div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
