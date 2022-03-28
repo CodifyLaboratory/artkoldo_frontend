@@ -41,7 +41,7 @@ export default function CeramicsPage(handleCategoryChange) {
       page: currentPage,
       ordering: order,
     };
-    ax.get(`${API_URL}/ceramics/`, { params }).then((r) => setData(r.data));
+    ax.get(`${API_URL}/api/ceramics/`, { params }).then((r) => setData(r.data));
   }, [
     searchValue,
     currentPage,

@@ -42,7 +42,9 @@ export default function HandicraftsPage(handleCategoryChange) {
       page: currentPage,
       ordering: order,
     };
-    ax.get(`${API_URL}/handicrafts/`, { params }).then((r) => setData(r.data));
+    ax.get(`${API_URL}/api/handicrafts/`, { params }).then((r) =>
+      setData(r.data)
+    );
   }, [
     searchValue,
     currentPage,

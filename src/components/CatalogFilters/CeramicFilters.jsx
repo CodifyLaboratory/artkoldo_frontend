@@ -26,7 +26,7 @@ export default function CeramicFilters({
   console.log("CeramicFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/ceramic_filter/`).then((r) => setFilters(r.data));
+    axios.get(`${API_URL}/api/ceramic_filter/`).then((r) => setFilters(r.data));
   }, []);
 
   if (!filters) return <div>Loading</div>;

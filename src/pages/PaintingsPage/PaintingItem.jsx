@@ -21,7 +21,7 @@ export default function PaintingItem() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/paintings/${id}/`)
+      .get(`${API_URL}/api/paintings/${id}/`)
       .then((response) => {
         setProduct(response.data);
       })
@@ -29,7 +29,7 @@ export default function PaintingItem() {
         console.log(error);
       });
     axios
-      .get(`${API_URL}/painting_recommendations/${id}/`)
+      .get(`${API_URL}/api/painting_recommendations/${id}/`)
       .then((response) => {
         setRecommended(response.data);
       })

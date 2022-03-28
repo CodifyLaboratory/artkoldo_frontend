@@ -52,7 +52,9 @@ export default function PaintingsPage(handleCategoryChange) {
       page: currentPage,
       ordering: order,
     };
-    ax.get(`${API_URL}/paintings/`, { params }).then((r) => setData(r.data));
+    ax.get(`${API_URL}/api/paintings/`, { params }).then((r) =>
+      setData(r.data)
+    );
   }, [
     searchValue,
     currentPage,

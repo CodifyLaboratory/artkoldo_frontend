@@ -33,7 +33,9 @@ export default function PaintingFilters({
   console.log("PaintingFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/painting_filter/`).then((r) => setFilters(r.data));
+    axios
+      .get(`${API_URL}/api/painting_filter/`)
+      .then((r) => setFilters(r.data));
   }, []);
 
   if (!filters) return <div>Loading</div>;

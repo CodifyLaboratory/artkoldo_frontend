@@ -26,7 +26,9 @@ export default function HandicraftFilters({
   console.log("HandicraftFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/handicraft_filter/`).then((r) => setFilters(r.data));
+    axios
+      .get(`${API_URL}/api/handicraft_filter/`)
+      .then((r) => setFilters(r.data));
   }, []);
 
   if (!filters) return <div>Loading</div>;
