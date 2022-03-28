@@ -33,9 +33,12 @@ export default function PaintingFilters({
   console.log("PaintingFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/painting_filter/`).then((r) => setFilters(r.data));
+    axios
+      .get(`${API_URL}/api/painting_filter/`)
+      .then((r) => setFilters(r.data));
   }, []);
 
+  if (!filters) return <div>Loading</div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
@@ -76,13 +79,23 @@ export default function PaintingFilters({
               <input
                 placeholder="Высота мин"
                 className="manual-input-size"
-                onChange={(e) => setMinHeight(e.target.value)}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                  setMinHeight(event.target.value);
+                }}
               />
               <span>&nbsp;&mdash;&nbsp;</span>
               <input
                 placeholder="Высота макс"
                 className="manual-input-size"
-                onChange={(e) => setMaxHeight(e.target.value)}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                  setMaxHeight(event.target.value);
+                }}
               />
               <span>&nbsp;см</span>
             </div>
@@ -90,13 +103,23 @@ export default function PaintingFilters({
               <input
                 placeholder="Ширина мин"
                 className="manual-input-size"
-                onChange={(e) => setMinWidth(e.target.value)}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                  setMinWidth(event.target.value);
+                }}
               />
               <span>&nbsp;&mdash;&nbsp;</span>
               <input
                 placeholder="Ширина макс"
                 className="manual-input-size"
-                onChange={(e) => setMaxWidth(e.target.value)}
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                  setMaxWidth(event.target.value);
+                }}
               />
               <span>&nbsp;см</span>
             </div>
@@ -143,13 +166,23 @@ export default function PaintingFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onChange={(e) => setMinPrice(e.target.value)}
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+                setMinPrice(event.target.value);
+              }}
             />
             <span>&nbsp;&mdash;&nbsp;</span>
             <input
               placeholder="До"
               className="manual-input-price"
-              onChange={(e) => setMaxPrice(e.target.value)}
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+                setMaxPrice(event.target.value);
+              }}
             />
             <span>&nbsp;сом</span>
           </div>

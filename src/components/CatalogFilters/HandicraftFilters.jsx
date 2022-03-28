@@ -26,9 +26,12 @@ export default function HandicraftFilters({
   console.log("HandicraftFilters", filters);
 
   useEffect(() => {
-    axios.get(`${API_URL}/handicraft_filter/`).then((r) => setFilters(r.data));
+    axios
+      .get(`${API_URL}/api/handicraft_filter/`)
+      .then((r) => setFilters(r.data));
   }, []);
 
+  if (!filters) return <div>Loading</div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
@@ -74,13 +77,23 @@ export default function HandicraftFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onChange={(e) => setMinPrice(e.target.value)}
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+                setMinPrice(event.target.value);
+              }}
             />
             <span>&nbsp;&mdash;&nbsp;</span>
             <input
               placeholder="До"
               className="manual-input-price"
-              onChange={(e) => setMaxPrice(e.target.value)}
+              onKeyPress={(event) => {
+                if (!/[0-9]/.test(event.key)) {
+                  event.preventDefault();
+                }
+                setMaxPrice(event.target.value);
+              }}
             />
             <span>&nbsp;сом</span>
           </div>

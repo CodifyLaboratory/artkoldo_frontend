@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";
 import "./Checkboxes.css";
+
 const CheckboxOptions = ({
   section,
   checkboxes,
@@ -10,9 +11,8 @@ const CheckboxOptions = ({
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [isCheckAll, setIsCheckAll] = useState(false);
+
   const toggleCheck = (id) => {
-    console.log("checkedOps", checkedOps);
-    console.log("id", id);
     setCheckedOps(() => {
       if (checkedOps.includes(id)) {
         return checkedOps.filter((item) => item !== id);
@@ -20,8 +20,6 @@ const CheckboxOptions = ({
         return [...checkedOps, id];
       }
     });
-    console.log("checkedOps", checkedOps);
-    console.log("id", id);
   };
   const selectAll = () => {
     setCheckedOps(() => {
@@ -35,8 +33,6 @@ const CheckboxOptions = ({
   useEffect(() => {
     let allChecked = true;
     for (const el of checkedOps) {
-      console.log("checkedOps", checkedOps);
-      console.log("el", el);
       if (checkedOps.includes(el) === false) {
         allChecked = false;
       }
@@ -47,6 +43,7 @@ const CheckboxOptions = ({
       setIsCheckAll(false);
     }
   }, [checkedOps]);
+
   return showOptions ? (
     <div className="filter-menu-open">
       <div className="filter-menu-section">
@@ -58,18 +55,18 @@ const CheckboxOptions = ({
           <img src={Minus} />
         </button>
       </div>
-      {checkboxes.map((option) => (
-        <div key={option.id} className="checkbox-row">
+      {checkboxes?.map((option) => (
+        <div key={option?.id} className="checkbox-row">
           <input
             type="checkbox"
-            id={option.title}
-            name={option.title}
-            value={option.id}
+            id={option?.title}
+            name={option?.title}
+            value={option?.id}
             onChange={() => toggleCheck(option.id)}
             checked={checkedOps.includes(option.id)}
           />
-          <label htmlFor={option.title} className="checkbox-title">
-            {option.title}
+          <label htmlFor={option?.title} className="checkbox-title">
+            {option?.title}
           </label>
         </div>
       ))}

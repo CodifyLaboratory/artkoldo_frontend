@@ -8,16 +8,17 @@ import axios from "axios";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
 import SliderComponent from "./SliderComponent";
-import Slider from "react-slick";
+import Modal from "./Modal";
 
 export default function MainPage() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="main-page-container">
       <Navbar />
       <div className="sell-now-container">
-        <div className="sell-now-btn">
+        <button className="sell-now-btn" onClick={() => setIsOpen(true)}>
           <span>Продай уже сейчас</span>
-        </div>
+        </button>
       </div>
       <div className="category-btns-container">
         <Link to="/paintings" style={{ textDecoration: "none" }}>
@@ -74,6 +75,7 @@ export default function MainPage() {
         </div>
       </div>
       <Footer />
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 }
