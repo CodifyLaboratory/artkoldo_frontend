@@ -82,19 +82,45 @@ body {
 }
 
 .flex_in_product_name {
+ 
   display: flex;
   margin-bottom: 20px;
+  margin-top: 17px;
+}
+.remove_btn{
+  background-image: url('../../images/remove.png');
+  width:15px;
+  height:19px;
+  margin-top: 7px;
+ 
+ 
+}
+.next_btn {
+  background-image: url('../../images/Vector(12).png');
+  background-size: contain;
+  width:18px;
+  height:21px;
+  display: flex;
+  margin-top: 5px;
+}
+.remove{
+  margin-top: -25px;
+width: 14px;
+height: 2px;
+cursor: pointer;
+}
+.add_b{
+  display: flex;
+  margin-top: -25px;
+width: 3px;
+height: 6px;
+ cursor: pointer;
 }
 
 .first_product_name {
 }
 
-.div_for_img_in_product_name {
-  min-width: 26px;
-  min-height: 26px;
-  display: flex;
-  align-items: center;
-}
+
 
 .div_for_img_in_product_name img {
   margin-right: 8px;
@@ -103,21 +129,30 @@ body {
 .disc_of_icons {
   font-size: 24px;
   font-weight: 500;
+  background-color: transparent;
+  margin-left: 10px;
+  cursor: pointer;
 }
+
 
 .second_product_name {
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
+
 }
 
 .calc_of_product_name {
   display: flex;
+ 
 }
+
+
 
 .input_of_calc {
   width: 100px;
   height: 62px;
-  background-color: #f3f3ec;
+  background-color: transparent;
   border: 1px solid #000;
   border-radius: 12px;
   display: flex;
@@ -127,6 +162,8 @@ body {
   font-size: 24px;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: -20px;
+  
 }
 
 .price_of_product_name {
@@ -137,10 +174,12 @@ body {
 .third_product_name {
   display: flex;
   align-items: center;
+  margin-top: 25px;
 }
 
-.price_of_product_name span {
+.price_of_product_name  {
   text-decoration: underline;
+  margin-top: -50px;
 }
 
 .total_price_div {

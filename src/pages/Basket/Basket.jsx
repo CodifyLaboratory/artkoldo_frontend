@@ -5,31 +5,20 @@ import "./Basket.css";
 
 export default function Basket() {
   const [product, setProduct] = useState({});
-  // const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([])
 
-  // const onAdd= (product) => {
-  //   const exist = cartItems.find((x) => x.id === product.id);
-  //   if (exist) {
-  //     setCartItems(
-  //       cartItems.map((x) =>
-  //       x.id === product.id ? { ...exist, qty: exist.qty + 1} : x
-  //     )
-  //     );
-  //   } else {
-  //     setCartItems([...cartItems, { ...product, qty: 1}])
-  //   }}
-  //   const onRemove = (product) => {
-  //    const exist = cartItems.find((x) => x.id === product.id);
-  //    if (exist.qty === 1) {
-  //      setCartItems(cartItems.filter((x) => x.id !== product.id));
-  //    } else {
-  //      setCartItems(
-  //        cartItems.map((x) =>
-  //          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-  //        )
-  //      );
-  //    }
-  //  }
+  localStorage.getItem("cartItems", JSON.stringify(cartItems))
+
+  const onAdd = (product) => {
+    setCartItems([...cartItems, {...product}]);
+    console.log('add')
+  };
+  const onRemove = (productToRemove) => {
+    setCartItems (
+      cartItems.filter((product) => product !== productToRemove)
+    )
+    console.log('remove')
+  }
 
   return (
     <PageWrapper>
@@ -41,9 +30,10 @@ export default function Basket() {
       </div>
       <hr />
 
-      <div>
-        {/* {cartItems.length === 0 && <div className="basket-content">Cart is empty</div>} */}
+     
+        
         <div className="basket-content">
+          {/* <div>{cartItems.length === 0 && <div className="empty">Cart is empty</div>}</div> */}
           <div className="product_box">
             <div className="box_for_product_img">
               <div className="left_side_of_product">
@@ -54,35 +44,37 @@ export default function Basket() {
                 ></img>
               </div>
               <div className="right_side_of_product">
-                <p className="product_name">Настроение</p>
-                <p className="disc_of_product_name">Тип :</p>
-                <p className="disc_of_product_name">Тип :Ширина: </p>
-                <p className="disc_of_product_name">Тип :Высота: </p>
+                <p className="product_name">Название{product.title}</p>
+                <p className="disc_of_product_name">Тип: {product?.type?.title}
+                </p>
+                <p className="disc_of_product_name">Ширина:  {product.width} </p>
+                <p className="disc_of_product_name">Высота:  {product.height} </p>
                 <div className="three_column_of_product">
                   <div className="first_product_name">
                     <div className="flex_in_product_name">
-                      <p className="disc_of_icons">Удалить</p>
+                      <div  onClick={() => onRemove(product)} className="remove_btn"> </div>
+                      <span onClick={() => onRemove(product)} className="disc_of_icons">Удалить</span>
                     </div>
                     <div className="flex_in_product_name">
-                      {/* <div className="div_for_img_in_product_name">+</div> */}
+                     
+                      <div  className="next_btn"> </div>
                       <p className="disc_of_icons">Оформить заказ</p>
                     </div>
                   </div>
                   <div className="second_product_name">
                     <div className="calc_of_product_name">
-                      {/* <button onClick={() => onRemove(item)} className="remove">
-                -
-              </button>{' '}
-                                <div className="input_of_calc">1</div>
-                                <button onClick={() => onAdd())} className="add">
-                +
-              </button> */}
+                      <div onClick={() => onRemove(product)} ><p className="remove">-</p>
+              </div>{' '}
+                                <input type="button"  className="input_of_calc" />
+                                <div onClick={() => onAdd(product)}>
+               <span  className="add_b">+</span>
+              </div> 
                     </div>
                   </div>
                   <div className="third_product_name">
                     <p className="price_of_product_name">
-                      700 <span>c</span>
-                    </p>
+                    {product.price} c </p>
+                   
                   </div>
                 </div>
               </div>
@@ -90,96 +82,7 @@ export default function Basket() {
           </div>
         </div>
         <div></div>
-      </div>
+    
     </PageWrapper>
   );
 }
-
-// import React from "react";
-// import PageWrapper from "../../components/PageWrapper";
-// import { useState } from "react";
-// import "./Basket.css";
-// const cartFromLocalStorage = JSON.parse(
-//   localStorage.getItem("cartItems") || "[ ]"
-// );
-// export default function Basket() {
-//   // const {  onAdd } = props;
-//   const [cartItems] = useState(cartFromLocalStorage);
-//   //   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-//   //  const onRemove = (product) => {
-//   //   const exist = cartItems.find((x) => x.id === product.id);
-//   //   if (exist.qty === 1) {
-//   //     setCartItems(cartItems.filter((x) => x.id !== product.id));
-//   //   } else {
-//   //     setCartItems(
-//   //       cartItems.map((x) =>
-//   //         x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-//   //       )
-//   //     );
-//   //   }
-//   // }
-//   return (
-//     //  <div>
-//     <PageWrapper>
-//       <div className="breadcrumbs">
-//         <p>Главная/Живопись/...</p>
-//       </div>
-//       <hr />
-//       <div>
-//         {cartItems.length === 0 && (
-//           <div className="basket-content">Cart is empty</div>
-//         )}
-//         {cartItems.map((item) => (
-//           <div key={item.id} className="row">
-//             <div className="col-2">{item.name}</div>
-//             <div className="col-2">
-//               <button onClick={() => onRemove(item)} className="remove">
-//                 -
-//               </button>{" "}
-//               <button onClick={() => onAdd(item)} className="add">
-//                 +
-//               </button>
-//             </div>
-//             <div className="col-2 text-right">
-//               {item.qty} x ${item.price.toFixed(2)}
-//             </div>
-//           </div>
-//         ))}
-//         {cartItems.length !== 0 && (
-//           <>
-//             <hr></hr>
-//             <div className="row">
-//               <div className="col-2">Items Price</div>
-//               <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
-//             </div>
-//             <div className="row">
-//               <div className="col-2">Tax Price</div>
-//               <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
-//             </div>
-//             <div className="row">
-//               <div className="col-2">Shipping Price</div>
-//               <div className="col-1 text-right">
-//                 ${shippingPrice.toFixed(2)}
-//               </div>
-//             </div>
-//             <div className="row">
-//               <div className="col-2">
-//                 <strong>Total Price</strong>
-//               </div>
-//               <div className="col-1 text-right">
-//                 <strong>${totalPrice.toFixed(2)}</strong>
-//               </div>
-//             </div>
-//             <hr />
-//             <div className="row">
-//               <button onClick={() => alert("Implement Checkout!")}>
-//                 Checkout
-//               </button>
-//             </div>
-//           </>
-//         )}
-//       </div>
-//     </PageWrapper>
-//     //  </div>
-//   );
-// }

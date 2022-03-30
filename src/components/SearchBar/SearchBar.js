@@ -30,7 +30,8 @@ function SearchBar({ setSearchValue }) {
       <Form.Select
         aria-label="Default select example"
         id="categoryId"
-        onChange={getSelectedCategory}
+        onChang59
+        e={getSelectedCategory}
       >
         <option value="" disabled selected>
           Поиск

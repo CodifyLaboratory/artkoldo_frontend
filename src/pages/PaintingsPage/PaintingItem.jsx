@@ -42,18 +42,11 @@ export default function PaintingItem() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
+
   const onAdd = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
-    }
-    setShowBasket(true);
+
+    setCartItems([...cartItems, {...product}]);
+    console.log('add')
   };
 
   if (!product || !recommended) return <div className="Loading">Loading</div>;
@@ -141,11 +134,12 @@ export default function PaintingItem() {
                 </div>
                 <div className="dividing_line_2"></div>
                 <p className="number_of_price">{product.price} c</p>
-                <div className="link_btn">
+                <Link to='/basket'
+                 className="link_btn">
                   <button className="add_btn" onClick={() => onAdd(product)}>
                     Добавить в корзину
                   </button>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="bottom">
