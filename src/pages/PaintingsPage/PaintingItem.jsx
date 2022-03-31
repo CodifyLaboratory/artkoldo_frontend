@@ -7,8 +7,8 @@ import Basket from "../Basket/Basket";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-
 import { useParams } from "react-router-dom";
+
 
 export default function PaintingItem() {
   const [product, setProduct] = useState();
@@ -49,7 +49,7 @@ export default function PaintingItem() {
     console.log('add')
   };
 
-  if (!product || !recommended) return <div className="Loading">Loading</div>;
+  if (!product || !recommended) return <div className="Loading" >Loading</div>;
   if (!showBasket)
     return (
       <div>

@@ -12,6 +12,7 @@ import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
 import RulesPage from "../pages/RulesPage/RulesPage";
 
+
 export default function Routing() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ export default function Routing() {
       <Route path="/Contacts" element={<ContactsPage />} />
       <Route path="/Rules" element={<RulesPage />} />
       <Route path="/basket" element={<Basket />} />
+    
 
       <Route path="*" element={<div>NOT FOUND</div>} />
     </Routes>

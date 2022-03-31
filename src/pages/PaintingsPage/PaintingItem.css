@@ -8,6 +8,11 @@
 body {
   background-color: #f3f3ec;
 }
+.Loading {
+background-color:  #F3F3EC;;
+}
+
+
 .breadcrumbs {
   display: flex;
   justify-content: start;

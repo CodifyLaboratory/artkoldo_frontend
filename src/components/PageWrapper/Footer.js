@@ -23,7 +23,8 @@ function Footer() {
       </Footer.Wrapper> */}
 
       <div className="footer-container">
-        <div className="logo">{/* <img src={logo} alt="logo" /> */}</div>
+        <div className="footer-logo">{/* <img src={logo} alt="logo" /> */}</div>
+        <div className="min_menu">
         <div className="categories">
           <ul className="footer-menu">
             <span>Категории</span>
@@ -66,21 +67,26 @@ function Footer() {
             })}
           </ul>
         </div>
+        </div>
         <div className="social">
-          <SearchBar />
-          <p className="pt-4">Мы в соц.сетях</p>
+          {/* <SearchBar className="search" /> */}
+          <p className="pt">Мы в соц.сетях</p>
           <div className="social-icons d-flex pt-4">
-            <a href="URL">
+          <a href="https://www.instagram.com/">
+              {" "}
+              <div className="insta-icon"></div>
+            </a>
+            <a href="https://web.telegram.org/z/">
               {" "}
               <div className="social-tw"></div>
             </a>
-            <a href="URL">
+            <a href="https://ru-ru.facebook.com/">
               {" "}
               <div className="social-fb"></div>
             </a>
           </div>
 
-          <p className="pt-4"> Бишкек, Кыргызстан</p>
+          <p className="pt-44"> Кыргызстан, Бишкек</p>
         </div>
       </div>
     </footer>

@@ -1,10 +1,22 @@
-import React from "react";
+import { React } from "react";
 import PageWrapper from "../../components/PageWrapper/index";
 import logo from "../../images/product-logo.jpeg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./AboutUsPage.css";
+// import { API_URL } from "../../API/api";
+// import axios from "axios"
+
+
 
 export default function AboutUsPage() {
+  // const [text, setText] = useState();
+  // useEffect(() => {
+  //   axios
+  //     .get(`${API_URL}/api/info/about_us/`)
+  //     .then((r) => setText(r.data));
+  //     console.log('kobght')
+  // }, []);
+
   return (
     <div>
       <PageWrapper>
@@ -21,12 +33,9 @@ export default function AboutUsPage() {
           <div className="short-info">
             <div className="short-info-text">
               <span> Краткая информация о платформе</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laudantium, tempperspiciatis non vitae quam, voluptates error?
-                Enim, velit. Commodi sint tempore temporibus tenetur? Nemo
-                quibusdam sapiente nam modi distinctio quasi nostrum corrupti
-                rem perferendis saepe. Quisquam eius dolor ea ducimus
+              
+              <p> 
+             
                 <br />
                 <br />
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
