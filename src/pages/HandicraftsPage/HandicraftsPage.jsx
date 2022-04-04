@@ -10,6 +10,7 @@ import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters
 import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import SpinComponent from "../../components/Spin/Spin";
 
 export default function HandicraftsPage(handleCategoryChange) {
   const [data, setData] = useState();
@@ -69,7 +70,7 @@ export default function HandicraftsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  if (!data) return <div>Loading</div>;
+  if (!data) return <SpinComponent/>;
   console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>

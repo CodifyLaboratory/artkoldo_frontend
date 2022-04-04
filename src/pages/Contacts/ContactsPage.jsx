@@ -2,7 +2,6 @@ import React from 'react';
 import './ContactsPage.css'
 import PageWrapper from '../../components/PageWrapper/index'
 import { Link } from "react-router-dom";
-
 export default function ContactsPage() {
     return (
         <div>
@@ -17,7 +16,8 @@ export default function ContactsPage() {
                 </div>
                 <hr/>
             </PageWrapper>
-            
+    
+
         </div>
     )
 }

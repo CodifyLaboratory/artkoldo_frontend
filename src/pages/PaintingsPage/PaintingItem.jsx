@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 
 import { useParams } from "react-router-dom";
+import SpinComponent from "../../components/Spin/Spin";
 
 export default function PaintingItem() {
   const [product, setProduct] = useState();
@@ -56,7 +57,7 @@ export default function PaintingItem() {
     setShowBasket(true);
   };
 
-  if (!product || !recommended) return <div className="Loading">Loading</div>;
+  if (!product || !recommended) return <SpinComponent/>;
   if (!showBasket)
     return (
       <div>
