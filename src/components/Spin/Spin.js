@@ -11,12 +11,4 @@ function SpinComponent (){
     </div>
     );
 }
-// ReactDOM.render(
-//   <Space size="middle">
-//     <Spin size="small" />
-//     <Spin />
-//     <Spin size="large" />
-//   </Space>,
-//   mountNode,
-// );
 export default SpinComponent;
