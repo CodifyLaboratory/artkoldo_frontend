@@ -1,0 +1,17 @@
+.spinner{
+    text-align: center;
+    margin-top: 25%;
+}
+.ant-spin-dot {
+    width: 220px;
+    height: 220px;
+}
+
+.ant-spin-dot-item {
+    background-color: #363735;
+}
+
+.ant-spin-lg .ant-spin-dot i {
+    width: 150px;
+    height: 150px;
+}
