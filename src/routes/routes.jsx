@@ -10,7 +10,7 @@ import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
 import MainPage from "../pages/MainPage/MainPage";
 import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
-import RulesPage from "../pages/RulesPage/RulesPage";
+import PrivacyPolicy from '../pages/Privacypolicy/PrivacyPolicy'
 
 export default function Routing() {
   return (
@@ -24,7 +24,7 @@ export default function Routing() {
       <Route path="/ceramics/:id" element={<CeramicItem />} />
       <Route path="/about" element={<AboutUsPage />} />
       <Route path="/Contacts" element={<ContactsPage />} />
-      <Route path="/Rules" element={<RulesPage />} />
+      <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       <Route path="/basket" element={<Basket />} />
 
       <Route path="*" element={<div>NOT FOUND</div>} />

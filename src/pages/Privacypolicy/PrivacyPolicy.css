@@ -1,0 +1,27 @@
+.breadcrumbs{
+    display: flex;
+    justify-content: start;
+    height: 50px;
+    margin-top: 50px;
+    width: 100%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #373635;
+    margin-right: 0;
+    margin-bottom: 62px;
+  }
+  hr {
+      margin-bottom: 48px;
+  }
+.rules-page{
+    font-size: 24px;
+}
+.RulesBlock span {
+    padding-bottom: 48px;
+}
+.rule {
+    margin-bottom: 1400px;
+}

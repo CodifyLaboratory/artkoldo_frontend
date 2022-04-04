@@ -1,24 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
+
+
 .hr {
   color: #373635;
 }
 .short-info {
   background-color: #737373;
   border-radius: 12px;
-  margin-top: 70px;
   font-size: 24px;
   display: flex;
   align-items: center;
+  margin-top: 162px;
+  
 }
+
 
 .short-info-text {
   padding: 70px 0 70px 50px;
   width: 50%;
+  margin-left: 97px;
 }
 
 .short-info-description {
-  width: 830px;
-  height: 300px;
+  width: 1600px;
+  height: 708px;
   margin-top: 30px;
 }
 
@@ -38,13 +43,24 @@
 .short-info span {
   color: #e1c55f;
   font-size: 36px;
+  margin-top: 159px;
 }
 .short-info p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+color: #000000;
   margin-top: 35px;
 }
 
 .founders-block {
-  margin-top: 70px;
+  margin-top: 165px;
+  margin-bottom: 38px;
+}
+.pol {
+  margin-bottom: 162px;
 }
 .founders-block span,
 .about-us-Block span {
@@ -63,7 +79,12 @@
 }
 
 .founder-img {
-  margin-bottom: 35px;
+  margin-bottom: 76px;
+}
+.sec img {
+  width: 295px;
+  height: 252px;
+  margin-bottom: 1500px;
 }
 
 .founder-text {
@@ -73,4 +94,8 @@
 .founder1 {
   display: flex;
   justify-content: space-between;
+}
+
+.founders_block{
+  margin-bottom: 1000px;
 }

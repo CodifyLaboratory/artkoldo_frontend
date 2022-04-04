@@ -12,12 +12,13 @@ export default function AboutUsPage() {
     axios
       .get(`${API_URL}/api/info/about_us/`)
       .then((response) => {
-        setData(response.data);
+        setData(response.data[0]);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
+ 
 
   return (
     <div>
@@ -33,6 +34,7 @@ export default function AboutUsPage() {
           <span>О нас</span>
           <hr />
           <div className="short-info">
+       
             <div className="short-info-text">
               <div className="short-info-title">
                 <span> Краткая информация о платформе</span>
@@ -47,28 +49,22 @@ export default function AboutUsPage() {
 
         <div className="founders-block">
           <span>Основатели</span>
-          <hr />
+          <hr className="pol" />
           <div className="founders">
             <div className="founder1 d-flex">
               <div className="founder-img">
                 <img src={logo} />
               </div>
               <div className="founder-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                omnis neque quasi libero cum doloremque a, culpa similique
-                facere odit beatae dolor. Mollitia labore amet, accusamus
-                repudiandae quis quidem accusantium.
+               <p>{data?.founder}</p>
               </div>
             </div>
             <div className="founder2 d-flex">
-              <div className="founder-img">
+              <div className="sec">
                 <img src={logo} />
               </div>
               <div className="founder-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                omnis neque quasi libero cum doloremque a, culpa similique
-                facere odit beatae dolor. Mollitia labore amet, accusamus
-                repudiandae quis quidem accusantium.
+              <p>{data?.founder}</p>
               </div>
             </div>
           </div>

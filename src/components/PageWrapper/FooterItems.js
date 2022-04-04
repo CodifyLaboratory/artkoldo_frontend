@@ -51,17 +51,17 @@ export const RuleItems=[
       
     {
       title: "Положения и условия",
-      url: "/Rules",
+      url: "/privacypolicy",
       cName: "nav-links",
     },
     {
         title: 'Политика конфиденциональности',
-        url: '/Rules',
+        url: '/privacypolicy',
         cName: 'nav-links'
     },
     {
         title: 'Политика авторского права',
-        url: '/Rules',
+        url: '/privacypolicy',
         cName: 'nav-links'
     }
 
