@@ -55,6 +55,26 @@ export default function PaintingItem() {
     setShowBasket(true);
   };
 
+  function changePhoto2(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_2)
+  }
+
+  function changePhoto3(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_3)
+  }
+
+  function changePhoto4(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_4)
+  }
+
+  function changePhoto5(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_5)
+  }
+
   if (!product || !recommended) return <SpinComponent/>;
   if (!showBasket)
     return (
@@ -71,34 +91,44 @@ export default function PaintingItem() {
           <div className="page-content">
             <div className="product-content">
               <div className="left-side">
-                <div>
+              <div>
                   <img
                     className="product-img"
-                    src={product?.photo_1}
-                    alt={product?.title}
+                    src={product.photo_1}
+                    alt={product.title}
+                    id="mainPhoto"
                   ></img>
                 </div>
                 <div className="four_photos">
+                  <div onClick={changePhoto2}>
                   <img
                     className="img_box"
-                    src={product?.photo_2}
-                    alt={product?.title}
+                    src={product.photo_2}
+                    alt={product.title}
                   ></img>
+                  </div>
+                  <div onClick={changePhoto3}>
                   <img
                     className="img_box"
-                    src={product?.photo_3}
-                    alt={product?.title}
+                    src={product.photo_3}
+                    alt={product.title}
+                
                   ></img>
+                  </div>
+                  <div onClick={changePhoto4}>
                   <img
                     className="img_box"
-                    src={product?.photo_4}
-                    alt={product?.title}
+                    src={product.photo_4}
+                    alt={product.title}
                   ></img>
+                  </div>
+                  <div onClick={changePhoto5}>
                   <img
                     className="img_box"
-                    src={product?.photo_5}
-                    alt={product?.title}
+                    src={product.photo_5}
+                    alt={product.title}
                   ></img>
+                  </div>
                 </div>
                 <div>
                   <h1 className="description_headings">Об изделии</h1>
