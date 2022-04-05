@@ -8,10 +8,10 @@ import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { MainContext } from "../../components/Context/Cgiontext";
+import { MainContext } from "../../components/Context/Context";
 const qs = require("qs");
 
-export default function PaintingsPage(handleCategoryChange) {
+export default function PaintingsPage() {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
   const [styleChecked, setStyleChecked] = useState([]);
