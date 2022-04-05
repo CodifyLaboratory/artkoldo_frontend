@@ -12,7 +12,7 @@ export default function AboutUsPage() {
     axios
       .get(`${API_URL}/api/info/about_us/`)
       .then((response) => {
-        setData(response.data);
+        setData(response.data[0]);
       })
       .catch((error) => {
         console.log(error);
