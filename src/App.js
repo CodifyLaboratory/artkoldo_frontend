@@ -1,11 +1,14 @@
 import "./App.css";
+import { CartProvider } from "../src/components/Context/context.jsx";
 import Routing from "./routes/routes";
 
 function App() {
   return (
-    <div className="App">
-      <Routing />
-    </div>
+    <CartProvider>
+      <div className="App">
+        <Routing />
+      </div>
+    </CartProvider>
   );
 }
 

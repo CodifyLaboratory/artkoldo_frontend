@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PageWrapper from "../../components/PageWrapper/index";
 import { API_URL } from "../../API/api";
 import axios from "axios";
@@ -6,15 +6,13 @@ import "./HandicraftsPage.css";
 import { Pagination } from "antd";
 import "../../components/Pagination/Pagination.css";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
-import Logo from "../../images/product-logo.jpeg";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import SpinComponent from "../../components/Spinner/Spin";
+import { MainContext } from "../../components/Context/context";
 
-export default function HandicraftsPage(handleCategoryChange) {
+export default function HandicraftsPage() {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const [searchValue, setSearchValue] = useState("");
   const [typeChecked, setTypeChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -24,6 +22,8 @@ export default function HandicraftsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const { valueSearch } = useContext(MainContext);
+  const [searchValue, setSearchValue] = valueSearch;
   const navigate = useNavigate();
   const qs = require("qs");
   let ax = axios.create({
@@ -71,10 +71,10 @@ export default function HandicraftsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  if (!data) return <SpinComponent/>;
+  if (!data) return <div>Loading</div>;
   console.log("data", data);
   return (
-    <PageWrapper setSearchValue={setSearchValue}>
+    <PageWrapper>
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
