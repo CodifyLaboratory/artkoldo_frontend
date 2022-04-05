@@ -31,7 +31,7 @@ export default function HandicraftFilters({
       .then((r) => setFilters(r.data));
   }, []);
 
-  if (!filters) return <div>Loading</div>;
+  if (!filters) return <div></div>;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
