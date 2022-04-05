@@ -9,6 +9,7 @@ import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import SpinComponent from "../../components/Spinner/Spin";
 const qs = require("qs");
 
 export default function PaintingsPage(handleCategoryChange) {
@@ -87,7 +88,7 @@ export default function PaintingsPage(handleCategoryChange) {
   }, [category]);
   console.log("data", data);
 
-  if (!data) return <div>Loading</div>;
+  if (!data) return <SpinComponent/>;
   console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>

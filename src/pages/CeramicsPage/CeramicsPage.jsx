@@ -8,6 +8,7 @@ import "../../components/Pagination/Pagination.css";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import SpinComponent from "../../components/Spinner/Spin";
 
 export default function CeramicsPage(handleCategoryChange) {
   const [data, setData] = useState();
@@ -67,7 +68,7 @@ export default function CeramicsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  if (!data) return <div>Loading</div>;
+  if (!data) return <SpinComponent/>;
   console.log("data", data);
   return (
     <PageWrapper setSearchValue={setSearchValue}>

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 
 import { useParams } from "react-router-dom";
+import SpinComponent from "../../components/Spinner/Spin";
 
 export default function PaintingItem() {
   const [product, setProduct] = useState();
@@ -56,7 +57,33 @@ export default function PaintingItem() {
     setShowBasket(true);
   };
 
-  if (!product || !recommended) return <div className="Loading">Loading</div>;
+  function changePhoto2(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_2)
+  }
+
+  function changePhoto3(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_3)
+  }
+
+  function changePhoto4(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_4)
+  }
+
+  function changePhoto5(){
+    var img =document.getElementById("mainPhoto")
+    img.setAttribute('src', product.photo_5)
+  }
+
+  // function rotatePhoto270(){
+  //   var photo = document.getElementById("mainPhoto")
+  //   photo.style.transform = photo.style.transform == "rotate(270deg)"?"rotate(0deg)":"rotate(270deg)";
+  // }
+
+
+  if (!product || !recommended) return <SpinComponent/>;
   if (!showBasket)
     return (
       <div>
@@ -77,29 +104,39 @@ export default function PaintingItem() {
                     className="product-img"
                     src={product.photo_1}
                     alt={product.title}
+                    id="mainPhoto"
                   ></img>
                 </div>
                 <div className="four_photos">
+                  <div onClick={changePhoto2}>
                   <img
                     className="img_box"
                     src={product.photo_2}
                     alt={product.title}
                   ></img>
+                  </div>
+                  <div onClick={changePhoto3}>
                   <img
                     className="img_box"
                     src={product.photo_3}
                     alt={product.title}
+                
                   ></img>
+                  </div>
+                  <div onClick={changePhoto4}>
                   <img
                     className="img_box"
                     src={product.photo_4}
                     alt={product.title}
                   ></img>
+                  </div>
+                  <div onClick={changePhoto5}>
                   <img
                     className="img_box"
                     src={product.photo_5}
                     alt={product.title}
                   ></img>
+                  </div>
                 </div>
                 <div>
                   <h1 className="description_headings">О картине</h1>
