@@ -6,11 +6,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import ProductSlider from "../../components/SliderComponent/ProductSlider";
-=======
 import SliderComponent from "../../components/SliderComponent/ProductSlider";
->>>>>>> Gulzhan2
 import Modal from "../../components/ModalComponent/Modal";
 import AuthorSlider from "../../components/SliderComponent/AuthorSlider";
 
@@ -107,31 +103,19 @@ export default function MainPage() {
         </div>
         <div className="slider-container-box">
           <div className="slider-container">
-<<<<<<< HEAD
-            <ProductSlider products={recent} filter={filter} />
-=======
             <SliderComponent products={recent} filter={filter} />
->>>>>>> Gulzhan2
           </div>
         </div>
         <p className="slider-title">Рекомендуемое</p>
         <div className="slider-container-box">
           <div className="slider-container">
-<<<<<<< HEAD
-            <ProductSlider products={recommended} filter="" />
-=======
             <SliderComponent products={recommended} filter="" />
->>>>>>> Gulzhan2
           </div>
         </div>
         <p className="slider-title">Скидка</p>
         <div className="slider-container-box slider-third">
           <div className="slider-container ">
-<<<<<<< HEAD
-            <ProductSlider products={discounted} filter="" />
-=======
             <SliderComponent products={discounted} filter="" />
->>>>>>> Gulzhan2
           </div>
         </div>
         <div className="about-container">
