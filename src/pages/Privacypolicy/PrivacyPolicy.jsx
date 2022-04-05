@@ -28,7 +28,7 @@ export default function PrivacePolicy() {
           <span>
             <a href="/">Главная/</a>
           </span>
-          <span>Правила и условия</span>
+          <span>Правила и условия / ...</span>
         </div>
         <hr />
 <div className="rule">

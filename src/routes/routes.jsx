@@ -10,7 +10,9 @@ import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
 import MainPage from "../pages/MainPage/MainPage";
 import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
-import PrivacyPolicy from '../pages/Privacypolicy/PrivacyPolicy'
+import PrivacyPolicy from '../pages/Privacypolicy/PrivacyPolicy';
+import ForPartners from '../pages/ForPartners/ForPartners';
+import DeliveryAndPayment from '../pages/DeliveryAndPayment/DeliveryAndPayment';
 
 export default function Routing() {
   return (
@@ -25,6 +27,9 @@ export default function Routing() {
       <Route path="/about" element={<AboutUsPage />} />
       <Route path="/Contacts" element={<ContactsPage />} />
       <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+      <Route path="/ForPartners" element={<ForPartners />} />
+      <Route path="/DeliveryAndPayment" element={<DeliveryAndPayment />} />
+      
       <Route path="/basket" element={<Basket />} />
 
       <Route path="*" element={<div>NOT FOUND</div>} />
