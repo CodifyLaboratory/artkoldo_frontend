@@ -8,7 +8,7 @@ import "../../components/Pagination/Pagination.css";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { MainContext } from "../../components/Context/context";
+import { MainContext } from "../../components/Context/Context.js";
 
 export default function CeramicsPage() {
   const [data, setData] = useState();

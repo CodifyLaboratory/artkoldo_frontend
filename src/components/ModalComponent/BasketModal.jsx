@@ -24,7 +24,7 @@ export const BasketModalOne = ({ setIsOpen, onClick }) => {
   );
 };
 
-export const BasketModalTwo = ({ setIsOpen, setFormdata, setIsOrderReady }) => {
+export const BasketModalTwo = ({ setIsOpen, setFormdata }) => {
   const onSubmit = async (values) => {
     const payload = {
       name: values?.username,
@@ -130,9 +130,7 @@ export const BasketModalTwo = ({ setIsOpen, setFormdata, setIsOrderReady }) => {
             </div>
             <div className="basket-checkout-btn">
               <Form.Item>
-                <button type="submit" onClick={setIsOrderReady}>
-                  Оформить заказ
-                </button>
+                <button type="submit">Оформить заказ</button>
               </Form.Item>
             </div>
           </Form>

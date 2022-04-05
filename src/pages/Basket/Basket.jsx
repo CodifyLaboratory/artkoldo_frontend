@@ -5,7 +5,7 @@ import {
   MainContext,
   RemoveCartContext,
   AddCartContext,
-} from "../../components/Context/context.jsx";
+} from "../../components/Context/Context.js";
 import Logo from "../../images/product-logo.jpeg";
 import RemoveItemIcon from "../../images/icons/removeItem-icon.svg";
 import CheckoutIcon from "../../images/icons/checkout-icon.svg";
@@ -30,7 +30,6 @@ export default function Basket() {
   const [isModalThreeOpen, setIsModalThreeOpen] = useState(false);
   const [formData, setFormData] = useState({});
   const [orderProducts, setOrderProducts] = useState([]);
-  const [isOrderReady, setIsOrderReady] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const navigate = useNavigate();
 
@@ -66,9 +65,8 @@ export default function Basket() {
     submitOrder();
     setIsModalTwoOpen(false);
     setIsModalThreeOpen(true);
-    console.log("1111111111111111111", isOrderReady);
     localStorage.clear();
-  }, [isOrderReady === true]);
+  }, [formData]);
 
   useEffect(() => {
     const orderData = JSON.parse(
@@ -222,7 +220,6 @@ export default function Basket() {
         <BasketModalTwo
           setIsOpen={setIsModalTwoOpen}
           setFormdata={setFormData}
-          setIsOrderReady={setIsOrderReady}
         />
       )}
       {isModalThreeOpen && (
