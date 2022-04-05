@@ -9,7 +9,7 @@ import RightArrowImg from "../../images/icons/slider-right-arrow.svg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function ProductSlider({ products, filter }) {
+export default function SliderComponent({ products, filter }) {
   const [slideItems, setSlideItems] = useState([]);
 
   function getProducts(items) {

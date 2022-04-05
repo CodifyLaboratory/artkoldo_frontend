@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { MainContext } from "../Context/Context";
+import { MainContext } from "../Context/context";
 import "./SearchBar.css";
 
 function SearchBar() {

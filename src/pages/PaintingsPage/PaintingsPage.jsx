@@ -8,7 +8,7 @@ import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { MainContext } from "../../components/Context/Context";
+import { MainContext } from "../../components/Context/context";
 const qs = require("qs");
 
 export default function PaintingsPage() {
