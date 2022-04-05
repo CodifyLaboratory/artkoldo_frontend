@@ -1,0 +1,108 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+
+.slider-container-box {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-third {
+  border-bottom: none;
+}
+
+.slider-title {
+  margin-top: 60px;
+  margin-left: 100px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.slider-container {
+  width: 90%;
+  height: 578px;
+}
+
+.slick-slider {
+  padding: 0;
+}
+
+.slider-item-img {
+  display: block;
+  box-sizing: border-box;
+  width: 510px;
+  height: 308px;
+  object-fit: cover;
+}
+
+.slick-slide {
+  width: 628px !important;
+  height: 492px !important;
+  background: rgba(255, 255, 255, 1);
+  padding: 45px 60px 22px 60px;
+  border-radius: 12px !important;
+  margin: 25px;
+}
+
+.slick-arrow::before {
+  display: none;
+}
+
+.slick-prev {
+  margin: -20px;
+}
+
+.slick-next {
+  margin: -20px;
+}
+
+.slider-item-text-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.slider-text-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.slider-text-price {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.slider-item-text-two {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider-item-text-three {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 1);
+}

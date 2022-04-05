@@ -7,7 +7,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
-import SliderComponent from "./SliderComponent";
+import ProductSlider from "./SliderComponent";
 import Modal from "./Modal";
 
 export default function MainPage() {
