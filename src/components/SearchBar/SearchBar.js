@@ -1,36 +1,42 @@
-// import { func } from "prop-types";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import { API_URL } from "../../API/api";
-// import axios from "axios";
+import { MainContext } from "../Context/context";
 import "./SearchBar.css";
 
-function SearchBar({ setSearchValue }) {
-  const [category, setCategory] = useState(null);
+function SearchBar() {
+  const { valueSearch } = useContext(MainContext);
+  const [searchValue, setSearchValue] = valueSearch;
+  const [search, setSearch] = useState(false);
+  const [category, setCategory] = useState("");
+  const [input, setInput] = useState("");
   const navigate = useNavigate();
 
-  function getSelectedCategory() {
-    return setCategory(document.getElementById("categoryId").value);
+  function getCategory() {
+    setCategory(document.getElementById("categoryId").value);
   }
-  console.log("выбранная категория: ", category);
 
-  function handleSearchClick() {
-    if (category === "paintings") {
+  useEffect(() => {
+    if (category === "" || input === "") {
+      return;
+    } else if (category === "paintings" && input !== undefined) {
+      setSearchValue(input);
       navigate("/paintings");
-    } else if (category === "handicrafts") {
+    } else if (category === "handicrafts" && input !== undefined) {
+      setSearchValue(input);
       navigate("/handicrafts");
-    } else if (category === "ceramics") {
+    } else if (category === "ceramics" && input !== undefined) {
+      setSearchValue(input);
       navigate("/ceramics");
     }
-  }
+  }, [search === true]);
 
   return (
     <div className="searchBar">
       <Form.Select
         aria-label="Default select example"
         id="categoryId"
-        onChange={getSelectedCategory}
+        onChange={getCategory}
       >
         <option value="" disabled selected>
           Поиск
@@ -44,13 +50,9 @@ function SearchBar({ setSearchValue }) {
           className="search-bar"
           type="text"
           id="searchbar"
-          onChange={(event) => setSearchValue(event.target.value)}
+          onChange={(event) => setInput(event.target.value)}
         />
-        <button
-          type="submit"
-          className="searchSubmit"
-          onClick={handleSearchClick}
-        />
+        <button className="searchSubmit" onClick={() => setSearch(true)} />
       </form>
     </div>
   );

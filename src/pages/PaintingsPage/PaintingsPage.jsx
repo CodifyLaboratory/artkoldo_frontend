@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PaintingFilters from "../../components/CatalogFilters/PaintingFilters";
 import PageWrapper from "../../components/PageWrapper/index";
-import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import { Pagination } from "antd";
@@ -9,12 +8,12 @@ import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import { MainContext } from "../../components/Context/context";
 const qs = require("qs");
 
 export default function PaintingsPage(handleCategoryChange) {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const [searchValue, setSearchValue] = useState("");
   const [styleChecked, setStyleChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -29,6 +28,8 @@ export default function PaintingsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const { valueSearch } = useContext(MainContext);
+  const [searchValue, setSearchValue] = valueSearch;
   const navigate = useNavigate();
   let ax = axios.create({
     paramsSerializer: (params) =>
@@ -72,7 +73,7 @@ export default function PaintingsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-  console.log("PAINTINGS", data?.results);
+
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
@@ -85,12 +86,11 @@ export default function PaintingsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  console.log("data", data);
 
   if (!data) return <div>Loading</div>;
-  console.log("data", data);
+
   return (
-    <PageWrapper setSearchValue={setSearchValue}>
+    <PageWrapper>
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>

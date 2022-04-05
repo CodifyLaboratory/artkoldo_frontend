@@ -1,9 +1,6 @@
 body {
   width: 1920px;
   margin: 0 auto;
-  background: url("../../images/bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .page-container {
@@ -14,4 +11,7 @@ body {
 .page-content {
   padding: 0 165px 0 165px;
   width: 100%;
+  background-image: url("../../images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

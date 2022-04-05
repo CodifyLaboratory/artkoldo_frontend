@@ -5,9 +5,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-body {
-  background-color: #f3f3ec;
-}
+
 .breadcrumbs {
   display: flex;
   justify-content: start;

@@ -1,13 +1,9 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
 
-.wrapper {
-}
-
 .slider-container-box {
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
 }
 
 .slider-third {
@@ -27,12 +23,10 @@
 
 .slider-container {
   width: 90%;
-  height: 778px;
+  height: 578px;
 }
 
 .slick-slider {
-  margin-top: 60px;
-  margin-bottom: 112px;
   padding: 0;
 }
 
@@ -47,7 +41,7 @@
 .slick-slide {
   width: 628px !important;
   height: 492px !important;
-  background: rgba(196, 196, 196, 1);
+  background: rgba(255, 255, 255, 1);
   padding: 45px 60px 22px 60px;
   border-radius: 12px !important;
   margin: 25px;
