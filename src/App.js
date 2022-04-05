@@ -1,5 +1,5 @@
 import "./App.css";
-import { CartProvider } from "../src/components/Context/context.jsx";
+import { CartProvider } from "../src/components/Context/Context.js";
 import Routing from "./routes/routes";
 
 function App() {

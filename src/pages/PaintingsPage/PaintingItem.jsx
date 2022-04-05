@@ -5,7 +5,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { AddCartContext } from "../../components/Context/context.jsx";
+import { AddCartContext } from "../../components/Context/Context";
 import "./PaintingItem.css";
 
 export default function PaintingItem() {

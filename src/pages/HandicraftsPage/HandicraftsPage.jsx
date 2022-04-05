@@ -8,7 +8,7 @@ import "../../components/Pagination/Pagination.css";
 import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { MainContext } from "../../components/Context/context";
+import { MainContext } from "../../components/Context/Context";
 
 export default function HandicraftsPage() {
   const [data, setData] = useState();

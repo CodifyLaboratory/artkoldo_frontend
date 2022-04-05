@@ -5,7 +5,7 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
-import { AddCartContext } from "../../components/Context/context.jsx";
+import { AddCartContext } from "../../components/Context/Context";
 import "./HandicraftItem.css";
 
 export default function HandicraftItem() {
