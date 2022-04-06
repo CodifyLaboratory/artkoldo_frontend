@@ -22,8 +22,8 @@ export default function HandicraftsPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
-  const { valueSearch } = useContext(MainContext);
-  const [searchValue, setSearchValue] = valueSearch;
+  const { handicraftSearch } = useContext(MainContext);
+  const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
   const navigate = useNavigate();
   const qs = require("qs");
   let ax = axios.create({
@@ -32,7 +32,7 @@ export default function HandicraftsPage() {
   });
   useEffect(() => {
     const params = {
-      search: searchValue ? searchValue : undefined,
+      search: searchHandicraftValue ? searchHandicraftValue : undefined,
       type: typeChecked.length > 0 ? typeChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
@@ -47,7 +47,7 @@ export default function HandicraftsPage() {
       setData(r.data)
     );
   }, [
-    searchValue,
+    searchHandicraftValue,
     currentPage,
     materialChecked,
     techniqueChecked,

@@ -28,8 +28,8 @@ export default function PaintingsPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
-  const { valueSearch } = useContext(MainContext);
-  const [searchValue, setSearchValue] = valueSearch;
+  const { paintingSearch } = useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
   const navigate = useNavigate();
   let ax = axios.create({
     paramsSerializer: (params) =>
@@ -37,7 +37,7 @@ export default function PaintingsPage() {
   });
   useEffect(() => {
     const params = {
-      search: searchValue ? searchValue : undefined,
+      search: searchPaintingValue ? searchPaintingValue : undefined,
       style: styleChecked.length > 0 ? styleChecked : undefined,
       subject: subjectChecked.length > 0 ? subjectChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
@@ -57,7 +57,7 @@ export default function PaintingsPage() {
       setData(r.data)
     );
   }, [
-    searchValue,
+    searchPaintingValue,
     currentPage,
     styleChecked,
     materialChecked,

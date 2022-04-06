@@ -22,8 +22,8 @@ export default function CeramicsPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
-  const { valueSearch } = useContext(MainContext);
-  const [searchValue, setSearchValue] = valueSearch;
+  const { ceramicSearch } = useContext(MainContext);
+  const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
   const navigate = useNavigate();
   const qs = require("qs");
   let ax = axios.create({
@@ -32,7 +32,7 @@ export default function CeramicsPage() {
   });
   useEffect(() => {
     const params = {
-      search: searchValue ? searchValue : undefined,
+      search: searchCeramicValue ? searchCeramicValue : undefined,
       type: typeChecked.length > 0 ? typeChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
@@ -45,7 +45,7 @@ export default function CeramicsPage() {
     };
     ax.get(`${API_URL}/api/ceramics/`, { params }).then((r) => setData(r.data));
   }, [
-    searchValue,
+    searchCeramicValue,
     currentPage,
     materialChecked,
     techniqueChecked,
@@ -72,7 +72,7 @@ export default function CeramicsPage() {
   if (!data) return <div>Loading</div>;
   console.log("data", data);
   return (
-    <PageWrapper setSearchValue={setSearchValue}>
+    <PageWrapper>
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>

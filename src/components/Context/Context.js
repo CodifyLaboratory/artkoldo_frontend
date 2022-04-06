@@ -6,7 +6,9 @@ export const SetSearch = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchPaintingValue, setSearchPaintingValue] = useState("");
+  const [searchHandicraftValue, setSearchHandicraftValue] = useState("");
+  const [searchCeramicValue, setSearchCeramicValue] = useState("");
 
   return (
     <AddCartContext.Provider
@@ -33,7 +35,9 @@ export const CartProvider = ({ children }) => {
         <MainContext.Provider
           value={{
             valueCart: [cartItems, setCartItems],
-            valueSearch: [searchValue, setSearchValue],
+            paintingSearch: [searchPaintingValue, setSearchPaintingValue],
+            handicraftSearch: [searchHandicraftValue, setSearchHandicraftValue],
+            ceramicSearch: [searchCeramicValue, setSearchCeramicValue]
           }}
         >
           {children}

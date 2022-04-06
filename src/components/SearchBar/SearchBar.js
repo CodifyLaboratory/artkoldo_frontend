@@ -5,8 +5,11 @@ import { MainContext } from "../Context/Context";
 import "./SearchBar.css";
 
 function SearchBar() {
-  const { valueSearch } = useContext(MainContext);
-  const [searchValue, setSearchValue] = valueSearch;
+  const { paintingSearch, handicraftSearch, ceramicSearch } =
+    useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
+  const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
+  const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
   const [search, setSearch] = useState(false);
   const [category, setCategory] = useState("");
   const [input, setInput] = useState("");
@@ -20,13 +23,13 @@ function SearchBar() {
     if (category === "" || input === "") {
       return;
     } else if (category === "paintings" && input !== undefined) {
-      setSearchValue(input);
+      setSearchPaintingValue(input);
       navigate("/paintings");
     } else if (category === "handicrafts" && input !== undefined) {
-      setSearchValue(input);
+      setSearchHandicraftValue(input);
       navigate("/handicrafts");
     } else if (category === "ceramics" && input !== undefined) {
-      setSearchValue(input);
+      setSearchCeramicValue(input);
       navigate("/ceramics");
     }
   }, [search === true]);
@@ -37,6 +40,7 @@ function SearchBar() {
         aria-label="Default select example"
         id="categoryId"
         onChange={getCategory}
+        required="true"
       >
         <option value="" disabled selected>
           Поиск
@@ -51,6 +55,7 @@ function SearchBar() {
           type="text"
           id="searchbar"
           onChange={(event) => setInput(event.target.value)}
+          required="true"
         />
         <button className="searchSubmit" onClick={() => setSearch(true)} />
       </form>
