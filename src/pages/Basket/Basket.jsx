@@ -28,7 +28,7 @@ export default function Basket() {
   const [isModalOneOpen, setIsModalOneOpen] = useState(false);
   const [isModalTwoOpen, setIsModalTwoOpen] = useState(false);
   const [isModalThreeOpen, setIsModalThreeOpen] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState();
   const [orderProducts, setOrderProducts] = useState([]);
   const [orderId, setOrderId] = useState(null);
   const navigate = useNavigate();
@@ -114,7 +114,7 @@ export default function Basket() {
           <p>Ваша корзина пуста.</p>
           <p>Заполните корзину товарами, чтобы оформить заказ.</p>
           <Link to={"/"}>
-            <button>
+            <button className="back-to-main">
               <span>{"Вернуться на главную >>"}</span>
             </button>
           </Link>
@@ -161,12 +161,8 @@ export default function Basket() {
                 )}
                 <div className="basket-item-quantity">
                   <div className="basket-item-delete-icon">
-                    <div>
-                      <img src={RemoveItemIcon} alt={"удалить"} />
-                    </div>
-                    <div>
-                      <button>Удалить</button>
-                    </div>
+                    <img src={RemoveItemIcon} alt={"удалить"} />
+                    <button>Удалить</button>
                   </div>
                   <div className="basket-item-counter-box">
                     <button onClick={() => removeItem(item)}>-</button>

@@ -17,7 +17,7 @@
   padding: 0 160px;
 }
 
-.basket-content button {
+.back-to-main {
   width: 502px;
   height: 58px;
   background-color: #373635;
@@ -46,6 +46,7 @@
 }
 
 .basket-item-details {
+  width: 100%;
   margin-left: 30px;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .basket-item-delete-icon {
-  width: 150px;
+  width: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,13 +89,6 @@
   font-size: 24px;
   line-height: 28px;
   color: #000000;
-}
-
-.basket-item-delete-icon div:first-child {
-  width: 20%;
-}
-.basket-item-delete-icon div:last-child {
-  width: 80%;
 }
 
 .basket-item-delete-icon img {
