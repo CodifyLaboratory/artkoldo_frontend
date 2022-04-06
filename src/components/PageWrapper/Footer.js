@@ -5,9 +5,6 @@ import { CategoryItems } from "./FooterItems";
 import { AboutCompanyItems } from "./FooterItems";
 import { RuleItems } from "./FooterItems";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import logo from "../../images/logo.png";
-import twIcon from "../../images/twIcon.png";
-import fbIcon from "../../images/fbIcon.png";
 
 function Footer() {
   return (
