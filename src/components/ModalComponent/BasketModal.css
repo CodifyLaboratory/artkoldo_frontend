@@ -11,7 +11,7 @@
   position: fixed;
 }
 
-.basket-modal-box {
+.basket-modal1-box {
   width: 780px;
   height: 618px;
   position: fixed;
@@ -24,7 +24,45 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.basket-modal2-box {
+  width: 780px;
+  height: 740px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(219, 214, 214, 1);
+  background-image: url("../../images/basket-modal-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+.basket-modal3-box {
+  width: 780px;
+  height: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(219, 214, 214, 1);
+  background-image: url("../../images/basket-modal-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
@@ -85,7 +123,8 @@
 }
 
 .basket-modal-button {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .basket-modal-button button {
@@ -107,7 +146,7 @@
 }
 
 .basket-order-submit-button {
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 80px;
 }
 
@@ -208,6 +247,7 @@
 
 .basket-checkout-btn {
   margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 }
@@ -226,7 +266,7 @@
   color: #ffffff;
 }
 
-.basket-checkout-btn input:hover {
+.basket-checkout-btn button:hover {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 

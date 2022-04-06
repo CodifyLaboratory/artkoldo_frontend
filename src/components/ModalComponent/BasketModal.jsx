@@ -7,7 +7,7 @@ export const BasketModalOne = ({ setIsOpen, onClick }) => {
   return (
     <>
       <div className="basket-dark-bg" onClick={() => setIsOpen(false)} />
-      <div className="basket-modal-box">
+      <div className="basket-modal1-box">
         <div className="basket-modal-logo">
           <img src={modalLogo} alt="logo" />
         </div>
@@ -40,7 +40,7 @@ export const BasketModalTwo = ({ setIsOpen, setFormdata }) => {
   return (
     <>
       <div className="basket-dark-bg" onClick={() => setIsOpen(false)} />
-      <div className="basket-modal-box">
+      <div className="basket-modal2-box">
         <div className="basket-modal-logo">
           <img src={modalLogo} alt="logo" />
         </div>
@@ -144,7 +144,7 @@ export const BasketModalThree = ({ setIsOpen, onClick, orderId }) => {
   return (
     <>
       <div className="basket-dark-bg" onClick={() => setIsOpen(false)} />
-      <div className="basket-modal-box">
+      <div className="basket-modal3-box">
         <div className="basket-modal-logo">
           <img src={modalLogo} alt="logo" />
         </div>

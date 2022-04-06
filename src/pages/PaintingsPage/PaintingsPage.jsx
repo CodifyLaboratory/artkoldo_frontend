@@ -11,7 +11,7 @@ import ItemCards from "../../components/Products/ItemCards";
 import { MainContext } from "../../components/Context/Context";
 const qs = require("qs");
 
-export default function PaintingsPage(handleCategoryChange) {
+export default function PaintingsPage() {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
   const [styleChecked, setStyleChecked] = useState([]);
