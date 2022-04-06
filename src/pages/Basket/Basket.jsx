@@ -31,6 +31,7 @@ export default function Basket() {
   const [formData, setFormData] = useState();
   const [orderProducts, setOrderProducts] = useState([]);
   const [orderId, setOrderId] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const payload = {
@@ -40,19 +41,20 @@ export default function Basket() {
 
   const submitOrder = async () => {
     const finalPayload = Object.assign(formData, payload);
+    setLoading(true);
     try {
       await axios
         .post(`${API_URL}/api/orders/create/`, finalPayload)
         .then(function (response) {
           if (response.status === 201 && response.data.id) {
             setOrderId(response.data.id);
-          } else {
-            return <div>Loading</div>;
           }
         });
       setCartItems([]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,7 +66,6 @@ export default function Basket() {
   useEffect(() => {
     submitOrder();
     setIsModalTwoOpen(false);
-    setIsModalThreeOpen(true);
     localStorage.clear();
   }, [formData]);
 
@@ -101,7 +102,7 @@ export default function Basket() {
   }, [cartItems]);
 
   return (
-    <PageWrapper>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -216,6 +217,7 @@ export default function Basket() {
         <BasketModalTwo
           setIsOpen={setIsModalTwoOpen}
           setFormdata={setFormData}
+          setIsModalThreeOpen={setIsModalThreeOpen}
         />
       )}
       {isModalThreeOpen && (
@@ -223,8 +225,9 @@ export default function Basket() {
           setIsOpen={setIsModalThreeOpen}
           onClick={handleOrderClose}
           orderId={orderId}
+          loading={loading}
         />
       )}
-    </PageWrapper>
+    </div>
   );
 }

@@ -20,6 +20,12 @@ function SearchBar() {
   }
 
   useEffect(() => {
+    return () => {
+      setInput("");
+    };
+  }, []);
+
+  const handleSearch = () => {
     if (category === "" || input === "") {
       return;
     } else if (category === "paintings" && input !== undefined) {
@@ -32,7 +38,7 @@ function SearchBar() {
       setSearchCeramicValue(input);
       navigate("/ceramics");
     }
-  }, [search === true]);
+  };
 
   return (
     <div className="searchBar">
@@ -40,7 +46,7 @@ function SearchBar() {
         aria-label="Default select example"
         id="categoryId"
         onChange={getCategory}
-        required="true"
+        required={true}
       >
         <option value="" disabled selected>
           Поиск
@@ -49,16 +55,16 @@ function SearchBar() {
         <option value="handicrafts">Ремесленные изделия</option>
         <option value="ceramics">Керамика</option>
       </Form.Select>
-      <form className="d-flex w-75">
+      <div className="d-flex w-75">
         <input
           className="search-bar"
           type="text"
           id="searchbar"
           onChange={(event) => setInput(event.target.value)}
-          required="true"
+          required={true}
         />
-        <button className="searchSubmit" onClick={() => setSearch(true)} />
-      </form>
+        <button className="searchSubmit" onClick={handleSearch} />
+      </div>
     </div>
   );
 }

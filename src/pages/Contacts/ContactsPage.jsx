@@ -6,19 +6,17 @@ import { Link } from "react-router-dom";
 export default function ContactsPage() {
   return (
     <div>
-      <PageWrapper>
-        <div className="breadcrumbs">
-          <span>
-            <a href="/">Главная/</a>
-          </span>
-          <span>Контакты</span>
-        </div>
-        <hr />
-        <div className="contacts">
-          <span>Контакты</span>
-        </div>
-        <hr />
-      </PageWrapper>
+      <div className="breadcrumbs">
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Контакты</span>
+      </div>
+      <hr />
+      <div className="contacts">
+        <span>Контакты</span>
+      </div>
+      <hr />
     </div>
   );
 }

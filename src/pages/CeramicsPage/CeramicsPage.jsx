@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import PageWrapper from "../../components/PageWrapper/index";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
@@ -22,7 +21,10 @@ export default function CeramicsPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
-  const { ceramicSearch } = useContext(MainContext);
+  const { paintingSearch, handicraftSearch, ceramicSearch } =
+    useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
+  const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
   const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
   const navigate = useNavigate();
   const qs = require("qs");
@@ -69,10 +71,16 @@ export default function CeramicsPage() {
       navigate("/ceramics");
     }
   }, [category]);
+
+  useEffect(() => {
+    setSearchPaintingValue("");
+    setSearchHandicraftValue("");
+  }, []);
+
   if (!data) return <div>Loading</div>;
   console.log("data", data);
   return (
-    <PageWrapper>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -111,15 +119,30 @@ export default function CeramicsPage() {
           <hr />
           <CeramicFilters
             typeChecked={typeChecked}
-            setTypeChecked={setTypeChecked}
+            setTypeChecked={(values) => {
+              setTypeChecked(values);
+              setCurrentPage(1);
+            }}
             colorChecked={colorChecked}
-            setColorChecked={setColorChecked}
+            setColorChecked={(values) => {
+              setColorChecked(values);
+              setCurrentPage(1);
+            }}
             materialChecked={materialChecked}
-            setMaterialChecked={setMaterialChecked}
+            setMaterialChecked={(values) => {
+              setMaterialChecked(values);
+              setCurrentPage(1);
+            }}
             techniqueChecked={techniqueChecked}
-            setTechniqueChecked={setTechniqueChecked}
+            setTechniqueChecked={(values) => {
+              setTechniqueChecked(values);
+              setCurrentPage(1);
+            }}
             regionChecked={regionChecked}
-            setRegionChecked={setRegionChecked}
+            setRegionChecked={(values) => {
+              setRegionChecked(values);
+              setCurrentPage(1);
+            }}
             setMinPrice={setMinPrice}
             setMaxPrice={setMaxPrice}
           />
@@ -132,6 +155,6 @@ export default function CeramicsPage() {
         total={data?.total_count}
         onChange={handlePagination}
       />
-    </PageWrapper>
+    </div>
   );
 }

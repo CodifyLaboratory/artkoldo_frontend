@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CheckboxOptions from "./Checkboxes";
 import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";

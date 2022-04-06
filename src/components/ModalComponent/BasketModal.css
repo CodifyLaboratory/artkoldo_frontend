@@ -122,6 +122,16 @@
   font-size: 32px;
 }
 
+.orderId {
+  display: inline;
+  font-size: 30px;
+  text-decoration: solid;
+}
+
+.orderId:hover {
+  color: #e1c55f;
+}
+
 .basket-modal-button {
   margin-top: 50px;
   margin-bottom: 50px;

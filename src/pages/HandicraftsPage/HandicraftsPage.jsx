@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import PageWrapper from "../../components/PageWrapper/index";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./HandicraftsPage.css";
@@ -22,8 +21,12 @@ export default function HandicraftsPage() {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
-  const { handicraftSearch } = useContext(MainContext);
+  const { paintingSearch, handicraftSearch, ceramicSearch } =
+    useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
   const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
+  const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
+
   const navigate = useNavigate();
   const qs = require("qs");
   let ax = axios.create({
@@ -71,10 +74,16 @@ export default function HandicraftsPage() {
       navigate("/ceramics");
     }
   }, [category]);
+
+  useEffect(() => {
+    setSearchPaintingValue("");
+    setSearchCeramicValue("");
+  }, []);
+
   if (!data) return <div>Loading</div>;
   console.log("data", data);
   return (
-    <PageWrapper>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -113,15 +122,30 @@ export default function HandicraftsPage() {
           <hr />
           <HandicraftFilters
             typeChecked={typeChecked}
-            setTypeChecked={setTypeChecked}
+            setTypeChecked={(values) => {
+              setTypeChecked(values);
+              setCurrentPage(1);
+            }}
             colorChecked={colorChecked}
-            setColorChecked={setColorChecked}
+            setColorChecked={(values) => {
+              setColorChecked(values);
+              setCurrentPage(1);
+            }}
             materialChecked={materialChecked}
-            setMaterialChecked={setMaterialChecked}
+            setMaterialChecked={(values) => {
+              setMaterialChecked(values);
+              setCurrentPage(1);
+            }}
             techniqueChecked={techniqueChecked}
-            setTechniqueChecked={setTechniqueChecked}
+            setTechniqueChecked={(values) => {
+              setMaterialChecked(values);
+              setCurrentPage(1);
+            }}
             regionChecked={regionChecked}
-            setRegionChecked={setRegionChecked}
+            setRegionChecked={(values) => {
+              setRegionChecked(values);
+              setCurrentPage(1);
+            }}
             setMinPrice={setMinPrice}
             setMaxPrice={setMaxPrice}
           />
@@ -134,6 +158,6 @@ export default function HandicraftsPage() {
         total={data?.total_count}
         onChange={handlePagination}
       />
-    </PageWrapper>
+    </div>
   );
 }

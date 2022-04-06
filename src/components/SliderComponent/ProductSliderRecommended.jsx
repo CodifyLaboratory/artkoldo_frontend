@@ -9,8 +9,8 @@ import RightArrowImg from "../../images/icons/slider-right-arrow.svg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function SliderComponent({ products, filter }) {
-  const [slideItems, setSlideItems] = useState([]);
+export default function SliderRecommended({ products, filter }) {
+  const [slideItems, setSlideItems] = useState();
 
   console.log("sliderIncomingData", products);
 
@@ -30,7 +30,7 @@ export default function SliderComponent({ products, filter }) {
 
   useEffect(() => {
     setSlideItems(getProducts(products));
-  }, [products]);
+  }, []);
 
   function RightArrow(props) {
     const { className, style, onClick } = props;

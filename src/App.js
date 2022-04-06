@@ -1,13 +1,14 @@
 import "./App.css";
 import { CartProvider } from "../src/components/Context/Context.js";
 import Routing from "./routes/routes";
+import PageWrapper from "./components/PageWrapper";
 
 function App() {
   return (
     <CartProvider>
-      <div className="App">
+      <PageWrapper>
         <Routing />
-      </div>
+      </PageWrapper>
     </CartProvider>
   );
 }

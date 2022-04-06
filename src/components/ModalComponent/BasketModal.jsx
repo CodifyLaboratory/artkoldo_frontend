@@ -24,7 +24,11 @@ export const BasketModalOne = ({ setIsOpen, onClick }) => {
   );
 };
 
-export const BasketModalTwo = ({ setIsOpen, setFormdata }) => {
+export const BasketModalTwo = ({
+  setIsOpen,
+  setFormdata,
+  setIsModalThreeOpen,
+}) => {
   const onSubmit = async (values) => {
     const payload = {
       name: values?.username,
@@ -130,7 +134,9 @@ export const BasketModalTwo = ({ setIsOpen, setFormdata }) => {
             </div>
             <div className="basket-checkout-btn">
               <Form.Item>
-                <button type="submit">Оформить заказ</button>
+                <button type="submit" onClick={() => setIsModalThreeOpen(true)}>
+                  Оформить заказ
+                </button>
               </Form.Item>
             </div>
           </Form>
@@ -140,7 +146,7 @@ export const BasketModalTwo = ({ setIsOpen, setFormdata }) => {
   );
 };
 
-export const BasketModalThree = ({ setIsOpen, onClick, orderId }) => {
+export const BasketModalThree = ({ setIsOpen, onClick, orderId, loading }) => {
   return (
     <>
       <div className="basket-dark-bg" onClick={() => setIsOpen(false)} />
@@ -148,15 +154,19 @@ export const BasketModalThree = ({ setIsOpen, onClick, orderId }) => {
         <div className="basket-modal-logo">
           <img src={modalLogo} alt="logo" />
         </div>
-        <div className="basket-order-submit-text">
-          <p>Спасибо!</p>
-          <p>
-            Ваш заказ успешно оформлен и принят в обработку. Номер вашего заказа{" "}
-            {orderId}. Наш менеджер свяжется с вами в ближайшее время, чтобы
-            уточнить детали заказа и оформить удобный вам способ оплаты и
-            доставки.
-          </p>
-        </div>
+        {loading ? (
+          <div>Loading</div>
+        ) : (
+          <div className="basket-order-submit-text">
+            <p>Спасибо!</p>
+            <p>
+              Ваш заказ успешно оформлен и принят в обработку. Номер вашего
+              заказа <span className="orderId">{orderId}</span>. Наш менеджер
+              свяжется с вами в ближайшее время, чтобы уточнить детали заказа и
+              оформить удобный вам способ оплаты и доставки.
+            </p>
+          </div>
+        )}
         <div className="basket-order-submit-button">
           <button onClick={onClick}>{"Вернуться на главную >>"}</button>
         </div>
