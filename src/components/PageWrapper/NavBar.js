@@ -26,7 +26,7 @@ export default function Navbar() {
 
         <div className="logo">
           {" "}
-          <img src={logo} alt="logo" />
+          <img className="img_logo" src={logo} alt="logo" />
         </div>
         <div className="header-right">
           <SearchBar />

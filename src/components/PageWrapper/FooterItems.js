@@ -20,7 +20,7 @@ export const AboutCompanyItems=[
       
         {
           title: "О нас",
-          url: "/Onas",
+          url: "/about",
           cName: "nav-links",
         },
         {
@@ -34,34 +34,27 @@ export const AboutCompanyItems=[
             cName: 'nav-links'
         },
         {
-            title: 'Доставка',
-            url: '/Delivery',
-            cName: 'nav-links'
-        },
-        {
-            title: 'Оплата',
-            url: '/Payment',
+            title: 'Доставка и оплата',
+            url: '/DeliveryAndPayment',
             cName: 'nav-links'
         }
-
-
 ]
 
 export const RuleItems=[
       
     {
       title: "Положения и условия",
-      url: "/Rules",
+      url: "/privacypolicy",
       cName: "nav-links",
     },
     {
         title: 'Политика конфиденциональности',
-        url: '/Rules',
+        url: '/privacypolicy',
         cName: 'nav-links'
     },
     {
         title: 'Политика авторского права',
-        url: '/Rules',
+        url: '/privacypolicy',
         cName: 'nav-links'
     }
 

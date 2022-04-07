@@ -20,12 +20,12 @@ export default function AboutUsPage() {
   }, []);
 
   return (
-    <div>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
-          <a href="/">Главная/</a>
+          <a href="/">Главная /</a>
         </span>
-        <span>О нас</span>
+        <span>О нас / ...</span>
       </div>
       <hr />
       <div className="about-us-Block">
@@ -40,34 +40,28 @@ export default function AboutUsPage() {
               <p>{data?.description}</p>
             </div>
           </div>
-          <div className="short-info-logo"></div>
         </div>
+        <div className="short-info-logo"></div>
       </div>
 
       <div className="founders-block">
         <span>Основатели</span>
-        <hr />
+        <hr className="pol" />
         <div className="founders">
-          <div className="founder1 d-flex">
+          <div className="founder1">
             <div className="founder-img">
               <img src={logo} />
             </div>
             <div className="founder-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              omnis neque quasi libero cum doloremque a, culpa similique facere
-              odit beatae dolor. Mollitia labore amet, accusamus repudiandae
-              quis quidem accusantium.
+              <p>{data?.founder}</p>
             </div>
           </div>
-          <div className="founder2 d-flex">
-            <div className="founder-img">
+          <div className="founder2">
+            <div className="sec">
               <img src={logo} />
             </div>
             <div className="founder-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              omnis neque quasi libero cum doloremque a, culpa similique facere
-              odit beatae dolor. Mollitia labore amet, accusamus repudiandae
-              quis quidem accusantium.
+              <p>{data?.founder}</p>
             </div>
           </div>
         </div>
