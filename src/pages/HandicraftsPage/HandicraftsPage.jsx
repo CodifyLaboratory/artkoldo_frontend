@@ -8,6 +8,7 @@ import HandicraftFilters from "../../components/CatalogFilters/HandicraftFilters
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { MainContext } from "../../components/Context/Context.js";
+import SpinComponent from "../../components/Spinner/Spin";
 
 export default function HandicraftsPage() {
   const [data, setData] = useState();
@@ -61,7 +62,6 @@ export default function HandicraftsPage() {
     maxPrice,
     order,
   ]);
-  console.log("HANDICRAFTS", data?.results);
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
@@ -80,8 +80,7 @@ export default function HandicraftsPage() {
     setSearchCeramicValue("");
   }, []);
 
-  if (!data) return <div>Loading</div>;
-  console.log("data", data);
+  if (!data) return <SpinComponent />;
   return (
     <div className="page-content">
       <div className="breadcrumbs">

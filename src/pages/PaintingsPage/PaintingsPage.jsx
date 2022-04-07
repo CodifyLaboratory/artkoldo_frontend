@@ -8,6 +8,7 @@ import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { MainContext } from "../../components/Context/Context";
+import SpinComponent from "../../components/Spinner/Spin";
 const qs = require("qs");
 
 export default function PaintingsPage() {
@@ -96,7 +97,7 @@ export default function PaintingsPage() {
     }
   }, [category]);
 
-  if (!data) return <div>Loading</div>;
+  if (!data) return <SpinComponent />;
 
   return (
     <div className="page-content">

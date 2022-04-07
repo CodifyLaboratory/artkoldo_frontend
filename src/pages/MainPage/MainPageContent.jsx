@@ -6,6 +6,7 @@ import "./MainPage.css";
 import { Link } from "react-router-dom";
 import SliderComponent from "../../components/SliderComponent/ProductSlider";
 import AuthorSlider from "../../components/SliderComponent/AuthorSlider";
+import SpinComponent from "../../components/Spinner/Spin";
 
 export default function MainPageContent({ setIsOpen }) {
   const [discounted, setDiscounted] = useState({});

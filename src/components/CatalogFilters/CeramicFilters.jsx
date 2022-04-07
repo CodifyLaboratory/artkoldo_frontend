@@ -4,6 +4,7 @@ import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";
 import { API_URL } from "../../API/api";
 import axios from "axios";
+import SpinComponent from "../Spinner/Spin";
 import "./Filters.css";
 
 export default function CeramicFilters({
@@ -29,7 +30,7 @@ export default function CeramicFilters({
     axios.get(`${API_URL}/api/ceramic_filter/`).then((r) => setFilters(r.data));
   }, []);
 
-  if (!filters) return <div>Loading</div>;
+  if (!filters) return <SpinComponent />;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions

@@ -8,6 +8,7 @@ import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { MainContext } from "../../components/Context/Context.js";
+import SpinComponent from "../../components/Spinner/Spin";
 
 export default function CeramicsPage() {
   const [data, setData] = useState();
@@ -58,7 +59,7 @@ export default function CeramicsPage() {
     maxPrice,
     order,
   ]);
-  console.log("CERAMICS", data?.results);
+
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
@@ -77,8 +78,7 @@ export default function CeramicsPage() {
     setSearchHandicraftValue("");
   }, []);
 
-  if (!data) return <div>Loading</div>;
-  console.log("data", data);
+  if (!data) return <SpinComponent />;
   return (
     <div className="page-content">
       <div className="breadcrumbs">

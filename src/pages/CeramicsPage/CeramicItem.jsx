@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import PageWrapper from "../../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { AddCartContext } from "../../components/Context/Context.js";
+import SpinComponent from "../../components/Spinner/Spin";
 import "./CeramicItem.css";
 
 export default function CeramicItem() {
@@ -14,6 +14,26 @@ export default function CeramicItem() {
   const addCartItems = useContext(AddCartContext);
   const navigate = useNavigate();
   const { id } = useParams();
+
+  function changePhoto2() {
+    var img = document.getElementById("mainPhoto");
+    img.setAttribute("src", product.photo_2);
+  }
+
+  function changePhoto3() {
+    var img = document.getElementById("mainPhoto");
+    img.setAttribute("src", product.photo_3);
+  }
+
+  function changePhoto4() {
+    var img = document.getElementById("mainPhoto");
+    img.setAttribute("src", product.photo_4);
+  }
+
+  function changePhoto5() {
+    var img = document.getElementById("mainPhoto");
+    img.setAttribute("src", product.photo_5);
+  }
 
   useEffect(() => {
     axios
@@ -40,7 +60,7 @@ export default function CeramicItem() {
     navigate("/basket");
   };
 
-  if (!product || !recommended) return <div className="Loading">Loading</div>;
+  if (!product || !recommended) return <SpinComponent />;
   return (
     <div className="page-content">
       <div className="breadcrumbs">
@@ -62,26 +82,34 @@ export default function CeramicItem() {
               ></img>
             </div>
             <div className="four_photos">
-              <img
-                className="img_box"
-                src={product?.photo_2}
-                alt={product?.title}
-              ></img>
-              <img
-                className="img_box"
-                src={product?.photo_3}
-                alt={product?.title}
-              ></img>
-              <img
-                className="img_box"
-                src={product?.photo_4}
-                alt={product?.title}
-              ></img>
-              <img
-                className="img_box"
-                src={product?.photo_5}
-                alt={product?.title}
-              ></img>
+              <div onClick={changePhoto2}>
+                <img
+                  className="img_box"
+                  src={product.photo_2}
+                  alt={product.title}
+                ></img>
+              </div>
+              <div onClick={changePhoto3}>
+                <img
+                  className="img_box"
+                  src={product.photo_3}
+                  alt={product.title}
+                ></img>
+              </div>
+              <div onClick={changePhoto4}>
+                <img
+                  className="img_box"
+                  src={product.photo_4}
+                  alt={product.title}
+                ></img>
+              </div>
+              <div onClick={changePhoto5}>
+                <img
+                  className="img_box"
+                  src={product.photo_5}
+                  alt={product.title}
+                ></img>
+              </div>
             </div>
             <div>
               <h1 className="description_headings">Об изделии</h1>
