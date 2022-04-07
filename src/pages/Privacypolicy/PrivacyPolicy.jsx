@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import PageWrapper from "../../components/PageWrapper";
-import './PrivacyPolicy.css'
+import "./PrivacyPolicy.css";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 
 export default function PrivacePolicy() {
-
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -19,19 +17,16 @@ export default function PrivacePolicy() {
       });
   }, []);
 
-
-
   return (
-    <div className="rules-page">
-      <PageWrapper>
-        <div className="breadcrumbs">
-          <span>
-            <a href="/">Главная/</a>
-          </span>
-          <span>Правила и условия / ...</span>
-        </div>
-        <hr />
-<div className="rule">
+    <div className="rules-page page-content">
+      <div className="breadcrumbs">
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Правила и условия / ...</span>
+      </div>
+      <hr />
+      <div className="rule">
         <div className="RulesBlock">
           <span>Положения и условия</span>
           <hr className="ruleshr" />
@@ -54,9 +49,8 @@ export default function PrivacePolicy() {
           <br />
           <p>{data?.copyright}</p>
           <br />
-          </div>
-          </div>
-      </PageWrapper>
+        </div>
+      </div>
     </div>
   );
 }

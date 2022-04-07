@@ -7,7 +7,14 @@
   list-style-type: none;
   margin-top: 214px;
   margin-bottom: 216px;
+  background-color: transparent !important;
 }
+
+.ant-pagination li {
+  border: none;
+  background-color: transparent !important;
+}
+
 .ant-pagination-item {
   font-family: "Roboto";
   font-style: normal;
@@ -44,7 +51,16 @@
 .ant-pagination-item-link {
   border: none;
   background: none;
+  background-color: transparent !important;
 }
+
+.ant-pagination-item-link::selection {
+  border: none;
+  background: none;
+  background-color: transparent !important;
+  border: 1px solid #4b4747 !important;
+}
+
 .ant-pagination-prev:after {
   content: initial;
   width: 50px;

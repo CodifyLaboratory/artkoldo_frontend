@@ -12,8 +12,6 @@ import { Link } from "react-router-dom";
 export default function SliderComponent({ products, filter }) {
   const [slideItems, setSlideItems] = useState([]);
 
-  console.log("sliderIncomingData", products);
-
   function getProducts(items) {
     let products = [];
     Object.values(items).map((list) => {

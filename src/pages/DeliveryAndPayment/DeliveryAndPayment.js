@@ -1,11 +1,9 @@
-import PageWrapper from "../../components/PageWrapper/index";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
-import './DeliveryAndPayment.css'
+import "./DeliveryAndPayment.css";
 
 export default function DeliveryAndPayment() {
-
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -20,28 +18,29 @@ export default function DeliveryAndPayment() {
   }, []);
 
   return (
-    <div>
-      <PageWrapper>
-        <div className="breadcrumbs">
-          <span>
-            <a href="/">Главная/</a>
-          </span>
-          <span>Опалата и доставка / ...</span>
-        </div>
-        <hr />
-        <div className="payments">
-          <span>Опалата</span>
-        </div>
-        <hr />
-      <div className="payments-text"><p>{data?.payment}</p></div>
+    <div className="page-content">
+      <div className="breadcrumbs">
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Оплата и доставка / ...</span>
+      </div>
       <hr />
-        <div className="payments">
-          <span>Доставка</span>
-        </div>
-        <hr />
-        <div className="delivery-text"><p>{data?.delivery}</p></div>
-        
-      </PageWrapper>
+      <div className="payments">
+        <span>Оплата</span>
+      </div>
+      <hr />
+      <div className="payments-text">
+        <p>{data?.payment}</p>
+      </div>
+      <hr />
+      <div className="payments">
+        <span>Доставка</span>
+      </div>
+      <hr />
+      <div className="delivery-text">
+        <p>{data?.delivery}</p>
+      </div>
     </div>
   );
 }

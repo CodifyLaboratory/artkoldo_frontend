@@ -1,11 +1,9 @@
-import PageWrapper from "../../components/PageWrapper/index";
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
-import './ForPartners.css'
+import "./ForPartners.css";
 
 export default function ForPartners() {
-
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -20,22 +18,21 @@ export default function ForPartners() {
   }, []);
 
   return (
-    <div>
-      <PageWrapper>
-        <div className="breadcrumbs">
-          <span>
-            <a href="/">Главная/</a>
-          </span>
-          <span>Для партнеров /...</span>
-        </div>
-        <hr />
-        <div className="forpartners">
-          <span>Для партнеров</span>
-        </div>
-        <hr />
-      <div className="partners-text"><p>{data?.description}</p></div>
-        
-      </PageWrapper>
+    <div className="page-content">
+      <div className="breadcrumbs">
+        <span>
+          <a href="/">Главная/</a>
+        </span>
+        <span>Для партнеров /...</span>
+      </div>
+      <hr />
+      <div className="forpartners">
+        <span>Для партнеров</span>
+      </div>
+      <hr />
+      <div className="partners-text">
+        <p>{data?.description}</p>
+      </div>
     </div>
   );
 }

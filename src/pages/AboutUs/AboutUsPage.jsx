@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PageWrapper from "../../components/PageWrapper/index";
 import logo from "../../images/product-logo.jpeg";
 import { API_URL } from "../../API/api";
 import "./AboutUsPage.css";
@@ -40,29 +39,23 @@ export default function AboutUsPage() {
               <p>{data?.description}</p>
             </div>
           </div>
+          <div className="short-info-logo"></div>
         </div>
-        <div className="short-info-logo"></div>
-      </div>
 
-      <div className="founders-block">
-        <span>Основатели</span>
-        <hr className="pol" />
-        <div className="founders">
-          <div className="founder1">
-            <div className="founder-img">
-              <img src={logo} />
-            </div>
-            <div className="founder-text">
-              <p>{data?.founder}</p>
-            </div>
-          </div>
-          <div className="founder2">
-            <div className="sec">
-              <img src={logo} />
-            </div>
-            <div className="founder-text">
-              <p>{data?.founder}</p>
-            </div>
+        <div className="founders-block">
+          <span>Основатели</span>
+          <hr className="pol" />
+          <div className="founders">
+            {data?.founder?.map((founder) => (
+              <div className="founder1">
+                <div className="founder-img">
+                  <img src={founder?.photo} alt={logo} />
+                </div>
+                <div className="founder-text">
+                  <p>{founder?.title}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
