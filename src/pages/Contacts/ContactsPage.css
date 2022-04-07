@@ -1,7 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,400&display=swap");
+
 .hr{
     color:#373635;
   }
+ 
 
 .contacts span{
     font-size: 38px;
+    padding-bottom: 48px;
+    padding-top: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 45px;
+    color: #000000;
+}
+.contacts-page{}
+.prevhr{
+  margin-top: 50px;
+}
+
+.contacts-page p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+.contacts-social {
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+.contacts-email {
+  margin-bottom: 40px;
+}
+.contacts-num {
+  margin-bottom: 40px;
+}
+.socialicons {
+  display: flex;
+}
+
+.socialtw {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #229ed9;
+  background-image: url(../../images/twIcon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 45px;
+  margin-right: 45px;
+
+}
+.contacts-address{
+  margin-bottom: 49px;
+  margin-top: 25px;
+}
+
+.instaicon{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #229ed9;
+  background-image: url(../../images/insta-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.socialfb {
+  width: 28px;
+  height: 28px;
+  background-color: #1877f2;
+  border-radius: 50%;
+  background-image: url(../../images/fbIcon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+.contatcts-text{
+  padding-bottom: 15px;
+}
+.contatcts-text p{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+
+color: #000000;
+}
+.lasthr{
+  margin-top: 20px;
+  margin-bottom: 1500px;
 }

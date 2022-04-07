@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import PageWrapper from "../../components/PageWrapper/index";
+import React, { useContext, useEffect, useState } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./CeramicsPage.css";
@@ -8,11 +7,12 @@ import "../../components/Pagination/Pagination.css";
 import CeramicFilters from "../../components/CatalogFilters/CeramicFilters";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import { MainContext } from "../../components/Context/Context.js";
+import SpinComponent from "../../components/Spinner/Spin";
 
-export default function CeramicsPage(handleCategoryChange) {
+export default function CeramicsPage() {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const [searchValue, setSearchValue] = useState("");
   const [typeChecked, setTypeChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -22,6 +22,11 @@ export default function CeramicsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const { paintingSearch, handicraftSearch, ceramicSearch } =
+    useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
+  const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
+  const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
   const navigate = useNavigate();
   const qs = require("qs");
   let ax = axios.create({
@@ -30,7 +35,7 @@ export default function CeramicsPage(handleCategoryChange) {
   });
   useEffect(() => {
     const params = {
-      search: searchValue ? searchValue : undefined,
+      search: searchCeramicValue ? searchCeramicValue : undefined,
       type: typeChecked.length > 0 ? typeChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
       technique: techniqueChecked.length > 0 ? techniqueChecked : undefined,
@@ -43,7 +48,7 @@ export default function CeramicsPage(handleCategoryChange) {
     };
     ax.get(`${API_URL}/api/ceramics/`, { params }).then((r) => setData(r.data));
   }, [
-    searchValue,
+    searchCeramicValue,
     currentPage,
     materialChecked,
     techniqueChecked,
@@ -54,7 +59,7 @@ export default function CeramicsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-  console.log("CERAMICS", data?.results);
+
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
@@ -67,10 +72,15 @@ export default function CeramicsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  if (!data) return <div>Loading</div>;
-  console.log("data", data);
+
+  useEffect(() => {
+    setSearchPaintingValue("");
+    setSearchHandicraftValue("");
+  }, []);
+
+  if (!data) return <SpinComponent />;
   return (
-    <PageWrapper setSearchValue={setSearchValue}>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -109,15 +119,30 @@ export default function CeramicsPage(handleCategoryChange) {
           <hr />
           <CeramicFilters
             typeChecked={typeChecked}
-            setTypeChecked={setTypeChecked}
+            setTypeChecked={(values) => {
+              setTypeChecked(values);
+              setCurrentPage(1);
+            }}
             colorChecked={colorChecked}
-            setColorChecked={setColorChecked}
+            setColorChecked={(values) => {
+              setColorChecked(values);
+              setCurrentPage(1);
+            }}
             materialChecked={materialChecked}
-            setMaterialChecked={setMaterialChecked}
+            setMaterialChecked={(values) => {
+              setMaterialChecked(values);
+              setCurrentPage(1);
+            }}
             techniqueChecked={techniqueChecked}
-            setTechniqueChecked={setTechniqueChecked}
+            setTechniqueChecked={(values) => {
+              setTechniqueChecked(values);
+              setCurrentPage(1);
+            }}
             regionChecked={regionChecked}
-            setRegionChecked={setRegionChecked}
+            setRegionChecked={(values) => {
+              setRegionChecked(values);
+              setCurrentPage(1);
+            }}
             setMinPrice={setMinPrice}
             setMaxPrice={setMaxPrice}
           />
@@ -130,6 +155,6 @@ export default function CeramicsPage(handleCategoryChange) {
         total={data?.total_count}
         onChange={handlePagination}
       />
-    </PageWrapper>
+    </div>
   );
 }

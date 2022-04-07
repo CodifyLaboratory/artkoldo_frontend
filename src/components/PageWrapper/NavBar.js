@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-export default function Navbar({ setSearchValue }) {
+export default function Navbar() {
   return (
     <header className="header">
       <div className="header-container">
@@ -26,10 +26,10 @@ export default function Navbar({ setSearchValue }) {
 
         <div className="logo">
           {" "}
-          <img src={logo} alt="logo" />
+          <img className="img_logo" src={logo} alt="logo" />
         </div>
         <div className="header-right">
-          <SearchBar setSearchValue={setSearchValue} />
+          <SearchBar />
 
           <Link to="/Basket">
             <div className="shop-cart"></div>

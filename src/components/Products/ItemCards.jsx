@@ -8,27 +8,21 @@ export default function ItemCards({ products = [], category = "" }) {
     <div className="Item-Cards">
       {products?.map((product) => (
         <div className="product-item" key={product?.id}>
-          <Link to={`/${category}/${product.id}`}>
+          <Link to={`/${product?.category}s/${product?.id}`}>
             {product?.photo_1 ? (
-              <>
-                <img
-                  className="product-item_image"
-                  id={product?.id}
-                  src={product?.photo_1}
-                  // onClick={() => handleClick(product.id)}
-                  alt=""
-                />
-              </>
+              <img
+                className="product-item_image"
+                id={product?.id}
+                src={product?.photo_1}
+                alt=""
+              />
             ) : (
-              <>
-                <img
-                  className="product-item_logo"
-                  id={product?.id}
-                  src={`${Logo}`}
-                  // onClick={() => handleClick(product.id)}
-                  alt=""
-                />
-              </>
+              <img
+                className="product-item_logo"
+                id={product?.id}
+                src={`${Logo}`}
+                alt=""
+              />
             )}
           </Link>
           <div className="product-item-text">

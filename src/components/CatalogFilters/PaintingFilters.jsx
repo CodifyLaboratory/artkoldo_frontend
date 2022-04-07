@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CheckboxOptions from "./Checkboxes";
 import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";
 import { API_URL } from "../../API/api";
 import axios from "axios";
+import SpinComponent from "../Spinner/Spin";
 import "./Filters.css";
 
 export default function PaintingFilters({
@@ -30,15 +31,13 @@ export default function PaintingFilters({
   const [showSizeOptions, setShowSizeOptions] = useState(false);
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("PaintingFilters", filters);
-
   useEffect(() => {
     axios
       .get(`${API_URL}/api/painting_filter/`)
       .then((r) => setFilters(r.data));
   }, []);
 
-  if (!filters) return <div>Loading</div>;
+  if (!filters) return <SpinComponent />;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions

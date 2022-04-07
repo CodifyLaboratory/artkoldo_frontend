@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+
+.author-slider-container {
+  width: 90%;
+  height: 732px;
+  padding-left: 10px;
+}
+
+.author-slider-container-box {
+  height: 1200px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.author-slider-container-box .slider-item-wrapper {
+  display: flex !important;
+  background: rgba(196, 196, 196, 1);
+}
+
+.author-slider-container-box .slick-slider {
+  padding: 0;
+}
+
+.author-slider-container-box .slick-slide {
+  width: 1666px !important;
+  height: 732px !important;
+  border-radius: 12px !important;
+  padding: 0;
+}
+
+.author-slider-container-box .slick-track {
+  margin: 0;
+}
+
+.slick-arrow::before {
+  display: none;
+}
+
+.slick-prev {
+  margin: -20px;
+}
+
+.slick-next {
+  margin: -20px;
+}
+
+.author-about-photo {
+  width: 741px;
+  height: 732px;
+  border-radius: 12px;
+}
+
+.author-photo {
+  width: 741px;
+  height: 732px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.author-about-text {
+  margin-left: 84px;
+}
+
+.author-about-name {
+  width: 744.38px;
+  height: 63px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 150%;
+  color: #373635;
+  margin: 214px 0 28px 0;
+}
+
+.author-about-bio {
+  width: 744.38px;
+  height: 252px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 150%;
+  color: #373635;
+}
+
+.slick-dots li {
+  width: 21px !important;
+  height: 21px !important;
+  background-color: #c4c4c4 !important;
+  border-radius: 50px !important;
+}
+
+.slick-dots .slick-active {
+  background-color: rgba(55, 54, 53, 1) !important;
+}
+
+.slick-dots button::before {
+  content: none !important;
+}

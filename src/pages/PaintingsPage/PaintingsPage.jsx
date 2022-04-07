@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PaintingFilters from "../../components/CatalogFilters/PaintingFilters";
-import PageWrapper from "../../components/PageWrapper/index";
-import { Link } from "react-router-dom";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import { Pagination } from "antd";
@@ -9,12 +7,13 @@ import "../../components/Pagination/Pagination.css";
 import "./PaintingsPage.css";
 import { useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
+import { MainContext } from "../../components/Context/Context";
+import SpinComponent from "../../components/Spinner/Spin";
 const qs = require("qs");
 
-export default function PaintingsPage(handleCategoryChange) {
+export default function PaintingsPage() {
   const [data, setData] = useState();
   const [category, setCategory] = useState(1);
-  const [searchValue, setSearchValue] = useState("");
   const [styleChecked, setStyleChecked] = useState([]);
   const [techniqueChecked, setTechniqueChecked] = useState([]);
   const [materialChecked, setMaterialChecked] = useState([]);
@@ -29,14 +28,20 @@ export default function PaintingsPage(handleCategoryChange) {
   const [maxPrice, setMaxPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState();
+  const { paintingSearch, handicraftSearch, ceramicSearch } =
+    useContext(MainContext);
+  const [searchPaintingValue, setSearchPaintingValue] = paintingSearch;
+  const [searchHandicraftValue, setSearchHandicraftValue] = handicraftSearch;
+  const [searchCeramicValue, setSearchCeramicValue] = ceramicSearch;
   const navigate = useNavigate();
   let ax = axios.create({
     paramsSerializer: (params) =>
       qs.stringify(params, { arrayFormat: "repeat" }),
   });
+
   useEffect(() => {
     const params = {
-      search: searchValue ? searchValue : undefined,
+      search: searchPaintingValue ? searchPaintingValue : undefined,
       style: styleChecked.length > 0 ? styleChecked : undefined,
       subject: subjectChecked.length > 0 ? subjectChecked : undefined,
       material: materialChecked.length > 0 ? materialChecked : undefined,
@@ -52,11 +57,11 @@ export default function PaintingsPage(handleCategoryChange) {
       page: currentPage,
       ordering: order,
     };
-    ax.get(`${API_URL}/api/paintings/`, { params }).then((r) =>
-      setData(r.data)
-    );
+    ax.get(`${API_URL}/api/paintings/`, { params }).then((r) => {
+      setData(r.data);
+    });
   }, [
-    searchValue,
+    searchPaintingValue,
     currentPage,
     styleChecked,
     materialChecked,
@@ -72,10 +77,16 @@ export default function PaintingsPage(handleCategoryChange) {
     maxPrice,
     order,
   ]);
-  console.log("PAINTINGS", data?.results);
+
+  useEffect(() => {
+    setSearchHandicraftValue("");
+    setSearchCeramicValue("");
+  }, []);
+
   const handlePagination = (page) => {
     setCurrentPage(page);
   };
+
   useEffect(() => {
     if (category === "1") {
       navigate("/paintings");
@@ -85,12 +96,11 @@ export default function PaintingsPage(handleCategoryChange) {
       navigate("/ceramics");
     }
   }, [category]);
-  console.log("data", data);
 
-  if (!data) return <div>Loading</div>;
-  console.log("data", data);
+  if (!data) return <SpinComponent />;
+
   return (
-    <PageWrapper setSearchValue={setSearchValue}>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -129,17 +139,35 @@ export default function PaintingsPage(handleCategoryChange) {
           <hr />
           <PaintingFilters
             styleChecked={styleChecked}
-            setStyleChecked={setStyleChecked}
+            setStyleChecked={(values) => {
+              setStyleChecked(values);
+              setCurrentPage(1);
+            }}
             colorChecked={colorChecked}
-            setColorChecked={setColorChecked}
+            setColorChecked={(values) => {
+              setColorChecked(values);
+              setCurrentPage(1);
+            }}
             materialChecked={materialChecked}
-            setMaterialChecked={setMaterialChecked}
+            setMaterialChecked={(values) => {
+              setMaterialChecked(values);
+              setCurrentPage(1);
+            }}
             techniqueChecked={techniqueChecked}
-            setTechniqueChecked={setTechniqueChecked}
+            setTechniqueChecked={(values) => {
+              setTechniqueChecked(values);
+              setCurrentPage(1);
+            }}
             regionChecked={regionChecked}
-            setRegionChecked={setRegionChecked}
+            setRegionChecked={(values) => {
+              setRegionChecked(values);
+              setCurrentPage(1);
+            }}
             subjectChecked={subjectChecked}
-            setSubjectChecked={setSubjectChecked}
+            setSubjectChecked={(values) => {
+              setSubjectChecked(values);
+              setCurrentPage(1);
+            }}
             setMinHeight={setMinHeight}
             setMaxHeight={setMaxHeight}
             setMinWidth={setMinWidth}
@@ -156,6 +184,6 @@ export default function PaintingsPage(handleCategoryChange) {
         total={data?.total_count}
         onChange={handlePagination}
       />
-    </PageWrapper>
+    </div>
   );
 }

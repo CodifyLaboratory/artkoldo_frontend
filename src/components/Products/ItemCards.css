@@ -1,5 +1,6 @@
 .Item-Cards {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,12 +8,6 @@
   padding-left: 33px;
   margin-bottom: 100px;
 }
-
-/* @media (max-width: 1440px) {
-  .Item-Cards{
-    width: 50%;
-  }
-} */
 
 .product-item {
   color: black;
