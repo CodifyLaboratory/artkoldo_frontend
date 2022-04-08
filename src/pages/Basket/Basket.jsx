@@ -94,7 +94,11 @@ export default function Basket() {
 
   const total = () => {
     setCartTotal(
-      cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)
+      cartItems.reduce(function (acc, item) {
+        return item.discount_price
+          ? acc + item.qty * item.discount_price
+          : acc + item.qty * item.price;
+      }, 0)
     );
   };
 
@@ -172,9 +176,17 @@ export default function Basket() {
                     <div className="basket-item-counter">{item?.qty}</div>
                     <button onClick={() => addItem(item)}>+</button>
                   </div>
-                  <div className="basket-item-price">
-                    {item?.price}&nbsp;<span>с</span>
-                  </div>
+                  {item?.discount_price ? (
+                    <div className="basket-item-discount-price">
+                      {item?.discount_price}
+                      <span>&nbsp;c.</span>
+                    </div>
+                  ) : (
+                    <div className="basket-item-price">
+                      {item?.price}
+                      <span>&nbsp;c.</span>
+                    </div>
+                  )}
                 </div>
                 <div className="basket-item-checkout">
                   <img src={CheckoutIcon} alt={"оформить заказ"} />
