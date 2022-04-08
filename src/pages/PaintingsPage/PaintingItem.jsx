@@ -7,6 +7,7 @@ import ItemCards from "../../components/Products/ItemCards";
 import { AddCartContext } from "../../components/Context/Context.js";
 import SpinComponent from "../../components/Spinner/Spin";
 import Logo from "../../images/product-logo.jpeg";
+import arrow from "../../images/arrow.svg";
 import "./PaintingItem.css";
 
 export default function PaintingItem() {
@@ -88,7 +89,7 @@ export default function PaintingItem() {
           <div className="left-side">
             <div className="product-img">
               <img
-                src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
+                src={product?.photo_1 ? product?.photo_1 : Logo}
                 alt={product?.title}
                 id="mainPhoto"
               ></img>
@@ -96,26 +97,26 @@ export default function PaintingItem() {
             <div className="four_photos">
               <div className="img_box" onClick={changePhoto2}>
                 <img
-                  src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
+                  src={product?.photo_1 ? product?.photo_1 : Logo}
                   alt={product?.title}
                 />
               </div>
               <div className="img_box" onClick={changePhoto3}>
                 <img
-                  src={product?.photo_2 ? product?.photo_2 : `${Logo}`}
+                  src={product?.photo_2 ? product?.photo_2 : Logo}
                   alt={product?.title}
                 />
               </div>
               <div className="img_box" onClick={changePhoto4}>
                 <img
-                  src={product?.photo_3 ? product?.photo_3 : `${Logo}`}
+                  src={product?.photo_3 ? product?.photo_3 : Logo}
                   alt={product?.title}
                 />
               </div>
               <div className="img_box" onClick={changePhoto5}>
                 <img
-                  src={product?.photo_4 ? product?.photo_4 : `${Logo}`}
-                  alt={Logo}
+                  src={product?.photo_4 ? product?.photo_4 : Logo}
+                  alt={product?.title}
                 />
               </div>
             </div>
@@ -158,7 +159,20 @@ export default function PaintingItem() {
               <p>Местоположение: {product?.author?.region?.title}</p>
             </div>
             <div className="dividing_line_2"></div>
-            <p className="number_of_price">{product?.price} c</p>
+            {product?.discount_price ? (
+              <div className="slider-text-discount-price">
+                <span className="line-through">{product?.price}</span>
+                <span className="line-through">&nbsp;c.</span>
+                <img className="discount-arrow" src={arrow} />
+                <span className="new-price">{product?.discount_price}</span>
+                <span className="new-price">&nbsp;c.</span>
+              </div>
+            ) : (
+              <div className="slider-text-price">
+                <span>{product?.price}</span>
+                <span>&nbsp;c.</span>
+              </div>
+            )}
             <div className="link_btn">
               <button
                 className="add_btn"
