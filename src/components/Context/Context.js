@@ -3,9 +3,10 @@ export const MainContext = createContext();
 export const AddCartContext = createContext();
 export const RemoveCartContext = createContext();
 export const SetSearch = createContext();
+const basket = JSON.parse(localStorage.getItem("cart") || "[]");
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(basket);
   const [searchPaintingValue, setSearchPaintingValue] = useState("");
   const [searchHandicraftValue, setSearchHandicraftValue] = useState("");
   const [searchCeramicValue, setSearchCeramicValue] = useState("");
@@ -37,7 +38,7 @@ export const CartProvider = ({ children }) => {
             valueCart: [cartItems, setCartItems],
             paintingSearch: [searchPaintingValue, setSearchPaintingValue],
             handicraftSearch: [searchHandicraftValue, setSearchHandicraftValue],
-            ceramicSearch: [searchCeramicValue, setSearchCeramicValue]
+            ceramicSearch: [searchCeramicValue, setSearchCeramicValue],
           }}
         >
           {children}

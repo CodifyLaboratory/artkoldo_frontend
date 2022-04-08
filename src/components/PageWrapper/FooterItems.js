@@ -24,17 +24,17 @@ export const AboutCompanyItems = [
   },
   {
     title: "Контакты",
-    url: "/Contacts",
+    url: "/contacts",
     cName: "nav-links",
   },
   {
     title: "Партнерам",
-    url: "/ForPartners",
+    url: "/partners",
     cName: "nav-links",
   },
   {
     title: "Доставка и оплата",
-    url: "/DeliveryAndPayment",
+    url: "/delivery",
     cName: "nav-links",
   },
 ];

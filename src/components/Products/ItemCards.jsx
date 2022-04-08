@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./ItemCards.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../../images/product-logo.jpeg";
 
-export default function ItemCards({ products = [], category = "" }) {
+export default function ItemCards({ products, category, onClick }) {
   return (
     <div className="Item-Cards">
       {products?.map((product) => (
         <div className="product-item" key={product?.id}>
-          <Link to={`/${product?.category}s/${product?.id}`}>
+          <Link to={`/${category}/${product.id}`}>
             {product?.photo_1 ? (
               <img
                 className="product-item_image"
                 id={product?.id}
                 src={product?.photo_1}
-                alt=""
+                alt={product?.title}
+                onClick={onClick}
               />
             ) : (
               <img
                 className="product-item_logo"
                 id={product?.id}
                 src={`${Logo}`}
-                alt=""
+                alt={product?.title}
+                onClick={onClick}
               />
             )}
           </Link>

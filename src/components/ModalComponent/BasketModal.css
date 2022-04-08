@@ -51,7 +51,7 @@
 
 .basket-modal3-box {
   width: 780px;
-  height: 600px;
+  height: 650px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -115,11 +115,19 @@
   font-size: 26px;
   z-index: 10;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .basket-order-submit-text p:first-child {
   font-size: 32px;
+}
+
+.basket-order-submit-text a {
+  color: black;
+}
+
+.basket-order-submit-text a:hover {
+  color: #e1c55f;
 }
 
 .orderId {
@@ -282,4 +290,8 @@
 
 .ant-form-item-explain-error {
   color: red;
+}
+
+.ant-input-status-error {
+  background: none !important;
 }
