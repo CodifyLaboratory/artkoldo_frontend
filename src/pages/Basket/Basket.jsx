@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import PageWrapper from "../../components/PageWrapper";
 import {
   MainContext,
   RemoveCartContext,
@@ -32,6 +31,7 @@ export default function Basket() {
   const [orderProducts, setOrderProducts] = useState([]);
   const [orderId, setOrderId] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isFailed, setIsFailed] = useState(false);
   const navigate = useNavigate();
 
   const payload = {
@@ -42,16 +42,19 @@ export default function Basket() {
   const submitOrder = async () => {
     const finalPayload = Object.assign(formData, payload);
     setLoading(true);
+    setIsFailed(false);
     try {
       await axios
         .post(`${API_URL}/api/orders/create/`, finalPayload)
         .then(function (response) {
           if (response.status === 201 && response.data.id) {
             setOrderId(response.data.id);
+            setCartItems([]);
           }
         });
-      setCartItems([]);
     } catch (error) {
+      setIsFailed(true);
+      localStorage.clear();
       console.log(error);
     } finally {
       setLoading(false);
@@ -64,26 +67,29 @@ export default function Basket() {
   }
 
   useEffect(() => {
-    submitOrder();
-    setIsModalTwoOpen(false);
-    localStorage.clear();
+    if (formData !== undefined) {
+      submitOrder();
+      setIsModalTwoOpen(false);
+    }
   }, [formData]);
 
   useEffect(() => {
-    const orderData = JSON.parse(
-      localStorage.getItem("cart", JSON.stringify(cartItems))
-    );
-    setOrderProducts(
-      orderData?.map((item) => {
-        return {
-          product_category: item?.category,
-          product_id: item?.id,
-          quantity: item?.qty,
-          price: item?.price,
-        };
-      })
-    );
-  }, [isModalOneOpen === true]);
+    if (isModalOneOpen === true) {
+      const orderData = JSON.parse(
+        localStorage.getItem("cart", JSON.stringify(cartItems))
+      );
+      setOrderProducts(
+        orderData?.map((item) => {
+          return {
+            product_category: item?.category,
+            product_id: item?.id,
+            quantity: item?.qty,
+            price: item?.price,
+          };
+        })
+      );
+    }
+  }, [isModalOneOpen]);
 
   function handleSecondModal() {
     setIsModalOneOpen(false);
@@ -226,6 +232,7 @@ export default function Basket() {
           onClick={handleOrderClose}
           orderId={orderId}
           loading={loading}
+          isFailed={isFailed}
         />
       )}
     </div>

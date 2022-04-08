@@ -10,9 +10,10 @@ import HandicraftsPage from "../pages/HandicraftsPage/HandicraftsPage";
 import MainPage from "../pages/MainPage/MainPage";
 import PaintingItem from "../pages/PaintingsPage/PaintingItem";
 import PaintingsPage from "../pages/PaintingsPage/PaintingsPage";
-import PrivacyPolicy from '../pages/Privacypolicy/PrivacyPolicy';
-import ForPartners from '../pages/ForPartners/ForPartners';
-import DeliveryAndPayment from '../pages/DeliveryAndPayment/DeliveryAndPayment';
+import PrivacyPolicy from "../pages/Privacypolicy/PrivacyPolicy";
+import ForPartners from "../pages/ForPartners/ForPartners";
+import DeliveryAndPayment from "../pages/DeliveryAndPayment/DeliveryAndPayment";
+import NotFound from "../components/Spinner/NotFound";
 
 export default function Routing() {
   return (
@@ -25,14 +26,14 @@ export default function Routing() {
       <Route path="/ceramics" element={<CeramicsPage />} />
       <Route path="/ceramics/:id" element={<CeramicItem />} />
       <Route path="/about" element={<AboutUsPage />} />
-      <Route path="/Contacts" element={<ContactsPage />} />
+      <Route path="/contacts" element={<ContactsPage />} />
       <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-      <Route path="/ForPartners" element={<ForPartners />} />
-      <Route path="/DeliveryAndPayment" element={<DeliveryAndPayment />} />
-      
+      <Route path="/partners" element={<ForPartners />} />
+      <Route path="/delivery" element={<DeliveryAndPayment />} />
+
       <Route path="/basket" element={<Basket />} />
 
-      <Route path="*" element={<div>NOT FOUND</div>} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

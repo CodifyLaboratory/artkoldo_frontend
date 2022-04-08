@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PageWrapper from "../../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
@@ -13,6 +12,8 @@ export default function PaintingItem() {
   const [product, setProduct] = useState();
   const [recommended, setRecommended] = useState();
   const addCartItems = useContext(AddCartContext);
+  const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -36,23 +37,37 @@ export default function PaintingItem() {
     img.setAttribute("src", product.photo_5);
   }
 
-  useEffect(() => {
-    axios
-      .get(`${API_URL}/api/paintings/${id}/`)
-      .then((response) => {
+  const getProduct = async () => {
+    setLoading(true);
+    try {
+      await axios.get(`${API_URL}/api/paintings/${id}/`).then((response) => {
         setProduct(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
       });
-    axios
-      .get(`${API_URL}/api/painting_recommendations/${id}/`)
-      .then((response) => {
-        setRecommended(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getRecommended = async () => {
+    setLoading2(true);
+    try {
+      await axios
+        .get(`${API_URL}/api/painting_recommendations/${id}/`)
+        .then((response) => {
+          setRecommended(response.data);
+        });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading2(false);
+    }
+  };
+
+  useEffect(() => {
+    getProduct();
+    getRecommended();
   }, []);
 
   const handleClick = (e, product) => {
@@ -75,42 +90,25 @@ export default function PaintingItem() {
       <div className="page-content">
         <div className="product-content">
           <div className="left-side">
-            <div>
+            <div className="product-img">
               <img
-                className="product-img"
                 src={product.photo_1}
                 alt={product.title}
                 id="mainPhoto"
               ></img>
             </div>
             <div className="four_photos">
-              <div onClick={changePhoto2}>
-                <img
-                  className="img_box"
-                  src={product.photo_2}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto2}>
+                <img src={product.photo_2} alt={product.title} />
               </div>
-              <div onClick={changePhoto3}>
-                <img
-                  className="img_box"
-                  src={product.photo_3}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto3}>
+                <img src={product.photo_3} alt={product.title} />
               </div>
-              <div onClick={changePhoto4}>
-                <img
-                  className="img_box"
-                  src={product.photo_4}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto4}>
+                <img src={product.photo_4} alt={product.title} />
               </div>
-              <div onClick={changePhoto5}>
-                <img
-                  className="img_box"
-                  src={product.photo_5}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto5}>
+                <img src={product.photo_5} alt={product.title} />
               </div>
             </div>
             <div>

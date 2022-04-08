@@ -47,12 +47,12 @@ export default function AboutUsPage() {
           <hr className="pol" />
           <div className="founders">
             {data?.founder?.map((founder) => (
-              <div className="founder1">
+              <div className="founder1" key={founder?.id}>
                 <div className="founder-img">
                   <img src={founder?.photo} alt={logo} />
                 </div>
                 <div className="founder-text">
-                  <p>{founder?.title}</p>
+                  <p>{founder?.description}</p>
                 </div>
               </div>
             ))}

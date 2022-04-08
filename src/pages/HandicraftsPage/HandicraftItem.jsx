@@ -76,41 +76,25 @@ export default function HandicraftItem() {
       <div className="page-content">
         <div className="product-content">
           <div className="left-side">
-            <div>
+            <div className="product-img">
               <img
-                className="product-img"
-                src={product?.photo_1}
-                alt={product?.title}
+                src={product.photo_1}
+                alt={product.title}
+                id="mainPhoto"
               ></img>
             </div>
             <div className="four_photos">
-              <div onClick={changePhoto2}>
-                <img
-                  className="img_box"
-                  src={product.photo_2}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto2}>
+                <img src={product.photo_2} alt={product.title} />
               </div>
-              <div onClick={changePhoto3}>
-                <img
-                  className="img_box"
-                  src={product.photo_3}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto3}>
+                <img src={product.photo_3} alt={product.title} />
               </div>
-              <div onClick={changePhoto4}>
-                <img
-                  className="img_box"
-                  src={product.photo_4}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto4}>
+                <img src={product.photo_4} alt={product.title} />
               </div>
-              <div onClick={changePhoto5}>
-                <img
-                  className="img_box"
-                  src={product.photo_5}
-                  alt={product.title}
-                ></img>
+              <div className="img_box" onClick={changePhoto5}>
+                <img src={product.photo_5} alt={product.title} />
               </div>
             </div>
             <div>
