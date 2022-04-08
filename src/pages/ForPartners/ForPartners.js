@@ -23,7 +23,7 @@ export default function ForPartners() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Для партнеров /...</span>
+        <span>Для партнеров</span>
       </div>
       <hr />
       <div className="forpartners">

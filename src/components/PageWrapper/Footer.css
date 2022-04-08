@@ -20,10 +20,10 @@
   display: flex;
   justify-content: space-evenly;
   font-size: 26px;
-line-height: 30px;
+  line-height: 30px;
   font-weight: 500;
-white-space: pre-line;
-padding-right: 90px;
+  white-space: pre-line;
+  padding-right: 90px;
 }
 
 .categories span,
@@ -43,7 +43,7 @@ padding-right: 90px;
 
 .footer-logo {
   width: 20%;
-  background-image: url(../../images/logo.png);;
+  background-image: url(../../images/icons/artkoldoo-logo.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -57,25 +57,25 @@ padding-right: 90px;
 .rules {
   width: 20%;
 }
-.rules .nav-links{
+.rules .nav-links {
   white-space: pre-line;
 }
-.pt{
-  font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 26px;
-line-height: 30px;
-margin-bottom: 20px;
+.pt {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  margin-bottom: 20px;
 }
-.pt-44{
-  font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #FFFFFF;
-margin-top: 35px;
+.pt-44 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  margin-top: 35px;
 }
 
 .social {
@@ -92,37 +92,34 @@ margin-top: 35px;
   width: 100px;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .social-tw {
-    background-image: url(../../images/twIcon.png);
-    width: 28px;
-    height: 28px;
-   
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 40px;
-  }
-  
+  background-image: url(../../images/twIcon.png);
+  width: 28px;
+  height: 28px;
 
-  .social-fb {
-    width: 28px;
-    height: 28px;
-    background-color: #1877f2;
-    border-radius: 50%;
-    background-image: url(../../images/fbIcon.png);
-    background-repeat: no-repeat;
-    
-  }
-  
-  .insta-icon{
-    width: 28px;
-    height: 28px;
-    background-color: #1877f2;
-    border-radius: 50%;
-    background-image: url(../../images/insta-icon.png);
-    background-repeat: no-repeat;
-    margin-right: 40px;
-  }
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 40px;
+}
+
+.social-fb {
+  width: 28px;
+  height: 28px;
+  background-color: #1877f2;
+  border-radius: 50%;
+  background-image: url(../../images/fbIcon.png);
+  background-repeat: no-repeat;
+}
+
+.insta-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #1877f2;
+  border-radius: 50%;
+  background-image: url(../../images/insta-icon.png);
+  background-repeat: no-repeat;
+  margin-right: 40px;
+}
