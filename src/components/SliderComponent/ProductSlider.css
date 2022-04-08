@@ -84,6 +84,30 @@
   line-height: 35px;
   color: #000000;
 }
+.slider-text-discount-price {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: red;
+}
+
+.discount-arrow {
+  width: 40px;
+  height: 20px;
+  margin: 0 10px;
+}
 
 .slider-item-text-two {
   display: flex;

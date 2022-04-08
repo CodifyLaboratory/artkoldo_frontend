@@ -22,9 +22,9 @@ export default function AboutUsPage() {
     <div className="page-content">
       <div className="breadcrumbs">
         <span>
-          <a href="/">Главная /</a>
+          <a href="/">Главная/</a>
         </span>
-        <span>О нас / ...</span>
+        <span>О нас</span>
       </div>
       <hr />
       <div className="about-us-Block">

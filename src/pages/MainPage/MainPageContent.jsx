@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PlayBtn from "../../images/play-btn.png";
 import { API_URL } from "../../API/api";
 import axios from "axios";
 import "./MainPage.css";
@@ -7,6 +6,7 @@ import { Link } from "react-router-dom";
 import SliderComponent from "../../components/SliderComponent/ProductSlider";
 import AuthorSlider from "../../components/SliderComponent/AuthorSlider";
 import SpinComponent from "../../components/Spinner/Spin";
+import Video from "../../components/VideoComponent/Video";
 
 export default function MainPageContent({ setIsOpen }) {
   const [discounted, setDiscounted] = useState({});
@@ -14,6 +14,7 @@ export default function MainPageContent({ setIsOpen }) {
   const [recent, setRecent] = useState({});
   const [filter, setFilter] = useState("");
   const [authors, setAuthors] = useState([]);
+  const [videoData, setVideoData] = useState([]);
 
   useEffect(() => {
     axios
@@ -44,6 +45,14 @@ export default function MainPageContent({ setIsOpen }) {
       .get(`${API_URL}/api/authors/`)
       .then((response) => {
         setAuthors(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    axios
+      .get(`${API_URL}/api/info/video_on_main_page/`)
+      .then((response) => {
+        setVideoData(response.data[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -89,37 +98,40 @@ export default function MainPageContent({ setIsOpen }) {
       </div>
       <div className="slider-container-box">
         <div className="slider-container">
-          <SliderComponent products={recent} filter={filter} />
+          <SliderComponent
+            products={recent}
+            filter={filter}
+            isDiscount={false}
+          />
         </div>
       </div>
       <p className="slider-title">Рекомендуемое</p>
       <div className="slider-container-box">
         <div className="slider-container">
-          <SliderComponent products={recommended} filter="" />
+          <SliderComponent
+            products={recommended}
+            filter=""
+            isDiscount={false}
+          />
         </div>
       </div>
       <p className="slider-title">Скидка</p>
       <div className="slider-container-box slider-third">
         <div className="slider-container ">
-          <SliderComponent products={discounted} filter="" />
+          <SliderComponent products={discounted} filter="" isDiscount={true} />
         </div>
       </div>
       <div className="about-container">
         <div className="about-box">
           <div className="about-left">
             <p className="about-title">Artkoldo</p>
-            <div className="about-text">
-              Проект нацеленный на популяризацию кыргызского искусства
-              посредством создания единой платформы для размещения ремесленных
-              изделий и картин на онлайн площадке, что поможет мастерам и
-              художникам продавать свои работы внутри и за пределы страны.
-            </div>
+            <div className="about-text">{videoData?.description}</div>
             <Link to="/about" className="about-btn">
               Подробнее...
             </Link>
           </div>
           <div className="about-right">
-            <img src={PlayBtn} />
+            <Video link={videoData?.link} />
           </div>
         </div>
       </div>

@@ -54,22 +54,25 @@ export default function AuthorSlider({ slides }) {
 
   if (!slides) return <div>Loading</div>;
   return (
-    <Slider {...settings}>
-      {slides?.map((author) => (
-        <div className="slider-item-wrapper" key={author?.name}>
-          <div className="author-about-photo">
-            {author?.photo ? (
-              <img className="author-photo" src={author?.photo} alt="photo" />
-            ) : (
-              <img className="author-photo" src={`${Logo}`} alt="photo" />
-            )}
+    <>
+      <p className="authors-slider-title">Мастера</p>
+      <Slider {...settings}>
+        {slides?.map((author) => (
+          <div className="slider-item-wrapper" key={author?.name}>
+            <div className="author-about-photo">
+              {author?.photo ? (
+                <img className="author-photo" src={author?.photo} alt="photo" />
+              ) : (
+                <img className="author-photo" src={`${Logo}`} alt="photo" />
+              )}
+            </div>
+            <div className="author-about-text">
+              <div className="author-about-name">{author?.name}</div>
+              <div className="author-about-bio">{author?.about}</div>
+            </div>
           </div>
-          <div className="author-about-text">
-            <div className="author-about-name">{author?.name}</div>
-            <div className="author-about-bio">{author?.about}</div>
-          </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </>
   );
 }

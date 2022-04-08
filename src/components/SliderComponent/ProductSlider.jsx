@@ -8,8 +8,9 @@ import LeftArrowImg from "../../images/icons/slider-left-arrow.svg";
 import RightArrowImg from "../../images/icons/slider-right-arrow.svg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import arrow from "../../images/arrow.svg";
 
-export default function SliderComponent({ products, filter }) {
+export default function SliderComponent({ products, filter, isDiscount }) {
   const [slideItems, setSlideItems] = useState([]);
 
   function getProducts(items) {
@@ -114,10 +115,22 @@ export default function SliderComponent({ products, filter }) {
                   <div className="slider-text-title">
                     <span>{product?.title}</span>
                   </div>
-                  <div className="slider-text-price">
-                    <span>{product?.price}</span>
-                    <span>&nbsp;c.</span>
-                  </div>
+                  {isDiscount ? (
+                    <div className="slider-text-discount-price">
+                      <span className="line-through">{product?.price}</span>
+                      <span className="line-through">&nbsp;c.</span>
+                      <img className="discount-arrow" src={arrow} />
+                      <span className="new-price">
+                        {product?.discount_price}
+                      </span>
+                      <span className="new-price">&nbsp;c.</span>
+                    </div>
+                  ) : (
+                    <div className="slider-text-price">
+                      <span>{product?.price}</span>
+                      <span>&nbsp;c.</span>
+                    </div>
+                  )}
                 </div>
                 <div className="slider-item-text-two">
                   <span>{product?.author?.name}</span>

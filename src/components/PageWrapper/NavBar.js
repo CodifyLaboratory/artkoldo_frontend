@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { MenuItems } from "./MenuItems";
-import logo from "../../images/logo.png";
+import MainLogo from "../../images/icons/artkoldoo-logo.svg";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchBar from "../SearchBar/SearchBar";
@@ -26,7 +26,7 @@ export default function Navbar() {
 
         <Link to="/">
           <div className="logo">
-            <img className="img_logo" src={logo} alt="logo" />
+            <img className="img_logo" src={MainLogo} alt="logo" />
           </div>
         </Link>
         <div className="header-right">
