@@ -1,6 +1,7 @@
 import React from "react";
 import modalLogo from "../../images/logo_in_modal.svg";
 import { Form, Input } from "antd";
+import SpinComponent from "../../components/Spinner/Spin";
 import "./BasketModal.css";
 
 export const BasketModalOne = ({ setIsOpen, onClick }) => {
@@ -52,6 +53,7 @@ export const BasketModalTwo = ({
           <Form className="basket-modal-order-inputs" onFinish={onSubmit}>
             <Form.Item
               name="username"
+              type="text"
               rules={[
                 {
                   required: true,
@@ -81,6 +83,11 @@ export const BasketModalTwo = ({
               <Input
                 className="order-info-input-lg"
                 placeholder="Номер телефона"
+                onKeyPress={(event) => {
+                  if (!/^[0-9]+$/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
               />
             </Form.Item>
             <Form.Item
@@ -89,10 +96,15 @@ export const BasketModalTwo = ({
                 {
                   required: true,
                   message: "* Введите адрес электронной почты",
+                  type: "email",
                 },
               ]}
             >
-              <input className="order-info-input-lg" placeholder="Эл.почта" />
+              <Input
+                className="order-info-input-lg"
+                placeholder="Эл.почта"
+                type="email"
+              />
             </Form.Item>
             <Form.Item
               name="country"
@@ -103,7 +115,16 @@ export const BasketModalTwo = ({
                 },
               ]}
             >
-              <Input className="order-info-input-lg" placeholder="Страна" />
+              <Input
+                className="order-info-input-lg"
+                placeholder="Страна"
+                type="text"
+                onKeyPress={(event) => {
+                  if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
+              />
             </Form.Item>
             <div className="order-info-sm-box">
               <Form.Item
@@ -111,24 +132,39 @@ export const BasketModalTwo = ({
                 rules={[
                   {
                     required: true,
-                    message: "* Введите номер телефона",
+                    message: "* Введите область",
                   },
                 ]}
               >
-                <Input className="order-info-input-sm" placeholder="Область" />
+                <Input
+                  className="order-info-input-sm"
+                  placeholder="Область"
+                  type="text"
+                  onKeyPress={(event) => {
+                    if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                />
               </Form.Item>
               <Form.Item
                 name="city"
                 rules={[
                   {
                     required: true,
-                    message: "* Введите номер телефона",
+                    message: "* Введите город/населенный пункт",
                   },
                 ]}
               >
                 <Input
                   className="order-info-input-sm"
                   placeholder="Город/Населенный пункт"
+                  type="text"
+                  onKeyPress={(event) => {
+                    if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                 />
               </Form.Item>
             </div>
@@ -146,7 +182,13 @@ export const BasketModalTwo = ({
   );
 };
 
-export const BasketModalThree = ({ setIsOpen, onClick, orderId, loading }) => {
+export const BasketModalThree = ({
+  setIsOpen,
+  onClick,
+  orderId,
+  loading,
+  isFailed,
+}) => {
   return (
     <>
       <div className="basket-dark-bg" onClick={() => setIsOpen(false)} />
@@ -154,8 +196,22 @@ export const BasketModalThree = ({ setIsOpen, onClick, orderId, loading }) => {
         <div className="basket-modal-logo">
           <img src={modalLogo} alt="logo" />
         </div>
-        {loading ? (
-          <div>Loading</div>
+        {loading && (
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <SpinComponent />
+          </div>
+        )}
+        {isFailed ? (
+          <div className="basket-order-submit-text">
+            <p>Ошибка!</p>
+            <p>
+              Ваш заказ не был отправлен. Проверьте соединение с интернетом и
+              попробуйте снова отправить форму. В случае повторной ошибки,
+              просим вас связаться с нашей службой обработки заказов по
+              телефонам, указанным в разделе <a href="/contacts">Контакты</a>.
+              Благодарим за понимание.
+            </p>
+          </div>
         ) : (
           <div className="basket-order-submit-text">
             <p>Спасибо!</p>

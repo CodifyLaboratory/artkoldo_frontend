@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PageWrapper from "../../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { API_URL } from "../../API/api";
 import axios from "axios";
@@ -7,53 +6,65 @@ import { useParams, useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { AddCartContext } from "../../components/Context/Context.js";
 import SpinComponent from "../../components/Spinner/Spin";
+import Logo from "../../images/product-logo.jpeg";
 import "./HandicraftItem.css";
 
 export default function HandicraftItem() {
   const [product, setProduct] = useState();
   const [recommended, setRecommended] = useState();
+  const [loading, setLoading] = useState(false);
+  const [isChanged, setIsChanged] = useState(false);
   const addCartItems = useContext(AddCartContext);
   const navigate = useNavigate();
   const { id } = useParams();
 
   function changePhoto2() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_2);
+    img.setAttribute("src", product?.photo_1 ? product?.photo_1 : `${Logo}`);
   }
 
   function changePhoto3() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_3);
+    img.setAttribute("src", product?.photo_2 ? product?.photo_2 : `${Logo}`);
   }
 
   function changePhoto4() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_4);
+    img.setAttribute("src", product?.photo_3 ? product?.photo_3 : `${Logo}`);
   }
 
   function changePhoto5() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_5);
+    img.setAttribute("src", product?.photo_4 ? product?.photo_4 : `${Logo}`);
   }
 
+  const getProductData = async () => {
+    setLoading(true);
+    try {
+      const item = await axios.get(`${API_URL}/api/handicrafts/${id}/`);
+      setProduct(item.data);
+      const items = await axios.get(
+        `${API_URL}/api/handicraft_recommendations/${item.data.id}/`
+      );
+      setRecommended(items.data);
+      return;
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get(`${API_URL}/api/handicrafts/${id}/`)
-      .then((response) => {
-        setProduct(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    axios
-      .get(`${API_URL}/api/handicraft_recommendations/${id}/`)
-      .then((response) => {
-        setRecommended(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getProductData();
   }, []);
+
+  useEffect(() => {
+    if (isChanged === true) {
+      getProductData();
+    }
+    setIsChanged(false);
+  }, [isChanged]);
 
   const handleClick = (e, product) => {
     e.preventDefault();
@@ -76,41 +87,37 @@ export default function HandicraftItem() {
       <div className="page-content">
         <div className="product-content">
           <div className="left-side">
-            <div>
+            <div className="product-img">
               <img
-                className="product-img"
-                src={product?.photo_1}
+                src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
                 alt={product?.title}
+                id="mainPhoto"
               ></img>
             </div>
             <div className="four_photos">
-              <div onClick={changePhoto2}>
+              <div className="img_box" onClick={changePhoto2}>
                 <img
-                  className="img_box"
-                  src={product.photo_2}
-                  alt={product.title}
-                ></img>
+                  src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
-              <div onClick={changePhoto3}>
+              <div className="img_box" onClick={changePhoto3}>
                 <img
-                  className="img_box"
-                  src={product.photo_3}
-                  alt={product.title}
-                ></img>
+                  src={product?.photo_2 ? product?.photo_2 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
-              <div onClick={changePhoto4}>
+              <div className="img_box" onClick={changePhoto4}>
                 <img
-                  className="img_box"
-                  src={product.photo_4}
-                  alt={product.title}
-                ></img>
+                  src={product?.photo_3 ? product?.photo_3 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
-              <div onClick={changePhoto5}>
+              <div className="img_box" onClick={changePhoto5}>
                 <img
-                  className="img_box"
-                  src={product.photo_5}
-                  alt={product.title}
-                ></img>
+                  src={product?.photo_4 ? product?.photo_4 : `${Logo}`}
+                  alt={Logo}
+                />
               </div>
             </div>
             <div>
@@ -163,6 +170,7 @@ export default function HandicraftItem() {
             recommended.length <= 6 ? recommended : recommended.splice(0, 6)
           }
           category="handicrafts"
+          onClick={() => setIsChanged(true)}
         />
       </div>
     </div>
