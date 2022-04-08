@@ -23,7 +23,7 @@ export default function DeliveryAndPayment() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Оплата и доставка / ...</span>
+        <span>Оплата и доставка</span>
       </div>
       <hr />
       <div className="payments">
