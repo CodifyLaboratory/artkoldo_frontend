@@ -30,7 +30,13 @@ export const CartProvider = ({ children }) => {
     >
       <RemoveCartContext.Provider
         value={(item) => {
-          setCartItems(cartItems.filter((product) => product !== item));
+          if (item.qty > 1) {
+            setCartItems(
+              cartItems.map((x) => (x === item ? { ...x, qty: x.qty - 1 } : x))
+            );
+          } else {
+            setCartItems(cartItems.filter((product) => product !== item));
+          }
         }}
       >
         <MainContext.Provider
