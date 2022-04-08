@@ -9,7 +9,9 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-logo"></div>
+        <Link to="/">
+          <div className="footer-logo"></div>
+        </Link>
         <div className="min-menu">
           <div className="categories">
             <ul className="footer-menu">
@@ -58,15 +60,12 @@ function Footer() {
           <p className="pt">Мы в соц.сетях</p>
           <div className="social-icons d-flex pt-4">
             <a href="URL">
-              {" "}
               <div className="insta-icon"></div>
             </a>
             <a href="URL">
-              {" "}
               <div className="social-tw"></div>
             </a>
             <a href="URL">
-              {" "}
               <div className="social-fb"></div>
             </a>
           </div>

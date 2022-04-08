@@ -147,7 +147,7 @@ export const BasketModalTwo = ({
                   }}
                 />
               </Form.Item>
-              {/* <Form.Item
+              <Form.Item
                 name="city"
                 rules={[
                   {
@@ -166,7 +166,7 @@ export const BasketModalTwo = ({
                     }
                   }}
                 />
-              </Form.Item> */}
+              </Form.Item>
             </div>
             <div className="basket-checkout-btn">
               <Form.Item>

@@ -6,43 +6,48 @@ import { useNavigate, useParams } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { AddCartContext } from "../../components/Context/Context.js";
 import SpinComponent from "../../components/Spinner/Spin";
+import Logo from "../../images/product-logo.jpeg";
 import "./PaintingItem.css";
 
 export default function PaintingItem() {
   const [product, setProduct] = useState();
   const [recommended, setRecommended] = useState();
+  const [isChanged, setIsChanged] = useState(false);
   const addCartItems = useContext(AddCartContext);
   const [loading, setLoading] = useState(false);
-  const [loading2, setLoading2] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
 
   function changePhoto2() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_2);
+    img.setAttribute("src", product?.photo_1 ? product?.photo_1 : `${Logo}`);
   }
 
   function changePhoto3() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_3);
+    img.setAttribute("src", product?.photo_2 ? product?.photo_2 : `${Logo}`);
   }
 
   function changePhoto4() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_4);
+    img.setAttribute("src", product?.photo_3 ? product?.photo_3 : `${Logo}`);
   }
 
   function changePhoto5() {
     var img = document.getElementById("mainPhoto");
-    img.setAttribute("src", product.photo_5);
+    img.setAttribute("src", product?.photo_4 ? product?.photo_4 : `${Logo}`);
   }
 
-  const getProduct = async () => {
+  const getProductData = async () => {
     setLoading(true);
     try {
-      await axios.get(`${API_URL}/api/paintings/${id}/`).then((response) => {
-        setProduct(response.data);
-      });
+      const item = await axios.get(`${API_URL}/api/paintings/${id}/`);
+      setProduct(item.data);
+      const items = await axios.get(
+        `${API_URL}/api/painting_recommendations/${item.data.id}/`
+      );
+      setRecommended(items.data);
+      return;
     } catch (error) {
       console.log(error);
     } finally {
@@ -50,25 +55,16 @@ export default function PaintingItem() {
     }
   };
 
-  const getRecommended = async () => {
-    setLoading2(true);
-    try {
-      await axios
-        .get(`${API_URL}/api/painting_recommendations/${id}/`)
-        .then((response) => {
-          setRecommended(response.data);
-        });
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading2(false);
-    }
-  };
+  useEffect(() => {
+    getProductData();
+  }, []);
 
   useEffect(() => {
-    getProduct();
-    getRecommended();
-  }, []);
+    if (isChanged === true) {
+      getProductData();
+    }
+    setIsChanged(false);
+  }, [isChanged]);
 
   const handleClick = (e, product) => {
     e.preventDefault();
@@ -92,23 +88,35 @@ export default function PaintingItem() {
           <div className="left-side">
             <div className="product-img">
               <img
-                src={product.photo_1}
-                alt={product.title}
+                src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
+                alt={product?.title}
                 id="mainPhoto"
               ></img>
             </div>
             <div className="four_photos">
               <div className="img_box" onClick={changePhoto2}>
-                <img src={product.photo_2} alt={product.title} />
+                <img
+                  src={product?.photo_1 ? product?.photo_1 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
               <div className="img_box" onClick={changePhoto3}>
-                <img src={product.photo_3} alt={product.title} />
+                <img
+                  src={product?.photo_2 ? product?.photo_2 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
               <div className="img_box" onClick={changePhoto4}>
-                <img src={product.photo_4} alt={product.title} />
+                <img
+                  src={product?.photo_3 ? product?.photo_3 : `${Logo}`}
+                  alt={product?.title}
+                />
               </div>
               <div className="img_box" onClick={changePhoto5}>
-                <img src={product.photo_5} alt={product.title} />
+                <img
+                  src={product?.photo_4 ? product?.photo_4 : `${Logo}`}
+                  alt={Logo}
+                />
               </div>
             </div>
             <div>
@@ -166,9 +174,10 @@ export default function PaintingItem() {
         </div>
         <ItemCards
           products={
-            recommended.length <= 6 ? recommended : recommended.splice(0, 6)
+            recommended?.length <= 6 ? recommended : recommended?.splice(0, 6)
           }
           category="paintings"
+          onClick={() => setIsChanged(true)}
         />
       </div>
     </div>

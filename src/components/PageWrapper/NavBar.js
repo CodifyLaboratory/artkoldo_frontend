@@ -24,10 +24,11 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <div className="logo">
-          {" "}
-          <img className="img_logo" src={logo} alt="logo" />
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img className="img_logo" src={logo} alt="logo" />
+          </div>
+        </Link>
         <div className="header-right">
           <SearchBar />
 

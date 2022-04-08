@@ -3,7 +3,7 @@ import "./ItemCards.css";
 import { Link } from "react-router-dom";
 import Logo from "../../images/product-logo.jpeg";
 
-export default function ItemCards({ products = [], category = "" }) {
+export default function ItemCards({ products, category, onClick }) {
   return (
     <div className="Item-Cards">
       {products?.map((product) => (
@@ -14,14 +14,16 @@ export default function ItemCards({ products = [], category = "" }) {
                 className="product-item_image"
                 id={product?.id}
                 src={product?.photo_1}
-                alt=""
+                alt={product?.title}
+                onClick={onClick}
               />
             ) : (
               <img
                 className="product-item_logo"
                 id={product?.id}
                 src={`${Logo}`}
-                alt=""
+                alt={product?.title}
+                onClick={onClick}
               />
             )}
           </Link>

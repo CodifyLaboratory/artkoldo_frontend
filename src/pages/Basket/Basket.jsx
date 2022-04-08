@@ -54,7 +54,6 @@ export default function Basket() {
         });
     } catch (error) {
       setIsFailed(true);
-      localStorage.clear();
       console.log(error);
     } finally {
       setLoading(false);
@@ -75,11 +74,8 @@ export default function Basket() {
 
   useEffect(() => {
     if (isModalOneOpen === true) {
-      const orderData = JSON.parse(
-        localStorage.getItem("cart", JSON.stringify(cartItems))
-      );
       setOrderProducts(
-        orderData?.map((item) => {
+        cartItems?.map((item) => {
           return {
             product_category: item?.category,
             product_id: item?.id,
