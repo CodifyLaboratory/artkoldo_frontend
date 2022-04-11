@@ -2,6 +2,7 @@ import React from "react";
 import "./ItemCards.css";
 import { Link } from "react-router-dom";
 import Logo from "../../images/product-logo.jpeg";
+import arrow from "../../images/arrow.svg";
 
 export default function ItemCards({ products, category, onClick }) {
   return (
@@ -32,10 +33,20 @@ export default function ItemCards({ products, category, onClick }) {
               <div className="product-text-title">
                 <span>{product?.title}</span>
               </div>
-              <div className="product-text-price">
-                <span>{product?.price}</span>
-                <span>&nbsp;c.</span>
-              </div>
+              {product?.discount_price ? (
+                <div className="slider-text-discount-price">
+                  <span className="line-through">{product?.price}</span>
+                  <span className="line-through">&nbsp;c.</span>
+                  <img className="discount-arrow" src={arrow} />
+                  <span className="new-price">{product?.discount_price}</span>
+                  <span className="new-price">&nbsp;c.</span>
+                </div>
+              ) : (
+                <div className="slider-text-price">
+                  <span>{product?.price}</span>
+                  <span>&nbsp;c.</span>
+                </div>
+              )}
             </div>
             <div className="product-item-text-two">
               <span>{product?.author?.name}</span>
