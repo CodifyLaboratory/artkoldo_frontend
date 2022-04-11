@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemCards.css";
 import { Link } from "react-router-dom";
-import Logo from "../../images/product-logo.jpeg";
+import Logo from "../../images/product-logo.png";
 import arrow from "../../images/arrow.svg";
 
 export default function ItemCards({ products, category, onClick }) {

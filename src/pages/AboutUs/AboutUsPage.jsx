@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../images/product-logo.jpeg";
+import logo from "../../images/product-logo.png";
 import { API_URL } from "../../API/api";
 import "./AboutUsPage.css";
 import axios from "axios";

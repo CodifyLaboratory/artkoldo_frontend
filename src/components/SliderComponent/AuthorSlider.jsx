@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../images/product-logo.jpeg";
+import Logo from "../../images/product-logo.png";
 import "./AuthorSlider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
