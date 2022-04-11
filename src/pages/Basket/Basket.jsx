@@ -5,7 +5,7 @@ import {
   RemoveCartContext,
   AddCartContext,
 } from "../../components/Context/Context.js";
-import Logo from "../../images/product-logo.jpeg";
+import Logo from "../../images/product-logo.png";
 import RemoveItemIcon from "../../images/icons/removeItem-icon.svg";
 import CheckoutIcon from "../../images/icons/checkout-icon.svg";
 import ReturnIcon from "../../images/icons/return-arrow-icon.svg";

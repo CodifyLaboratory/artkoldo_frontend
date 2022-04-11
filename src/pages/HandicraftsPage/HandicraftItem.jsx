@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ItemCards from "../../components/Products/ItemCards";
 import { AddCartContext } from "../../components/Context/Context.js";
 import SpinComponent from "../../components/Spinner/Spin";
-import Logo from "../../images/product-logo.jpeg";
+import Logo from "../../images/product-logo.png";
 import arrow from "../../images/arrow.svg";
 import "./HandicraftItem.css";
 
