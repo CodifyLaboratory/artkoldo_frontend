@@ -95,30 +95,58 @@ export default function CeramicItem() {
               ></img>
             </div>
             <div className="four_photos">
-              <div className="img_box" onClick={changePhoto2}>
+              {product?.photo_1 ? (
                 <img
-                  src={product?.photo_1 ? product?.photo_1 : Logo}
-                  alt={product?.title}
+                  className="img_box"
+                  onClick={changePhoto2}
+                  src={product?.photo_1}
                 />
-              </div>
-              <div className="img_box" onClick={changePhoto3}>
+              ) : (
                 <img
-                  src={product?.photo_2 ? product?.photo_2 : Logo}
-                  alt={product?.title}
+                  className="img_box"
+                  onClick={changePhoto2}
+                  src={`${Logo}`}
                 />
-              </div>
-              <div className="img_box" onClick={changePhoto4}>
+              )}
+              {product?.photo_2 ? (
                 <img
-                  src={product?.photo_3 ? product?.photo_3 : Logo}
-                  alt={product?.title}
+                  className="img_box"
+                  onClick={changePhoto3}
+                  src={product?.photo_2}
                 />
-              </div>
-              <div className="img_box" onClick={changePhoto5}>
+              ) : (
                 <img
-                  src={product?.photo_4 ? product?.photo_4 : Logo}
-                  alt={product?.title}
+                  className="img_box"
+                  onClick={changePhoto3}
+                  src={`${Logo}`}
                 />
-              </div>
+              )}
+              {product?.photo_3 ? (
+                <img
+                  className="img_box"
+                  onClick={changePhoto4}
+                  src={product?.photo_3}
+                />
+              ) : (
+                <img
+                  className="img_box"
+                  onClick={changePhoto4}
+                  src={`${Logo}`}
+                />
+              )}
+              {product?.photo_4 ? (
+                <img
+                  className="img_box"
+                  onClick={changePhoto5}
+                  src={product?.photo_4}
+                />
+              ) : (
+                <img
+                  className="img_box"
+                  onClick={changePhoto5}
+                  src={`${Logo}`}
+                />
+              )}
             </div>
             <div>
               <h1 className="description_headings">Об изделии</h1>

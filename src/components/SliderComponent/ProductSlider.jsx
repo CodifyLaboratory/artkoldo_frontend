@@ -89,7 +89,10 @@ export default function SliderComponent({ products, filter, isDiscount }) {
               key={product?.title}
               style={{ width: 50 }}
             >
-              <Link to={`/${product?.category}s/${product?.id}`}>
+              <Link
+                to={`/${product?.category}s/${product?.id}`}
+                style={{ textDecoration: "none" }}
+              >
                 {product?.photo_1 ? (
                   <>
                     <img
@@ -109,39 +112,39 @@ export default function SliderComponent({ products, filter, isDiscount }) {
                     />
                   </>
                 )}
-              </Link>
-              <div className="slider-item-text">
-                <div className="slider-item-text-one">
-                  <div className="slider-text-title">
-                    <span>{product?.title}</span>
+                <div className="slider-item-text">
+                  <div className="slider-item-text-one">
+                    <div className="slider-text-title">
+                      <span>{product?.title}</span>
+                    </div>
+                    {isDiscount ? (
+                      <div className="slider-text-discount-price">
+                        <span className="line-through">{product?.price}</span>
+                        <span className="line-through">&nbsp;c.</span>
+                        <img className="discount-arrow" src={arrow} />
+                        <span className="new-price">
+                          {product?.discount_price}
+                        </span>
+                        <span className="new-price">&nbsp;c.</span>
+                      </div>
+                    ) : (
+                      <div className="slider-text-price">
+                        <span>{product?.price}</span>
+                        <span>&nbsp;c.</span>
+                      </div>
+                    )}
                   </div>
-                  {isDiscount ? (
-                    <div className="slider-text-discount-price">
-                      <span className="line-through">{product?.price}</span>
-                      <span className="line-through">&nbsp;c.</span>
-                      <img className="discount-arrow" src={arrow} />
-                      <span className="new-price">
-                        {product?.discount_price}
-                      </span>
-                      <span className="new-price">&nbsp;c.</span>
-                    </div>
-                  ) : (
-                    <div className="slider-text-price">
-                      <span>{product?.price}</span>
-                      <span>&nbsp;c.</span>
-                    </div>
-                  )}
+                  <div className="slider-item-text-two">
+                    <span>{product?.author?.name}</span>
+                  </div>
+                  <div className="slider-item-text-three">
+                    <span>
+                      {product?.author?.region?.title}&nbsp;
+                      {product?.author?.region?.country?.title}
+                    </span>
+                  </div>
                 </div>
-                <div className="slider-item-text-two">
-                  <span>{product?.author?.name}</span>
-                </div>
-                <div className="slider-item-text-three">
-                  <span>
-                    {product?.author?.region?.title}&nbsp;
-                    {product?.author?.region?.country?.title}
-                  </span>
-                </div>
-              </div>
+              </Link>
             </div>
           ))}
         </Slider>

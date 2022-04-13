@@ -44,6 +44,7 @@
 .basket-item-photo img {
   width: 510px;
   height: 308px;
+  object-fit: cover;
 }
 
 .basket-item-details {

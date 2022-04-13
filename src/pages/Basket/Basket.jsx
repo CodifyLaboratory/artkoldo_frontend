@@ -135,7 +135,7 @@ export default function Basket() {
                   {item?.photo_1 ? (
                     <img src={item?.photo_1} />
                   ) : (
-                    <img src={Logo} />
+                    <img src={`${Logo}`} />
                   )}
                 </Link>
               </div>
@@ -169,7 +169,15 @@ export default function Basket() {
                 <div className="basket-item-quantity">
                   <div className="basket-item-delete-icon">
                     <img src={RemoveItemIcon} alt={"удалить"} />
-                    <button>Удалить</button>
+                    <button
+                      onClick={() =>
+                        setCartItems(
+                          cartItems.filter((product) => product !== item)
+                        )
+                      }
+                    >
+                      Удалить
+                    </button>
                   </div>
                   <div className="basket-item-counter-box">
                     <button onClick={() => removeItem(item)}>-</button>
@@ -190,7 +198,9 @@ export default function Basket() {
                 </div>
                 <div className="basket-item-checkout">
                   <img src={CheckoutIcon} alt={"оформить заказ"} />
-                  <button>Оформить заказ</button>
+                  <button onClick={() => setIsModalOneOpen(true)}>
+                    Оформить заказ
+                  </button>
                 </div>
               </div>
             </div>

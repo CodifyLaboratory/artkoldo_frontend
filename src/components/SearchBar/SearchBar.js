@@ -40,8 +40,19 @@ function SearchBar() {
     }
   };
 
+  function handleInput(event) {
+    document.getElementById("dropdown").style.display = "none";
+    setInput(event.target.value);
+  }
+
   return (
     <div className="searchBar">
+      <div className="dropdown" id="dropdown">
+        <p>Для поиска товара по каталогу, вам необходимо:</p>
+        <p>1. Выбрать категорию</p>
+        <p>2. Ввести текст для поиска</p>
+        <p>3. Нажать на кнопку поиска</p>
+      </div>
       <Form.Select
         aria-label="Default select example"
         id="categoryId"
@@ -60,7 +71,7 @@ function SearchBar() {
           className="search-bar"
           type="text"
           id="searchbar"
-          onChange={(event) => setInput(event.target.value)}
+          onChange={(event) => handleInput(event)}
           required={true}
         />
         <button className="searchSubmit" onClick={handleSearch} />
