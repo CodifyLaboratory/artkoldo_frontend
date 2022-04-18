@@ -3,10 +3,13 @@ export const MainContext = createContext();
 export const AddCartContext = createContext();
 export const RemoveCartContext = createContext();
 export const SetSearch = createContext();
+const basket = JSON.parse(localStorage.getItem("cart") || "[]");
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+  const [cartItems, setCartItems] = useState(basket);
+  const [searchPaintingValue, setSearchPaintingValue] = useState("");
+  const [searchHandicraftValue, setSearchHandicraftValue] = useState("");
+  const [searchCeramicValue, setSearchCeramicValue] = useState("");
 
   return (
     <AddCartContext.Provider
@@ -27,13 +30,21 @@ export const CartProvider = ({ children }) => {
     >
       <RemoveCartContext.Provider
         value={(item) => {
-          setCartItems(cartItems.filter((product) => product !== item));
+          if (item.qty > 1) {
+            setCartItems(
+              cartItems.map((x) => (x === item ? { ...x, qty: x.qty - 1 } : x))
+            );
+          } else {
+            setCartItems(cartItems.filter((product) => product !== item));
+          }
         }}
       >
         <MainContext.Provider
           value={{
             valueCart: [cartItems, setCartItems],
-            valueSearch: [searchValue, setSearchValue],
+            paintingSearch: [searchPaintingValue, setSearchPaintingValue],
+            handicraftSearch: [searchHandicraftValue, setSearchHandicraftValue],
+            ceramicSearch: [searchCeramicValue, setSearchCeramicValue],
           }}
         >
           {children}

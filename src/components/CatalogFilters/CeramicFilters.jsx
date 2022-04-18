@@ -4,6 +4,7 @@ import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";
 import { API_URL } from "../../API/api";
 import axios from "axios";
+import SpinComponent from "../Spinner/Spin";
 import "./Filters.css";
 import SpinComponent from "../Spinner/Spin";
 
@@ -24,13 +25,11 @@ export default function CeramicFilters({
   const [filters, setFilters] = useState({});
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("CeramicFilters", filters);
-
   useEffect(() => {
     axios.get(`${API_URL}/api/ceramic_filter/`).then((r) => setFilters(r.data));
   }, []);
 
-  if (!filters) return <SpinComponent/>;
+  if (!filters) return <SpinComponent />;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
@@ -76,7 +75,7 @@ export default function CeramicFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }
@@ -87,7 +86,7 @@ export default function CeramicFilters({
             <input
               placeholder="До"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }

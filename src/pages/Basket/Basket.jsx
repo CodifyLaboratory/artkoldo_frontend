@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import PageWrapper from "../../components/PageWrapper";
 import {
   MainContext,
   RemoveCartContext,
   AddCartContext,
-} from "../../components/Context/Context";
-import Logo from "../../images/product-logo.jpeg";
+} from "../../components/Context/Context.js";
+import Logo from "../../images/product-logo.png";
 import RemoveItemIcon from "../../images/icons/removeItem-icon.svg";
 import CheckoutIcon from "../../images/icons/checkout-icon.svg";
 import ReturnIcon from "../../images/icons/return-arrow-icon.svg";
@@ -28,10 +27,11 @@ export default function Basket() {
   const [isModalOneOpen, setIsModalOneOpen] = useState(false);
   const [isModalTwoOpen, setIsModalTwoOpen] = useState(false);
   const [isModalThreeOpen, setIsModalThreeOpen] = useState(false);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState();
   const [orderProducts, setOrderProducts] = useState([]);
-  const [isOrderReady, setIsOrderReady] = useState(false);
   const [orderId, setOrderId] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [isFailed, setIsFailed] = useState(false);
   const navigate = useNavigate();
 
   const payload = {
@@ -41,19 +41,22 @@ export default function Basket() {
 
   const submitOrder = async () => {
     const finalPayload = Object.assign(formData, payload);
+    setLoading(true);
+    setIsFailed(false);
     try {
       await axios
         .post(`${API_URL}/api/orders/create/`, finalPayload)
         .then(function (response) {
           if (response.status === 201 && response.data.id) {
             setOrderId(response.data.id);
-          } else {
-            return <div>Loading</div>;
+            setCartItems([]);
           }
         });
-      setCartItems([]);
     } catch (error) {
+      setIsFailed(true);
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -63,28 +66,26 @@ export default function Basket() {
   }
 
   useEffect(() => {
-    submitOrder();
-    setIsModalTwoOpen(false);
-    setIsModalThreeOpen(true);
-    console.log("1111111111111111111", isOrderReady);
-    localStorage.clear();
-  }, [isOrderReady === true]);
+    if (formData !== undefined) {
+      submitOrder();
+      setIsModalTwoOpen(false);
+    }
+  }, [formData]);
 
   useEffect(() => {
-    const orderData = JSON.parse(
-      localStorage.getItem("cart", JSON.stringify(cartItems))
-    );
-    setOrderProducts(
-      orderData?.map((item) => {
-        return {
-          product_category: item?.category,
-          product_id: item?.id,
-          quantity: item?.qty,
-          price: item?.price,
-        };
-      })
-    );
-  }, [isModalOneOpen === true]);
+    if (isModalOneOpen === true) {
+      setOrderProducts(
+        cartItems?.map((item) => {
+          return {
+            product_category: item?.category,
+            product_id: item?.id,
+            quantity: item?.qty,
+            price: item?.price,
+          };
+        })
+      );
+    }
+  }, [isModalOneOpen]);
 
   function handleSecondModal() {
     setIsModalOneOpen(false);
@@ -93,7 +94,11 @@ export default function Basket() {
 
   const total = () => {
     setCartTotal(
-      cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)
+      cartItems.reduce(function (acc, item) {
+        return item.discount_price
+          ? acc + item.qty * item.discount_price
+          : acc + item.qty * item.price;
+      }, 0)
     );
   };
 
@@ -103,7 +108,7 @@ export default function Basket() {
   }, [cartItems]);
 
   return (
-    <PageWrapper>
+    <div className="page-content">
       <div className="breadcrumbs">
         <span>
           <a href="/">Главная/</a>
@@ -116,7 +121,7 @@ export default function Basket() {
           <p>Ваша корзина пуста.</p>
           <p>Заполните корзину товарами, чтобы оформить заказ.</p>
           <Link to={"/"}>
-            <button>
+            <button className="back-to-main">
               <span>{"Вернуться на главную >>"}</span>
             </button>
           </Link>
@@ -130,7 +135,7 @@ export default function Basket() {
                   {item?.photo_1 ? (
                     <img src={item?.photo_1} />
                   ) : (
-                    <img src={Logo} />
+                    <img src={`${Logo}`} />
                   )}
                 </Link>
               </div>
@@ -163,25 +168,39 @@ export default function Basket() {
                 )}
                 <div className="basket-item-quantity">
                   <div className="basket-item-delete-icon">
-                    <div>
-                      <img src={RemoveItemIcon} alt={"удалить"} />
-                    </div>
-                    <div>
-                      <button>Удалить</button>
-                    </div>
+                    <img src={RemoveItemIcon} alt={"удалить"} />
+                    <button
+                      onClick={() =>
+                        setCartItems(
+                          cartItems.filter((product) => product !== item)
+                        )
+                      }
+                    >
+                      Удалить
+                    </button>
                   </div>
                   <div className="basket-item-counter-box">
                     <button onClick={() => removeItem(item)}>-</button>
                     <div className="basket-item-counter">{item?.qty}</div>
                     <button onClick={() => addItem(item)}>+</button>
                   </div>
-                  <div className="basket-item-price">
-                    {item?.price}&nbsp;<span>с</span>
-                  </div>
+                  {item?.discount_price ? (
+                    <div className="basket-item-discount-price">
+                      {item?.discount_price}
+                      <span>&nbsp;c.</span>
+                    </div>
+                  ) : (
+                    <div className="basket-item-price">
+                      {item?.price}
+                      <span>&nbsp;c.</span>
+                    </div>
+                  )}
                 </div>
                 <div className="basket-item-checkout">
                   <img src={CheckoutIcon} alt={"оформить заказ"} />
-                  <button>Оформить заказ</button>
+                  <button onClick={() => setIsModalOneOpen(true)}>
+                    Оформить заказ
+                  </button>
                 </div>
               </div>
             </div>
@@ -222,7 +241,7 @@ export default function Basket() {
         <BasketModalTwo
           setIsOpen={setIsModalTwoOpen}
           setFormdata={setFormData}
-          setIsOrderReady={setIsOrderReady}
+          setIsModalThreeOpen={setIsModalThreeOpen}
         />
       )}
       {isModalThreeOpen && (
@@ -230,8 +249,10 @@ export default function Basket() {
           setIsOpen={setIsModalThreeOpen}
           onClick={handleOrderClose}
           orderId={orderId}
+          loading={loading}
+          isFailed={isFailed}
         />
       )}
-    </PageWrapper>
+    </div>
   );
 }

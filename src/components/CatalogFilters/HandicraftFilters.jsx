@@ -4,6 +4,7 @@ import Plus from "../../images/icons/Plus.svg";
 import Minus from "../../images/icons/Minus.svg";
 import { API_URL } from "../../API/api";
 import axios from "axios";
+import SpinComponent from "../Spinner/Spin";
 import "./Filters.css";
 
 export default function HandicraftFilters({
@@ -23,15 +24,13 @@ export default function HandicraftFilters({
   const [filters, setFilters] = useState({});
   const [showPriceOptions, setShowPriceOptions] = useState(false);
 
-  console.log("HandicraftFilters", filters);
-
   useEffect(() => {
     axios
       .get(`${API_URL}/api/handicraft_filter/`)
       .then((r) => setFilters(r.data));
   }, []);
 
-  if (!filters) return <div></div>;
+  if (!filters) return <SpinComponent />;
   return (
     <div className="checkboxes-container">
       <CheckboxOptions
@@ -77,7 +76,7 @@ export default function HandicraftFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }
@@ -88,7 +87,7 @@ export default function HandicraftFilters({
             <input
               placeholder="До"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../images/product-logo.jpeg";
+import Logo from "../../images/product-logo.png";
 import "./ProductSlider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,8 +8,9 @@ import LeftArrowImg from "../../images/icons/slider-left-arrow.svg";
 import RightArrowImg from "../../images/icons/slider-right-arrow.svg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import arrow from "../../images/arrow.svg";
 
-export default function SliderComponent({ products, filter }) {
+export default function SliderComponent({ products, filter, isDiscount }) {
   const [slideItems, setSlideItems] = useState([]);
 
   function getProducts(items) {
@@ -28,7 +29,7 @@ export default function SliderComponent({ products, filter }) {
 
   useEffect(() => {
     setSlideItems(getProducts(products));
-  }, []);
+  }, [products]);
 
   function RightArrow(props) {
     const { className, style, onClick } = props;
@@ -88,7 +89,10 @@ export default function SliderComponent({ products, filter }) {
               key={product?.title}
               style={{ width: 50 }}
             >
-              <Link to={`/${product?.category}s/${product?.id}`}>
+              <Link
+                to={`/${product?.category}s/${product?.id}`}
+                style={{ textDecoration: "none" }}
+              >
                 {product?.photo_1 ? (
                   <>
                     <img
@@ -108,27 +112,39 @@ export default function SliderComponent({ products, filter }) {
                     />
                   </>
                 )}
+                <div className="slider-item-text">
+                  <div className="slider-item-text-one">
+                    <div className="slider-text-title">
+                      <span>{product?.title}</span>
+                    </div>
+                    {isDiscount ? (
+                      <div className="slider-text-discount-price">
+                        <span className="line-through">{product?.price}</span>
+                        <span className="line-through">&nbsp;c.</span>
+                        <img className="discount-arrow" src={arrow} />
+                        <span className="new-price">
+                          {product?.discount_price}
+                        </span>
+                        <span className="new-price">&nbsp;c.</span>
+                      </div>
+                    ) : (
+                      <div className="slider-text-price">
+                        <span>{product?.price}</span>
+                        <span>&nbsp;c.</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="slider-item-text-two">
+                    <span>{product?.author?.name}</span>
+                  </div>
+                  <div className="slider-item-text-three">
+                    <span>
+                      {product?.author?.region?.title}&nbsp;
+                      {product?.author?.region?.country?.title}
+                    </span>
+                  </div>
+                </div>
               </Link>
-              <div className="slider-item-text">
-                <div className="slider-item-text-one">
-                  <div className="slider-text-title">
-                    <span>{product?.title}</span>
-                  </div>
-                  <div className="slider-text-price">
-                    <span>{product?.price}</span>
-                    <span>&nbsp;c.</span>
-                  </div>
-                </div>
-                <div className="slider-item-text-two">
-                  <span>{product?.author?.name}</span>
-                </div>
-                <div className="slider-item-text-three">
-                  <span>
-                    {product?.author?.region?.title}&nbsp;
-                    {product?.author?.region?.country?.title}
-                  </span>
-                </div>
-              </div>
             </div>
           ))}
         </Slider>

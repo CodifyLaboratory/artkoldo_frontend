@@ -39,27 +39,29 @@ span {
   width: 100%;
 }
 .product-img {
-  width: 700px;
+  width: 694px;
   height: 476px;
-  /* margin-top: 100px; */
-  /* max-width: 694px;
- max-height: 476px;
- width: 100% !important;
- height: 100% !important; */
   margin-top: 100px;
 }
+
+.product-img img {
+  width: 694px;
+  height: 476px;
+  object-fit: cover;
+}
+
 .four_photos {
   margin-top: 47px;
   display: flex;
   margin-bottom: 60px;
 }
 .img_box {
+  object-fit: cover;
   width: 160px;
   height: 160px;
   margin-right: 20px;
-  /* width: 100% !important;
- height: 100% !important; */
 }
+
 .description_headings {
   color: #000;
   font-size: 32px;
