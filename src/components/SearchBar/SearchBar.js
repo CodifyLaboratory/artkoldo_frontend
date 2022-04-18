@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../Context/Context";
 import "./SearchBar.css";
@@ -47,32 +46,28 @@ function SearchBar() {
 
   return (
     <div className="searchBar">
-      <div className="dropdown" id="dropdown">
+      {/* <div className="dropdown" id="dropdown">
         <p>Для поиска товара по каталогу, вам необходимо:</p>
         <p>1. Выбрать категорию</p>
         <p>2. Ввести текст для поиска</p>
         <p>3. Нажать на кнопку поиска</p>
-      </div>
-      <Form.Select
-        aria-label="Default select example"
-        id="categoryId"
-        onChange={getCategory}
-        required={true}
-      >
-        <option value="" disabled selected>
-          Поиск
+      </div> */}
+      <select id="categoryId" onChange={getCategory} required={true}>
+        <option value="" disabled selected className="select-category">
+          Выбрать
         </option>
         <option value="paintings">Живопись</option>
         <option value="handicrafts">Ремесленные изделия</option>
         <option value="ceramics">Керамика</option>
-      </Form.Select>
-      <div className="d-flex w-75">
+      </select>
+      <div className="search-input">
         <input
           className="search-bar"
           type="text"
-          id="searchbar"
+          id="search-bar"
           onChange={(event) => handleInput(event)}
           required={true}
+          placeholder="Поиск..."
         />
         <button className="searchSubmit" onClick={handleSearch} />
       </div>

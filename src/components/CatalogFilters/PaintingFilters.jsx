@@ -78,7 +78,7 @@ export default function PaintingFilters({
               <input
                 placeholder="Высота мин"
                 className="manual-input-size"
-                onKeyPress={(event) => {
+                onKeyUp={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
@@ -89,7 +89,7 @@ export default function PaintingFilters({
               <input
                 placeholder="Высота макс"
                 className="manual-input-size"
-                onKeyPress={(event) => {
+                onKeyUp={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
@@ -102,7 +102,7 @@ export default function PaintingFilters({
               <input
                 placeholder="Ширина мин"
                 className="manual-input-size"
-                onKeyPress={(event) => {
+                onKeyUp={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
@@ -113,7 +113,7 @@ export default function PaintingFilters({
               <input
                 placeholder="Ширина макс"
                 className="manual-input-size"
-                onKeyPress={(event) => {
+                onKeyUp={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
@@ -165,7 +165,7 @@ export default function PaintingFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }
@@ -176,7 +176,7 @@ export default function PaintingFilters({
             <input
               placeholder="До"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }

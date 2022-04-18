@@ -74,7 +74,7 @@ export default function CeramicFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }
@@ -85,7 +85,7 @@ export default function CeramicFilters({
             <input
               placeholder="До"
               className="manual-input-price"
-              onKeyPress={(event) => {
+              onKeyUp={(event) => {
                 if (!/[0-9]/.test(event.key)) {
                   event.preventDefault();
                 }

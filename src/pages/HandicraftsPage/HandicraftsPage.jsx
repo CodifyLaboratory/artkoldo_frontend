@@ -137,7 +137,7 @@ export default function HandicraftsPage() {
             }}
             techniqueChecked={techniqueChecked}
             setTechniqueChecked={(values) => {
-              setMaterialChecked(values);
+              setTechniqueChecked(values);
               setCurrentPage(1);
             }}
             regionChecked={regionChecked}

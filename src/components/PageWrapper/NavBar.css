@@ -79,6 +79,22 @@ textarea {
   padding-left: 20px;
   width: 17px;
   height: 17px;
+  position: relative;
+}
+
+.cart-counter {
+  position: absolute;
+  background-color: red;
+  color: white;
+  border-radius: 12px;
+  width: 15px;
+  height: 15px;
+  right: 293px;
+  top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
 .lastitem ul li a {

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.css";
 import { MenuItems } from "./MenuItems";
 import MainLogo from "../../images/icons/artkoldoo-logo.svg";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SearchBar from "../SearchBar/SearchBar";
+import { MainContext } from "../../components/Context/Context.js";
 
 export default function Navbar() {
+  const { valueCart } = useContext(MainContext);
+  const [cartItems, setCartItems] = valueCart;
+
   return (
     <header className="header">
       <div className="header-container">
@@ -34,8 +38,10 @@ export default function Navbar() {
 
           <Link to="/Basket">
             <div className="shop-cart"></div>
+            {cartItems.length > 0 ? (
+              <span className="cart-counter">{cartItems.length}</span>
+            ) : null}
           </Link>
-
           <div className="lastitem">
             <ul>
               <li>
