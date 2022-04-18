@@ -6,7 +6,6 @@ import { API_URL } from "../../API/api";
 import axios from "axios";
 import SpinComponent from "../Spinner/Spin";
 import "./Filters.css";
-import SpinComponent from "../Spinner/Spin";
 
 export default function CeramicFilters({
   typeChecked,

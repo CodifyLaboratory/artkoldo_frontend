@@ -17,8 +17,16 @@ export const BasketModalOne = ({ setIsOpen, onClick }) => {
           производителем и продавцом товара, способ оплаты и доставки
           обговаривается с оператором.
         </div>
-        <div className="basket-modal-button">
-          <button onClick={onClick}>Перейти к заказу</button>
+        <div className="basket-modal-buttons">
+          <button className="basket-modal-button" onClick={onClick}>
+            Перейти к заказу
+          </button>
+          <button
+            className="basket-cancel-btn"
+            onClick={() => setIsOpen(false)}
+          >
+            Отмена
+          </button>
         </div>
       </div>
     </>
@@ -168,12 +176,22 @@ export const BasketModalTwo = ({
                 />
               </Form.Item>
             </div>
-            <div className="basket-checkout-btn">
+            <div className="basket-checkout-btns">
               <Form.Item>
-                <button type="submit" onClick={() => setIsModalThreeOpen(true)}>
+                <button
+                  className="basket-checkout-btn"
+                  type="submit"
+                  onClick={() => setIsModalThreeOpen(true)}
+                >
                   Оформить заказ
                 </button>
               </Form.Item>
+              <button
+                className="basket-cancel-btn"
+                onClick={() => setIsOpen(false)}
+              >
+                Отмена
+              </button>
             </div>
           </Form>
         </div>
