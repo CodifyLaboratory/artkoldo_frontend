@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./NavBar.css";
 import { MenuItems } from "./MenuItems";
 import MainLogo from "../../images/icons/artkoldoo-logo.svg";
@@ -10,6 +10,19 @@ import { MainContext } from "../../components/Context/Context.js";
 export default function Navbar() {
   const { valueCart } = useContext(MainContext);
   const [cartItems, setCartItems] = valueCart;
+  const [totalQty, setTotalQty] = useState();
+
+  const cartQty = () => {
+    setTotalQty(
+      cartItems.reduce(function (acc, item) {
+        return acc + item.qty;
+      }, 0)
+    );
+  };
+
+  useEffect(() => {
+    cartQty();
+  }, [cartItems]);
 
   return (
     <header className="header">
@@ -39,7 +52,7 @@ export default function Navbar() {
           <Link to="/Basket">
             <div className="shop-cart"></div>
             {cartItems.length > 0 ? (
-              <span className="cart-counter">{cartItems.length}</span>
+              <span className="cart-counter">{totalQty}</span>
             ) : null}
           </Link>
           <div className="lastitem">
