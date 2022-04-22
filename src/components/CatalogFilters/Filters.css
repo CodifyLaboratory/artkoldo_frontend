@@ -91,3 +91,13 @@
 .price-row {
   padding-bottom: 40px;
 }
+
+.manual-input-row input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.manual-input-row input[type="number"] {
+  -moz-appearance: textfield;
+}

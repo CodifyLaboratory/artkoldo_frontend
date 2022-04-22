@@ -38,16 +38,26 @@ export const BasketModalTwo = ({
   setFormdata,
   setIsModalThreeOpen,
 }) => {
-  const onSubmit = async (values) => {
-    const payload = {
-      name: values?.username,
-      email: values?.email,
-      phone: values?.phoneNumber,
-      country: values?.country,
-      region: values?.region,
-      city: values?.city,
-    };
-    setFormdata(payload);
+  const [form] = Form.useForm();
+
+  const onSubmit = () => {
+    form
+      .validateFields()
+      .then((values) => {
+        const payload = {
+          name: values?.username,
+          email: values?.email,
+          phone: values?.phoneNumber,
+          country: values?.country,
+          region: values?.region,
+          city: values?.city,
+        };
+        setFormdata(payload);
+        form.resetFields();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -58,7 +68,11 @@ export const BasketModalTwo = ({
           <img src={modalLogo} alt="logo" />
         </div>
         <div className="basket-modal-order-info">
-          <Form className="basket-modal-order-inputs" onFinish={onSubmit}>
+          <Form
+            className="basket-modal-order-inputs"
+            onFinish={onSubmit}
+            form={form}
+          >
             <Form.Item
               name="username"
               type="text"
@@ -67,17 +81,13 @@ export const BasketModalTwo = ({
                   required: true,
                   message: "* Введите имя и фамилию получателя",
                 },
+                {
+                  pattern: /[A-Za-zА-Яа-яЁё\s]/,
+                  message: "* Данные ФИО введены неправильно",
+                },
               ]}
             >
-              <Input
-                className="order-info-input-lg"
-                placeholder="ФИО*"
-                onKeyPress={(event) => {
-                  if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
-              />
+              <Input className="order-info-input-lg" placeholder="ФИО" />
             </Form.Item>
             <Form.Item
               name="phoneNumber"
@@ -86,16 +96,16 @@ export const BasketModalTwo = ({
                   required: true,
                   message: "* Введите номер телефона",
                 },
+                {
+                  pattern:
+                    /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})/,
+                  message: "* Номер телефона введен неправильно",
+                },
               ]}
             >
               <Input
                 className="order-info-input-lg"
                 placeholder="Номер телефона"
-                onKeyPress={(event) => {
-                  if (!/^[0-9]+$/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
               />
             </Form.Item>
             <Form.Item
@@ -104,7 +114,10 @@ export const BasketModalTwo = ({
                 {
                   required: true,
                   message: "* Введите адрес электронной почты",
-                  type: "email",
+                },
+                {
+                  pattern: /^\S+@\S+\.\S+$/,
+                  message: "* Неправильный адрес электронной почты",
                 },
               ]}
             >
@@ -121,17 +134,16 @@ export const BasketModalTwo = ({
                   required: true,
                   message: "* Введите название страны получателя",
                 },
+                {
+                  pattern: /[A-Za-zА-Яа-яЁё\s]/,
+                  message: "* Название страны введено неправильно",
+                },
               ]}
             >
               <Input
                 className="order-info-input-lg"
                 placeholder="Страна"
                 type="text"
-                onKeyPress={(event) => {
-                  if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
-                    event.preventDefault();
-                  }
-                }}
               />
             </Form.Item>
             <div className="order-info-sm-box">
@@ -142,17 +154,16 @@ export const BasketModalTwo = ({
                     required: true,
                     message: "* Введите область",
                   },
+                  {
+                    pattern: /[A-Za-zА-Яа-яЁё\s]/,
+                    message: "* Неправильное название области",
+                  },
                 ]}
               >
                 <Input
                   className="order-info-input-sm"
                   placeholder="Область"
                   type="text"
-                  onKeyPress={(event) => {
-                    if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
                 />
               </Form.Item>
               <Form.Item
@@ -162,27 +173,22 @@ export const BasketModalTwo = ({
                     required: true,
                     message: "* Введите город/населенный пункт",
                   },
+                  {
+                    pattern: /[A-Za-zА-Яа-яЁё\s]/,
+                    message: "* Неправильное название города/села",
+                  },
                 ]}
               >
                 <Input
                   className="order-info-input-sm"
                   placeholder="Город/Населенный пункт"
                   type="text"
-                  onKeyPress={(event) => {
-                    if (!/[A-Za-zА-Яа-яЁё\s]/.test(event.key)) {
-                      event.preventDefault();
-                    }
-                  }}
                 />
               </Form.Item>
             </div>
             <div className="basket-checkout-btns">
               <Form.Item>
-                <button
-                  className="basket-checkout-btn"
-                  type="submit"
-                  onClick={() => setIsModalThreeOpen(true)}
-                >
+                <button className="basket-checkout-btn" type="submit">
                   Оформить заказ
                 </button>
               </Form.Item>

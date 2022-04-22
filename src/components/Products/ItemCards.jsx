@@ -11,7 +11,6 @@ export default function ItemCards({ products, category, onClick }) {
         <Link
           to={`/${category}/${product.id}`}
           style={{ textDecoration: "none" }}
-          target="_blank"
         >
           <div className="product-item" key={product?.id}>
             {product?.photo_1 ? (

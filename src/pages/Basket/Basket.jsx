@@ -69,6 +69,7 @@ export default function Basket() {
     if (formData !== undefined) {
       submitOrder();
       setIsModalTwoOpen(false);
+      setIsModalThreeOpen(true);
     }
   }, [formData]);
 

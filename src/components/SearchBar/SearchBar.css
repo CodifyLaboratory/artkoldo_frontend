@@ -40,7 +40,7 @@ input {
 }
 
 #categoryId {
-  width: 140px;
+  width: 120px;
   border: 1px solid white;
   border-radius: 12px 0 0 12px;
   background-color: transparent;
@@ -52,6 +52,9 @@ input {
   outline: none;
   text-indent: 10px;
   color: gray;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 .select-category {

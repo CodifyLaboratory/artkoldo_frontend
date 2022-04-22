@@ -78,10 +78,8 @@ export default function PaintingFilters({
               <input
                 placeholder="Высота мин"
                 className="manual-input-size"
-                onKeyUp={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
+                type="number"
+                onChange={(event) => {
                   setMinHeight(event.target.value);
                 }}
               />
@@ -89,10 +87,8 @@ export default function PaintingFilters({
               <input
                 placeholder="Высота макс"
                 className="manual-input-size"
-                onKeyUp={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
+                type="number"
+                onChange={(event) => {
                   setMaxHeight(event.target.value);
                 }}
               />
@@ -102,10 +98,8 @@ export default function PaintingFilters({
               <input
                 placeholder="Ширина мин"
                 className="manual-input-size"
-                onKeyUp={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
+                type="number"
+                onChange={(event) => {
                   setMinWidth(event.target.value);
                 }}
               />
@@ -113,10 +107,8 @@ export default function PaintingFilters({
               <input
                 placeholder="Ширина макс"
                 className="manual-input-size"
-                onKeyUp={(event) => {
-                  if (!/[0-9]/.test(event.key)) {
-                    event.preventDefault();
-                  }
+                type="number"
+                onChange={(event) => {
                   setMaxWidth(event.target.value);
                 }}
               />
@@ -165,10 +157,8 @@ export default function PaintingFilters({
             <input
               placeholder="От"
               className="manual-input-price"
-              onKeyUp={(event) => {
-                if (!/[0-9]/.test(event.key)) {
-                  event.preventDefault();
-                }
+              type="number"
+              onChange={(event) => {
                 setMinPrice(event.target.value);
               }}
             />
@@ -176,10 +166,8 @@ export default function PaintingFilters({
             <input
               placeholder="До"
               className="manual-input-price"
-              onKeyUp={(event) => {
-                if (!/[0-9]/.test(event.key)) {
-                  event.preventDefault();
-                }
+              type="number"
+              onChange={(event) => {
                 setMaxPrice(event.target.value);
               }}
             />
