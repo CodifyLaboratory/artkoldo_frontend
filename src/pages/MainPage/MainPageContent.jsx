@@ -105,7 +105,7 @@ export default function MainPageContent({ setIsOpen }) {
           />
         </div>
       </div>
-      <p className="slider-title">Рекомендуемое</p>
+      <p className="slider-title-rec">Рекомендуемое</p>
       <div className="slider-container-box">
         <div className="slider-container">
           <SliderComponent
@@ -115,7 +115,7 @@ export default function MainPageContent({ setIsOpen }) {
           />
         </div>
       </div>
-      <p className="slider-title">Скидка</p>
+      <p className="slider-title-sale">Скидка</p>
       <div className="slider-container-box slider-third">
         <div className="slider-container ">
           <SliderComponent products={discounted} filter="" isDiscount={true} />

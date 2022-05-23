@@ -10,15 +10,16 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 38px;
+  font-size: 28px;
   line-height: 45px;
   color: #000000;
 }
 
 .author-slider-container {
   width: 90%;
-  height: 732px;
-  padding-left: 10px;
+  height: 835px;
+  /* padding-left: 10px; */
+  border-radius: 8.53px;
 }
 
 .author-slider-container-box {
@@ -26,6 +27,7 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  border-radius: 8.53px;
 }
 
 .author-slider-container-box .slider-item-wrapper {
@@ -38,9 +40,9 @@
 }
 
 .author-slider-container-box .slick-slide {
-  width: 1666px !important;
-  height: 732px !important;
-  border-radius: 12px !important;
+  width: 1175px !important;
+  height: 520px !important;
+  border-radius: 8.53px;
   padding: 0;
 }
 
@@ -61,43 +63,48 @@
 }
 
 .author-about-photo {
-  width: 741px;
-  height: 732px;
-  border-radius: 12px;
+  width: 526px;
+  height: 520px;
+  border-radius: 8.53px;
 }
 
 .author-photo {
-  width: 741px;
-  height: 732px;
-  border-radius: 12px;
+  width: 526px;
+  height: 520px;
+  border-radius: 8.53px;
   object-fit: cover;
+  
 }
 
 .author-about-text {
-  margin-left: 84px;
+  margin-left: 59px;
+ 
+ 
+  
 }
 
 .author-about-name {
-  width: 744.38px;
-  height: 63px;
+  width: 529.38px;
+  height: 42px;
   font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 42px;
-  line-height: 150%;
-  color: #373635;
-  margin: 214px 0 28px 0;
-}
-
-.author-about-bio {
-  width: 744.38px;
-  height: 252px;
-  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 150%;
   color: #373635;
+  margin: 50px 0 28px 0;
+}
+
+.author-about-bio {
+  width: 50%;
+  height: 252px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #373635;
+
 }
 
 .slick-dots li {
@@ -105,6 +112,7 @@
   height: 21px !important;
   background-color: #c4c4c4 !important;
   border-radius: 50px !important;
+  margin-top: -100px;
 }
 
 .slick-dots .slick-active {

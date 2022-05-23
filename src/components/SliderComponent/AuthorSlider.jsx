@@ -55,7 +55,7 @@ export default function AuthorSlider({ slides }) {
   if (!slides) return <div>Loading</div>;
   return (
     <>
-      <p className="authors-slider-title">Мастера</p>
+      <p className="authors-slider-title"></p>
       <Slider {...settings}>
         {slides?.map((author) => (
           <div className="slider-item-wrapper" key={author?.name}>

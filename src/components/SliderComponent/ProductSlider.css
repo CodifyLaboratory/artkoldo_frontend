@@ -16,8 +16,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 38px;
-  line-height: 45px;
+  font-size: 26px;
+  line-height: 30px;
   color: #000000;
 }
 
@@ -33,18 +33,18 @@
 .slider-item-img {
   display: block;
   box-sizing: border-box;
-  width: 510px;
-  height: 308px;
+  width: 364px;
+  height: 220px;
   object-fit: cover;
 }
 
 .slick-slide {
-  width: 628px !important;
-  height: 492px !important;
+  width: 448px !important;
+  height: 344px !important;
   background: rgba(255, 255, 255, 1);
-  padding: 45px 60px 22px 60px;
+  padding: 32px 42px 92px 42px;
   border-radius: 12px !important;
-  margin: 25px;
+  margin: 25px 25px 0 25px;
 }
 
 .slick-arrow::before {
@@ -53,25 +53,34 @@
 
 .slick-prev {
   margin: -20px;
+  background: #292929;
+  opacity: 60%;
+  width: 13.23px ;
+  height: 21.43px;
 }
 
 .slick-next {
   margin: -20px;
+  background: #292929;
+  opacity: 60%;
+  width: 13.23px ;
+  height: 21.43px;
+  margin-top: 10px;
 }
 
 .slider-item-text-one {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 .slider-text-title {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 17px;
   color: #000000;
 }
 
@@ -80,8 +89,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 21px;
+  line-height: 25px;
   color: #000000;
 }
 .slider-text-discount-price {
@@ -90,8 +99,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 21px;
+  line-height: 25px;
   color: #000000;
 }
 
@@ -104,8 +113,8 @@
 }
 
 .discount-arrow {
-  width: 40px;
-  height: 20px;
+  width: 30px;
+  height: 10px;
   margin: 0 10px;
 }
 
@@ -115,10 +124,9 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 17px;
   color: #000000;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -126,7 +134,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 14px;
   color: rgba(0, 0, 0, 1);
+  opacity: 70%;
 }
