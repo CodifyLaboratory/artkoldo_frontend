@@ -1,46 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
 
-.hr {
+.hraboutus {
   color: #373635;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  
 }
+.hrafter{
+
+}
+
+ 
 .short-info {
   background-color: #737373;
-  border-radius: 12px;
-  font-size: 24px;
+  border-radius: 8.6px;
   display: flex;
   align-items: center;
-  margin-top: 162px;
+  margin-top: 70px;
+ 
 }
 
 .about-us-Block span {
-  margin-bottom: 41px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  margin-bottom: 40px;
 }
 
 .short-info-text {
-  padding: 70px 0 70px 50px;
   width: 50%;
   margin-left: 97px;
+  padding: 70px 0 0 0;
 }
 
 .short-info-description {
-  width: 1600px;
-  height: 708px;
-  margin-top: 30px;
+  width: 1160px;
+  height: 442px; 
+  margin-top: 30px; 
 }
+
 .short-info-description p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 21px;
   color: #000000;
   width: 100%;
-  padding-right: 874px;
+  padding-right: 674px;
 }
 
 .short-info-logo {
-  width: 310px;
-  height: 310px;
+  width: 219px;
+  height: 219px;
   border-radius: 50%;
   background-color: #373635;
   background-position: center;
@@ -52,30 +67,35 @@
 }
 
 .short-info span {
-  color: #e1c55f;
-  font-size: 36px;
-  margin-top: 159px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #E1C55F;
+ 
 }
 .short-info p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 21px;
   color: #000000;
-  margin-top: 35px;
+  margin-top: 20px;
 }
 
 .founders-block {
-  margin-top: 165px;
-  margin-bottom: 1000px;
+  margin-top: 100px;
+  margin-bottom: 417px;
+ 
 }
 .pol {
-  margin-bottom: 162px;
+  margin-bottom: 40px;
 }
 .founders-block span,
 .about-us-Block span {
-  font-size: 38px;
+  font-size: 20px;
 }
 
 .founders {
@@ -84,17 +104,17 @@
 }
 
 .founder-img img {
-  width: 295px;
-  height: 252px;
+  width: 244px;
+  height: 208px;
 }
 
 .founder-img {
-  margin-bottom: 76px;
+  margin-bottom: 62px;
 }
 .sec img {
-  width: 295px;
-  height: 252px;
-  margin-bottom: 1500px;
+  width: 244px;
+  height: 208px;
+
 }
 
 .founder-text {
@@ -102,8 +122,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 19px;
+  line-height: 23px;
   color: #000000;
 }
 
@@ -111,6 +131,3 @@
   display: flex;
 }
 
-.founders_block {
-  margin-bottom: 1000px;
-}

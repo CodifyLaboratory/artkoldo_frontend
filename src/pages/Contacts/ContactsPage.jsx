@@ -25,13 +25,13 @@ export default function ContactsPage() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Контакты</span>
+        <span>Контакты / ...</span>
       </div>
-      <hr />
+      <hr className="contactshr"/>
       <div className="contacts">
         <span>Контакты</span>
       </div>
-      <hr />
+      <hr className="contactshr1" />
 
       <div className="contacts-page">
         <div className="contacts-num">

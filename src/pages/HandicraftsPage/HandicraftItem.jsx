@@ -83,10 +83,10 @@ export default function HandicraftItem() {
         </span>
         <span>...</span>
       </div>
-      <hr />
-      <div className="page-content">
+      <hr className="handhr" />
+   
         <div className="product-content">
-          <div className="left-side">
+          <div className="handleft-side">
             <div className="product-img">
               <img
                 src={product?.photo_1 ? product?.photo_1 : Logo}
@@ -214,6 +214,6 @@ export default function HandicraftItem() {
           onClick={() => setIsChanged(true)}
         />
       </div>
-    </div>
+
   );
 }

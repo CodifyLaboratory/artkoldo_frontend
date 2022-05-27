@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="lastitem">
             <ul>
               <li>
-                <Link to="/Contacts">Контакты</Link>
+                <Link to="/contacts">Контакты</Link>
               </li>
             </ul>
           </div>

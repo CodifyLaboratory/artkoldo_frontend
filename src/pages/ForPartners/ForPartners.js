@@ -23,13 +23,13 @@ export default function ForPartners() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Для партнеров</span>
+        <span>Для партнеров / ...</span>
       </div>
-      <hr />
+      <hr className="partnershr" />
       <div className="forpartners">
         <span>Для партнеров</span>
       </div>
-      <hr />
+      <hr className="partnershr1"/>
       <div className="partners-text">
         <p>{data?.description}</p>
       </div>

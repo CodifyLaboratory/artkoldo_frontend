@@ -24,12 +24,12 @@ export default function AboutUsPage() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>О нас</span>
+        <span>О нас / ...</span>
       </div>
-      <hr />
+      <hr className="hraboutus" />
       <div className="about-us-Block">
         <span>О нас</span>
-        <hr />
+        <hr className="hrafter" />
         <div className="short-info">
           <div className="short-info-text">
             <div className="short-info-title">

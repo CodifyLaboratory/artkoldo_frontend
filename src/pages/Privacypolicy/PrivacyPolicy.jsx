@@ -23,29 +23,29 @@ export default function PrivacePolicy() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Правила и условия</span>
+        <span>Правила и условия / ...</span>
       </div>
-      <hr />
+      <hr className="ruleshr"/>
       <div className="rule">
         <div className="RulesBlock">
           <span>Положения и условия</span>
-          <hr className="ruleshr" />
+          <hr className="ruleshr2" />
           <br />
           <p>{data?.conditions}</p>
           <br />
         </div>
         <div className="RulesBlock pt-1">
-          <hr />
+          <hr className="ruleshr3"/>
           <span>Политика конфиденциальности</span>
-          <hr />
+          <hr className="ruleshr4"/>
           <br />
           <p>{data?.privacy}</p>
           <br />
         </div>
         <div className="RulesBlock pt-1 pb-5">
-          <hr />
+          <hr className="ruleshr3" />
           <span>Политика авторского права</span>
-          <hr />
+          <hr className="ruleshr4" />
           <br />
           <p>{data?.copyright}</p>
           <br />

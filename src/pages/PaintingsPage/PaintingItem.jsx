@@ -83,10 +83,9 @@ export default function PaintingItem() {
         </span>
         <span>...</span>
       </div>
-      <hr />
-      <div className="page-content">
+      <hr className="itemhr" />
         <div className="product-content">
-          <div className="left-side">
+          <div className="paintingleft-side">
             <div className="product-img">
               <img
                 src={product?.photo_1 ? product?.photo_1 : Logo}
@@ -176,7 +175,7 @@ export default function PaintingItem() {
               <hr className="dividing_line"></hr>
             </div>
           </div>
-          <div class="right_side">
+          <div class="paintingright_side">
             <div class="right_description_headings">{product?.title}</div>
             <div className="description">
               <p>Живопись</p>
@@ -211,6 +210,7 @@ export default function PaintingItem() {
             </div>
           </div>
         </div>
+        
         <div className="bottom">
           <h1 className="bottom_heading">Рекомендуем также:</h1>
         </div>
@@ -222,6 +222,6 @@ export default function PaintingItem() {
           onClick={() => setIsChanged(true)}
         />
       </div>
-    </div>
+  
   );
 }

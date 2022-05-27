@@ -87,9 +87,9 @@ export default function HandicraftsPage() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Ремесленные изделия</span>
+        <span>Ремесленные изделия / ...</span>
       </div>
-      <hr />
+      <hr className="handdhr" />
       <div className="sort-items-container">
         <p>Ремесленные изделия</p>
         <div className="sort-items-select">

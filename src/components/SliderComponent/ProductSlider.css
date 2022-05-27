@@ -12,7 +12,7 @@
 
 .slider-title {
   margin-top: 60px;
-  margin-left: 100px;
+  margin-left: 140px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -22,7 +22,7 @@
 }
 
 .slider-container {
-  width: 90%;
+  width: 85%;
   height: 578px;
 }
 

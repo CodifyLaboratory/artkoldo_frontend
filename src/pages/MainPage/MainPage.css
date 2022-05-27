@@ -31,12 +31,12 @@
   line-height: 33px;
   text-transform: uppercase;
   color: #000000;
-  margin-left: 110px;
+  margin-left: 140px;
   margin-top: 168px;
 }
 
 .sell-now-box {
-  margin-left: 110px;
+  margin-left: 140px;
   margin-top: 51px;
 }
 
@@ -70,7 +70,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 140px;
 }
 
 .filter-btn:hover {
@@ -78,7 +78,7 @@
 }
 .slider-title-rec{
   margin-top: -140px;
-  margin-left: 100px;
+  margin-left: 140px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -89,7 +89,7 @@
 }
 .slider-title-sale{
   margin-top: -140px;
-  margin-left: 100px;
+  margin-left: 140px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -199,7 +199,7 @@
 }
 
 .about-box {
-  width:90%;
+  width:85%;
   height: 520px;
   background: #c4c4c4;
   border-radius: 12px;
