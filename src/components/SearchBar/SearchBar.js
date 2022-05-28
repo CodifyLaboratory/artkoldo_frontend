@@ -40,18 +40,11 @@ function SearchBar() {
   };
 
   function handleInput(event) {
-    document.getElementById("dropdown").style.display = "none";
     setInput(event.target.value);
   }
 
   return (
     <div className="searchBar">
-      {/* <div className="dropdown" id="dropdown">
-        <p>Для поиска товара по каталогу, вам необходимо:</p>
-        <p>1. Выбрать категорию</p>
-        <p>2. Ввести текст для поиска</p>
-        <p>3. Нажать на кнопку поиска</p>
-      </div> */}
       <select id="categoryId" onChange={getCategory} required={true}>
         <option value="" disabled selected className="select-category">
           Выбрать
@@ -66,6 +59,7 @@ function SearchBar() {
           type="text"
           id="search-bar"
           onChange={(event) => handleInput(event)}
+          onKeyDown={handleSearch}
           required={true}
           placeholder="Поиск..."
         />
