@@ -41,7 +41,7 @@
 .product-item_detailes {
   display: flex;
   width: 100% !important;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: space-between;
   padding-top: 15px;
 }
