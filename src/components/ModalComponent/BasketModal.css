@@ -187,7 +187,7 @@
 }
 
 .basket-modal-order-info {
-  margin-top: 25px;
+  margin-top: 5px;
 }
 
 .basket-modal-order-inputs {
@@ -200,7 +200,7 @@
   height: 25px;
   border: 1px solid #373635;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -232,7 +232,7 @@
   height: 25px;
   border: 1px solid #373635;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: transparent;
   display: flex;
   align-items: center;
