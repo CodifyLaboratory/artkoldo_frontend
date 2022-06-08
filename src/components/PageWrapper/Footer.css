@@ -23,15 +23,15 @@
   line-height: 30px;
   font-weight: 500;
   padding-right: 131px;
- margin-bottom: 20px;
- padding-left: 100px;
+  margin-bottom: 20px;
+  padding-left: 100px;
 }
 
 .categories span,
 .about-company span,
 .rules span {
   color: #e1c55f;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -54,17 +54,14 @@
   background-size: contain;
   width: 111px;
   height: 59px;
-  margin-top: 130px;
+  margin-top: 70px;
 }
 
-.categories{
+.categories {
   width: 35%;
-
-
 }
-.about-company{
-  width: 35%; 
- 
+.about-company {
+  width: 35%;
 }
 .rules {
   width: 38%;
@@ -103,8 +100,7 @@
 .social-icons {
   display: flex;
   align-items: center;
-  justify-content: flex-start ;
-
+  justify-content: flex-start;
 }
 
 .social-tw {
@@ -115,9 +111,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 23px;
-
-
-  
 }
 
 .social-fb {
@@ -138,5 +131,5 @@
   background-image: url(../../images/insta-icon.png);
   background-repeat: no-repeat;
   background-size: contain;
-margin-right: 23px;
+  margin-right: 23px;
 }

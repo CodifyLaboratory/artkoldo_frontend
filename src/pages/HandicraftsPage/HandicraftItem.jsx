@@ -84,8 +84,9 @@ export default function HandicraftItem() {
         <span>...</span>
       </div>
       <hr className="handhr" />
-   
-        <div className="product-content">
+
+      <div className="product-content">
+        <div className="product-info">
           <div className="handleft-side">
             <div className="product-img">
               <img
@@ -214,6 +215,6 @@ export default function HandicraftItem() {
           onClick={() => setIsChanged(true)}
         />
       </div>
-
+    </div>
   );
 }

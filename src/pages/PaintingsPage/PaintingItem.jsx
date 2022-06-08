@@ -84,7 +84,8 @@ export default function PaintingItem() {
         <span>...</span>
       </div>
       <hr className="itemhr" />
-        <div className="product-content">
+      <div className="product-content">
+        <div className="product-info">
           <div className="paintingleft-side">
             <div className="product-img">
               <img
@@ -210,7 +211,7 @@ export default function PaintingItem() {
             </div>
           </div>
         </div>
-        
+
         <div className="bottom">
           <h1 className="bottom_heading">Рекомендуем также:</h1>
         </div>
@@ -222,6 +223,6 @@ export default function PaintingItem() {
           onClick={() => setIsChanged(true)}
         />
       </div>
-  
+    </div>
   );
 }
