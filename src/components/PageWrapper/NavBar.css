@@ -3,7 +3,6 @@ header {
   background: #373635;
   width: 100%;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
- 
 }
 
 .header-container {
@@ -18,7 +17,7 @@ header {
 
 .header-left {
   width: 100%;
- margin-right: 90px;
+  margin-right: 90px;
 }
 .nav-menu {
   display: flex;
@@ -39,7 +38,7 @@ header {
   margin-top: 18px;
 }
 .nav-links a:nth-child(3n) {
-  padding-left: 7,5%;
+  padding-left: 7, 5%;
 }
 
 .nav-links :hover {
@@ -75,7 +74,7 @@ textarea {
   background-image: url(../../images/icons/cart_icon.svg);
   background-size: contain;
   background-repeat: no-repeat;
-margin-left: 20px;
+  margin-left: 12px;
   width: 17px;
   height: 17px;
   position: relative;
@@ -88,8 +87,8 @@ margin-left: 20px;
   border-radius: 12px;
   width: 15.54px;
   height: 14.56px;
-  right: 235px;
-  top: 30px;
+  right: 260px;
+  top: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,7 +110,6 @@ margin-left: 20px;
 }
 .lastitem {
   margin-top: 18px;
-
 }
 
 .lastitem ul li a :hover {

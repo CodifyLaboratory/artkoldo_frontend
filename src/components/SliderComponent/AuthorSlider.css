@@ -19,7 +19,6 @@
   width: 85%;
   height: 520px;
   border-radius: 12px;
- 
 }
 
 .author-slider-container-box {
@@ -41,13 +40,12 @@
 }
 
 .author-slider-container-box .slick-slide {
-  width: 1147px !important;
+  width: 1428px !important;
   height: 520px !important;
   border-radius: 12px;
   padding: 0;
   margin: 0;
   margin-bottom: 100px;
-
 }
 
 .author-slider-container-box .slick-track {
@@ -78,18 +76,13 @@
   border-radius: 8.53px;
   object-fit: cover;
   background-size: contain;
-  
 }
 
 .author-about-text {
   margin-left: 59px;
- 
- 
-  
 }
 
 .author-about-name {
-  
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -100,7 +93,7 @@
 }
 
 .author-about-bio {
-  width: 50%;
+  width: 80%;
   height: 252px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -108,7 +101,6 @@
   font-size: 17px;
   line-height: 150%;
   color: #373635;
-
 }
 
 .slick-dots li {
