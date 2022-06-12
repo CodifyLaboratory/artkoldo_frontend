@@ -20,14 +20,14 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 1200px;
-  height: 839px;
-  left: 360px;
-  top: 302px;
+  width: 824px;
+  height: 525px;
+  left: 308px;
+  margin-top: 150px;
   background: #dbd6d6;
-  border-radius: 12px;
+  border-radius: 10px;
   color: black;
-  font-size: 26px;
+  font-size: 18px;
   z-index: 10;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   padding: 0 176px;
@@ -36,35 +36,35 @@
 }
 
 .modal-logo img {
-  width: 190px;
-  height: 190px;
+  width: 165px;
+  height: 165px;
 }
 .modal-logo {
-  margin-bottom: 54px;
-  margin-top: 96px;
+  margin-bottom: 40px;
+  margin-top: 56px;
 }
 
 .modal-text {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 21px;
   text-align: center;
   color: #000000;
 }
 
 .modal-btn-box button {
-  width: 502px;
-  height: 58px;
+  width: 400px;
+  height: 45px;
   background-color: #373635;
   border: none;
   border-radius: 12px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 21px;
   text-align: center;
   color: #ffffff;
   margin-top: 50px;

@@ -12,8 +12,8 @@
 }
 
 .basket-modal1-box {
-  width: 780px;
-  height: 618px;
+  width: 548px;
+  height: 433px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -31,8 +31,8 @@
 }
 
 .basket-modal2-box {
-  width: 780px;
-  height: 810px;
+  width: 548px;
+  height: 433px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -50,8 +50,8 @@
 }
 
 .basket-modal3-box {
-  width: 780px;
-  height: 650px;
+  width: 548px;
+  height: 433px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -69,29 +69,29 @@
 }
 
 .basket-modal-logo img {
-  width: 150px;
-  height: 79px;
+  width: 105px;
+  height: 55px;
 }
 
 .basket-modal-logo {
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .basket-modal-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 504px;
-  height: 175px;
+  width: 353px;
+  height: 122px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 18px;
+  line-height: 21px;
   text-align: justify;
   border-radius: 12px;
   color: black;
-  font-size: 26px;
+  font-size: 19px;
   z-index: 10;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
   margin-top: 50px;
@@ -102,24 +102,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 504px;
-  height: 175px;
+  width: 400px;
+  height: 130px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 16px;
+  line-height: 21px;
   text-align: justify;
   border-radius: 12px;
   color: black;
-  font-size: 26px;
+  font-size: 16px;
   z-index: 10;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  margin-top: 90px;
+  margin-top: 70px;
 }
 
 .basket-order-submit-text p:first-child {
-  font-size: 32px;
+  font-size: 22px;
 }
 
 .basket-order-submit-text a {
@@ -148,17 +148,17 @@
   align-items: center;
 }
 
-.basket-modal-button {
-  width: 281px;
-  height: 65px;
+.basket-modal-button button {
+  width: 197px;
+  height: 45px;
   background-color: #373635;
   border: none;
   border-radius: 12px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 21px;
+  line-height: 24px;
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -168,21 +168,21 @@
 }
 
 .basket-order-submit-button {
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 80px;
 }
 
 .basket-order-submit-button button {
-  width: 380px;
-  height: 65px;
+  width: 280px;
+  height: 45px;
   background-color: #373635;
   border: none;
   border-radius: 12px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 18px;
+  line-height: 21px;
   color: #ffffff;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .basket-modal-order-info {
-  margin-top: 25px;
+  margin-top: 5px;
 }
 
 .basket-modal-order-inputs {
@@ -200,11 +200,11 @@
 }
 
 .order-info-input-lg {
-  width: 488px;
-  height: 44px;
+  width: 388px;
+  height: 25px;
   border: 1px solid #373635;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -212,17 +212,17 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 12px;
+  line-height: 19px;
   color: #373635;
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .order-info-input-lg::placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 12px;
   line-height: 21px;
   color: #373635;
 }
@@ -233,10 +233,10 @@
 }
 
 .order-info-input-sm {
-  height: 44px;
+  height: 25px;
   border: 1px solid #373635;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -244,31 +244,31 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 12px;
+  line-height: 19px;
   color: #373635;
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .order-info-input-sm:first-child {
-  width: 233px;
+  width: 190px;
 }
 
 .order-info-input-sm:last-child {
-  width: 238px;
+  width: 185px;
 }
 
 .order-info-input-sm::placeholder {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 12px;
+  line-height: 19px;
   color: #373635;
 }
 
-.basket-checkout-btns {
-  margin-top: 50px;
+.basket-checkout-btn {
+  margin-top: 0px;
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
@@ -276,17 +276,17 @@
   align-items: center;
 }
 
-.basket-checkout-btn {
-  width: 281px;
-  height: 65px;
+.basket-checkout-btn button {
+  width: 200px;
+  height: 35px;
   background-color: #373635;
   border: none;
   border-radius: 12px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 16px;
+  line-height: 21px;
   color: #ffffff;
 }
 

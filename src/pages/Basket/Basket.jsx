@@ -114,9 +114,9 @@ export default function Basket() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Корзина</span>
+        <span>Корзина / ...</span>
       </div>
-      <hr />
+      <hr className="baskethr" />
       {cartItems?.length === 0 ? (
         <div className="basket-content">
           <p>Ваша корзина пуста.</p>

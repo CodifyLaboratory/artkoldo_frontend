@@ -7,9 +7,12 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 21px;
+  font-size: 13px;
+  line-height: 16px;
   color: #373635;
+}
+.painthr{
+  margin-top: -30px; 
 }
 
 .breadcrumbs span a {
@@ -23,36 +26,43 @@
 }
 
 .sort-items-container {
-  height: 142px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+
 }
 
 .sort-items-container p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 38px;
-  line-height: 45px;
+  font-size: 26px;
+  line-height: 30px;
   color: #000000;
 }
 
 .sort-items-select select {
-  width: 274px;
-  height: 62px;
+  width: 213px;
+  height: 48px;
   display: flex;
   align-items: center;
-  font-family: "Roboto";
+  font-family: “Roboto”;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 20px;
   color: #000000;
   background-color: transparent;
   border-radius: 12px;
   padding: 13px;
+  outline: none;
+  -webkit-appearance: none;
+  background-image: url(../../images/dropdown.png);
+  background-repeat: no-repeat;
+  background-position: 180px, 30px;
 }
 
 .catalog-container {

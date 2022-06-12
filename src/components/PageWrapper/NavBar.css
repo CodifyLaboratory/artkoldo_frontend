@@ -6,19 +6,18 @@ header {
 }
 
 .header-container {
-  height: 150px;
+  height: 104px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 0;
-  padding: 0 150px 0 120px;
+  padding: 0 153px 0 108px;
 }
 
 .header-left {
   width: 100%;
-  max-width: 721px;
-  margin-right: 160px;
+  margin-right: 90px;
 }
 .nav-menu {
   display: flex;
@@ -32,14 +31,14 @@ header {
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
-  font-size: 19px;
+  font-size: 14px;
   line-height: 22px;
   color: #ffffff;
   white-space: nowrap;
   margin-top: 18px;
 }
 .nav-links a:nth-child(3n) {
-  padding-left: 144px;
+  padding-left: 7, 5%;
 }
 
 .nav-links :hover {
@@ -53,17 +52,16 @@ header {
 }
 
 .img_logo {
-  width: 149.28px;
-  height: 84.15px;
+  width: 112.5px;
+  height: 54.77px;
 }
 
 .header-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  justify-content: space-evenly;
   width: 100%;
-  margin-left: 110px;
+  margin-left: 86px;
 }
 
 input,
@@ -76,7 +74,7 @@ textarea {
   background-image: url(../../images/icons/cart_icon.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  padding-left: 20px;
+  margin-left: 12px;
   width: 17px;
   height: 17px;
   position: relative;
@@ -87,10 +85,10 @@ textarea {
   background-color: red;
   color: white;
   border-radius: 12px;
-  width: 15px;
-  height: 15px;
-  right: 293px;
-  top: 60px;
+  width: 15.54px;
+  height: 14.56px;
+  right: 260px;
+  top: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +99,7 @@ textarea {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 19px;
+  font-size: 14px;
   line-height: 22px;
   color: #ffffff;
   text-decoration: none;
@@ -114,6 +112,6 @@ textarea {
   margin-top: 18px;
 }
 
-.lastitem ul li :hover {
+.lastitem ul li a :hover {
   color: #e1c55f;
 }

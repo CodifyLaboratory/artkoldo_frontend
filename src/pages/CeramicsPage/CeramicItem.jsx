@@ -84,8 +84,9 @@ export default function CeramicItem() {
         <span>...</span>
       </div>
       <hr />
-      <div className="page-content">
-        <div className="product-content">
+
+      <div className="product-content">
+        <div className="product-info">
           <div className="left-side">
             <div className="product-img">
               <img

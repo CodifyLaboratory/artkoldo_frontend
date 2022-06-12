@@ -23,21 +23,21 @@ export default function DeliveryAndPayment() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Оплата и доставка</span>
+        <span>Оплата и доставка / ...</span>
       </div>
-      <hr />
+      <hr className="paymenthr" />
       <div className="payments">
         <span>Оплата</span>
       </div>
-      <hr />
+      <hr className="paymenthr1" />
       <div className="payments-text">
         <p>{data?.payment}</p>
       </div>
-      <hr />
+      <hr className="paymenthr1" />
       <div className="payments">
         <span>Доставка</span>
       </div>
-      <hr />
+      <hr className="paymenthr1" />
       <div className="delivery-text">
         <p>{data?.delivery}</p>
       </div>

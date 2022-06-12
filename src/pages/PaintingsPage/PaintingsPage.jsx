@@ -105,9 +105,9 @@ export default function PaintingsPage() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Живопись</span>
+        <span>Живопись / ...</span>
       </div>
-      <hr />
+      <hr className="painthr" />
       <div className="sort-items-container">
         <p>Живопись</p>
         <div className="sort-items-select">
@@ -122,7 +122,7 @@ export default function PaintingsPage() {
           </select>
         </div>
       </div>
-      <hr />
+      <hr className="hrpaint" />
       <div className="catalog-container">
         <div className="filter-menu-container">
           <p className="filter-menu-header">Категории</p>

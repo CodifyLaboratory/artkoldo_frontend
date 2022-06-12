@@ -19,8 +19,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 20px;
+  line-height: 23px;
   color: #000000;
   margin-left: 30px;
   margin-right: 30px;
@@ -29,8 +29,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 33px;
+  font-size: 20px;
+  line-height: 23px;
   color: #626262;
 }
 .ant-pagination-item:hover {
@@ -38,8 +38,8 @@
   background-color: #e8e8e8;
 }
 .anticon {
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   background: none;
 }
 .anticon-left {

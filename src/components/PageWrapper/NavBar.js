@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className="header">
       <div className="header-container">
         <div className="header-left">
-          <ul className="nav-menu">
+          <ul className="nav-menu" style={{ paddingLeft: "0" }}>
             {MenuItems.map((item, index) => {
               return (
                 <div className="nav-links" key={index}>

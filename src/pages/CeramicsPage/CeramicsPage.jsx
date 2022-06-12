@@ -85,9 +85,9 @@ export default function CeramicsPage() {
         <span>
           <a href="/">Главная/</a>
         </span>
-        <span>Керамика</span>
+        <span>Керамика / ...</span>
       </div>
-      <hr />
+      <hr className="cerhr"/>
       <div className="sort-items-container">
         <p>Керамика</p>
         <div className="sort-items-select">

@@ -2,8 +2,9 @@
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
-  width: 741.21px;
-  height: 557px;
+  width: 527px;
+  height: 395px;
+  border-radius: 8px;
 }
 
 .video-responsive iframe {
