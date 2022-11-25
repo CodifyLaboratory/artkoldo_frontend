@@ -54,7 +54,7 @@ export default function AuthorSlider({ slides }) {
 
   if (!slides) return <div>Loading</div>;
   return (
-    <>
+    <div className='author-slider'>
       <p className="authors-slider-title"></p>
       <Slider {...settings}>
         {slides?.map((author) => (
@@ -73,6 +73,6 @@ export default function AuthorSlider({ slides }) {
           </div>
         ))}
       </Slider>
-    </>
+    </div>
   );
 }

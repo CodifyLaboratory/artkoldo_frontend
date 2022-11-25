@@ -80,7 +80,7 @@ export default function SliderComponent({ products, filter, isDiscount }) {
 
   if (!slideItems) return <div>Loading</div>;
   return (
-    <>
+    <div className='product-slider'>
       {filter === "all" || filter === "" ? (
         <Slider {...settings}>
           {slideItems?.map((product) => (
@@ -203,6 +203,6 @@ export default function SliderComponent({ products, filter, isDiscount }) {
             ))}
         </Slider>
       )}
-    </>
+    </div>
   );
 }

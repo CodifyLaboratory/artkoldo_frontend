@@ -26,11 +26,11 @@
   height: 578px;
 }
 
-.slick-slider {
+.product-slider .slick-slider {
   padding: 0;
 }
 
-.slider-item-img {
+.product-slider .slider-item-img {
   display: block;
   box-sizing: border-box;
   width: 364px;
@@ -38,7 +38,7 @@
   object-fit: cover;
 }
 
-.slick-slide {
+.product-slider .slick-slide {
   width: 448px !important;
   height: 344px !important;
   background: rgba(255, 255, 255, 1);
@@ -68,14 +68,14 @@
   margin-top: 10px;
 }
 
-.slider-item-text-one {
+.product-slider .slider-item-text-one {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 14px;
 }
 
-.slider-text-title {
+.product-slider .slider-text-title {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -84,7 +84,7 @@
   color: #000000;
 }
 
-.slider-text-price {
+.product-slider .slider-text-price {
   display: flex;
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -93,7 +93,7 @@
   line-height: 25px;
   color: #000000;
 }
-.slider-text-discount-price {
+.product-slider .slider-text-discount-price {
   display: flex;
   align-items: center;
   font-family: "Roboto", sans-serif;
@@ -104,7 +104,7 @@
   color: #000000;
 }
 
-.line-through {
+.product-slider .line-through {
   text-decoration: line-through;
 }
 
@@ -112,13 +112,13 @@
   color: red;
 }
 
-.discount-arrow {
+.product-slider .discount-arrow {
   width: 30px;
   height: 10px;
   margin: 0 10px;
 }
 
-.slider-item-text-two {
+.product-slider .slider-item-text-two {
   display: flex;
   justify-content: flex-start;
   font-family: "Roboto", sans-serif;
@@ -130,7 +130,7 @@
   margin-bottom: 10px;
 }
 
-.slider-item-text-three {
+.product-slider .slider-item-text-three {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 300;
